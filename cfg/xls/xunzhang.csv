@@ -1,0 +1,6 @@
+itemid,type,ActivatioCondition,targetType,targetID,targetValue,
+6769,1,s==6|比武大会勋章,,,1,
+6770,1,s==6|比武大会勋章,,,2,
+6771,1,s==6|比武大会勋章,,,3,
+6772,1,s==6|比武大会勋章,,,4,
+6773,1,s==6|比武大会勋章,,,5,

@@ -1,0 +1,4 @@
+id,level,vipLevel,copper,gold,progress,unionExp,donate,desc,
+1,1,0,22000,0,55,55,110,s==4|铜钱捐献,
+2,1,0,0,110,110,110,275,s==4|元宝捐献,
+3,1,0,0,330,220,220,880,s==4|尊贵捐献,

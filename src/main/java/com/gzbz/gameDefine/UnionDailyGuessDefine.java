@@ -1,0 +1,42 @@
+package com.gzbz.gameDefine;
+
+public interface UnionDailyGuessDefine {
+   int EVENT_ENEMY = 1;
+   int EVENT_RANDOM_BOX = 2;
+   int EVENT_RESOURCE = 3;
+   int EVENT_INVITE_FRIEND = 4;
+   int EVENT_GRID_CHANGE = 5;
+   int GRID_STATE_LOCK = 0;
+   int GRID_STATE_NORMAL = 1;
+   int GRID_STATE_EXCHANGE = 2;
+   int TRANSMIT_HIDE = 0;
+   int TRANSMIT_SHOW = 1;
+   int RECORD_LOWEST_POWER = 1;
+   int RECORD_NEAREST = 2;
+   int HAD_INIT_GRID_DATA = 0;
+   int EMPLOY_HERO_START = 800000;
+   int SUPPORT_HERO_CODE = 1;
+   int SUPPORT_UNIQUE_CODE = 2;
+   String UNION_GATE_LV_REQUIRE = "unionGateLvRequire";
+   String UNION_GATE_LV_REWARD = "unionGateLvReward";
+   String UNION_GATE_FIGHT_TURN = "unionGateFightTurn";
+   String UNION_GATE_SHARE_REWARD = "unionGateShareReward";
+   int CHAPTER_STATE_NORMAL = 0;
+   int CHAPTER_STATE_FIGHTING = 1;
+   int CHAPTER_STATE_COMPLETE = 2;
+   int EVENT_COMPLETE = 0;
+   int ALL_CHAPTER_STATE_NORMAL = 0;
+   int ALL_CHAPTER_STATE_COMPLETE = 1;
+   int ALL_CHAPTER_STATE_FINISH = -1;
+   int CHAPTER_CAN_PASS_BATTLE = 1;
+   int GRID_LAST_CHAPTER = -1;
+   int FIGHT_PASSED = 1;
+   int FIGHT_INIT = 0;
+   int TYPE_1 = 1;
+   int TYPE_2 = 2;
+   int BATTLE_RECORD_TYPE_PASS = 1;
+   int END_TYPE_FINISH = 0;
+   int END_TYPE_COMPLETE = 1;
+   int SHARE_NORMAL = 0;
+   int SHARE_HAS = 1;
+}

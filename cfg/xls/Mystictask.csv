@@ -1,0 +1,5 @@
+id,targets-targetType-1,targets-targetId-1,targets-targetValue-1,taskName,taskDesc,rewards-type-1,rewards-id-1,rewards-value-1,
+1,212,6,1,s==4|奇遇之旅,s==10|接取1次红色奇遇任务,1,9,50,
+2,209,0,10,s==4|将印合成,s==9|进行10次将印合成,1,9,50,
+3,216,0,4000000,s==4|君主战力,s==10|出阵战力达到400万,1,9,50,
+4,201,0,110,s==4|君主等级,s==10|君主等级达到110级,1,9,50,

@@ -1,0 +1,4 @@
+extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
+1,2,6980,1,s==7|消耗1个双鱼佩,1,,
+2,2,6980,10,s==8|消耗10个双鱼佩,10,,
+3,2,6980,45,s==8|消耗45个双鱼佩,50,9,

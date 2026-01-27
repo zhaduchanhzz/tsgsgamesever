@@ -1,0 +1,2 @@
+id,heroGameAddSpeed,heroGameAddSpeedTime,heroGameAddGold,heroGameLottery,heroGameLotteryInitialNum,heroGameLotterySpeed,heroGameLotteryBackstage,heroGameTypeName,heroGamePowerLv,heroGameTaskLock,heroGameLevelLock,isOpenPrivilege,accelerate,accelerateSpd,
+1,10016,300,50,10017,50,3,10,s==62|1:武器|2:衣服|3:肩甲|4:护腕|5:头盔|6:腰带|7:鞋子|8:手镯|9:玉佩|10:项链|11:戒指|12:护符,5,411013,6,0,s==23|1,1|2,2|3,3|4,4|5,5|6,6,1.8,

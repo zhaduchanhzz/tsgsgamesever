@@ -1,0 +1,4 @@
+extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
+1,2,2754,1,s==8|消耗1个寒冰密钥,1,,
+2,2,2754,10,s==9|消耗10个寒冰密钥,10,,
+3,2,2754,45,s==9|消耗45个寒冰密钥,50,9,

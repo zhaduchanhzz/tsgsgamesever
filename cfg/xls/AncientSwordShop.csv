@@ -1,0 +1,6 @@
+id,group,itemType,itemId,combineNum,resourceType,resourceId,disPrice,buyLimit,autoReset,worldlvLimit,lvLimit,lvLimitEx,vipLimit,desc,oriPrice,discount,sort,weight,maxTimes,
+1,1,2,800209,1,1,9,150,1,4,,,,,s==6|随机蓝色幻武,300,5,920,5000,,
+2,1,2,800210,1,1,9,800,1,4,,,,,s==6|随机紫色幻武,1000,8,910,3500,,
+3,1,2,800211,1,1,9,5000,1,4,,,,,s==6|随机橙色幻武,10000,5,870,1500,1,
+4,2,2,800200,40,1,9,480,1,4,,,,,s==2|陨铁,600,8,860,2000,,
+5,2,2,800200,40,1,9,480,1,4,,,,,s==2|陨铁,600,8,850,2000,,

@@ -1,0 +1,5 @@
+id,exchangeType,exchangeId,exchangeNum,rewards-type-1,rewards-id-1,rewards-value-1,rewards-type-2,rewards-id-2,rewards-value-2,rewards-type-3,rewards-id-3,rewards-value-3,
+1,2,1157,5,2,1001,200,1,8,300000,,,,
+2,2,1157,10,2,1003,1,2,1007,5,,,,
+3,2,1157,20,2,1003,3,2,1006,500,,,,
+4,2,1157,30,2,900008,1,2,1004,1,2,1014,1,

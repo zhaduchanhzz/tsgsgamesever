@@ -1,0 +1,4 @@
+extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
+1,2,2749,1,s==8|消耗1个幸运渔网,1,,
+2,2,2749,10,s==9|消耗10个幸运渔网,10,,
+3,2,2749,45,s==9|消耗45个幸运渔网,50,9,

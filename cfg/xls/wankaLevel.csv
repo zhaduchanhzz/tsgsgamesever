@@ -1,0 +1,5 @@
+level,mark,need,icon,icon1,lvBoxItemId,headFrame,prestige,logo,
+1,s==3|潜力咖,2000,s==10|q_icon_qe3,s==10|q_icon_qe5,5678,,19628,5673,
+2,s==3|准玩咖,5000,s==10|q_icon_qe4,s==10|q_icon_qe5,5679,,19629,5674,
+3,s==3|大玩咖,10000,s==10|q_icon_qe2,s==10|q_icon_qe5,5680,30049,19630,5675,
+4,s==5|超级大玩咖,50000,s==10|q_icon_qe1,s==10|q_icon_qe5,5681,30050,19631,5676,

@@ -1,0 +1,4 @@
+id,levelDown,levelUP,level-key-1,level-val-1,level-key-2,level-val-2,level-key-3,level-val-3,level-key-4,level-val-4,level-key-5,level-val-5,level-key-6,level-val-6,level-key-7,level-val-7,
+1,1,20,1,25,0,50,-1,25,,,,,,,,,
+2,21,40,2,10,1,15,0,50,-1,15,-2,10,,,,,
+3,41,9999,3,5,2,10,1,20,0,50,-1,20,-2,10,-3,5,

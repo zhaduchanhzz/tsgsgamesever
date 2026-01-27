@@ -1,0 +1,6 @@
+id,moncakeIName,mateerialId%1,mateerialId%2,mateerialId%3,mateerialId%4,
+1,s==3|桂花糕,6,5,9,10,
+2,s==2|年糕,6,9,5,,
+3,s==3|牛轧糖,9,7,3,4,
+4,s==3|龙须酥,8,7,3,2,
+5,s==4|酒酿圆子,6,1,5,9,

@@ -1,0 +1,3 @@
+id,name,luckPoint,prayScore,prayTimes,cost-type-1,cost-id-1,cost-value-1,cost-type-2,cost-id-2,cost-value-2,refreshCost-type-1,refreshCost-id-1,refreshCost-value-1,freeRefreshCount,freeRefreshTime,desc,
+1,s==4|普通祈福,10,10,1|15,2,1007,1,2,1007,12,1,9,30,1,3,,
+2,s==4|灵宝祈福,10,10,1|10,2,1014,1,2,1014,10,1,9,30,1,3,,

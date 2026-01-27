@@ -1,0 +1,46 @@
+package com.gzbz.gameDefine;
+
+public interface PvpDefine {
+   int PLAYER_MIN_SCORE = 1000;
+   int REWARD_FIGHT_WIN = 1;
+   int REWARD_FIGHT_LOST = 2;
+   int ACTIVITY_STATE_NOT_OPEN = 0;
+   int ACTIVITY_STATE_READY = 1;
+   int ACTIVITY_STATE_START = 2;
+   int ACTIVITY_STATE_END = 3;
+   int SEASON_STATE_NOT_OPEN = 0;
+   int SEASON_STATE_READY = 1;
+   int SEASON_STATE_GUESS = 2;
+   int SEASON_STATE_FIGHT = 3;
+   int TRIAL_NUM = 128;
+   int ROUND_READY = 0;
+   int ROUND_TRIAL_1 = 1;
+   int ROUND_TRIAL_2 = 2;
+   int ROUND_TRIAL_3 = 3;
+   int ROUND_TRIAL_4 = 4;
+   int ROUND_TRIAL_5 = 5;
+   int ROUND_TRIAL_6 = 6;
+   int ROUND_32 = 7;
+   int ROUND_16 = 8;
+   int ROUND_8 = 9;
+   int ROUND_4 = 10;
+   int ROUND_2 = 11;
+   int SIDE_ATTACK = 0;
+   int SIDE_DEFENSE = 1;
+   double PVP_POINTS_GAP_MIN = 0.68;
+   double PVP_POINTS_GAP_MAX = 1.32;
+   int[][] GUESS_FIRST_PLAYER_RANK = new int[][]{{119, 128}, {109, 118}, {99, 108}, {89, 98}, {79, 88}, {69, 78}};
+   int RANK_128 = 128;
+   int RANK_32 = 32;
+   int RANK_16 = 16;
+   int RANK_8 = 8;
+   int RANK_4 = 4;
+   int RANK_2 = 2;
+   int RANK_1 = 1;
+   int GUESS_NO = 0;
+   int GUESS_YES = 1;
+   int ACTIVITY_START_TIME = 75900000;
+   int KINGOFCP_TYPE_OPEN_SERVER = 1;
+   int KINGOFCP_TYPE_WEEK = 2;
+   int KINGOFCP_TYPE_DEFAULT_VALUE = 2;
+}

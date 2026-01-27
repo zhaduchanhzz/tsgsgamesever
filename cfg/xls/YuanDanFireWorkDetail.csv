@@ -1,0 +1,3 @@
+id,FestivalName,openTime,duration,FireWorkThemeType,fireWorkId,ChatWish,title,sloganResources,iconid,backphotoResources,titleResources,
+1,s==2|元旦,s==10|2024-01-01,259200,1,s==6|120052,s==33|[]~(￣▽￣)~*元旦快乐！新的一年大家一起龙腾虎跃，勇攀高峰！,s==4|元旦贺礼,s==20|y_ydhl_word_yaoguang,2600311,s==21|GUI/ActFire/y_ydhl_bg,s==19|y_ydhl_word_yuandan,
+2,s==2|春节,s==10|2024-02-10,172800,2,s==6|120051,s==32|龙年大吉=(:з」∠)_，祝各位龙年行大运，龙凤呈祥，龙马精神！,s==4|新春贺礼,s==18|y_xchl_word_feihuo,2600310,s==21|GUI/ActFire/y_xchl_bg,s==19|y_xchl_word_xinchun,

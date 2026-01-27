@@ -1,0 +1,6 @@
+id,unlockLv,nextId,extraItemType,extraItemId,extraItemValue,items-type-1,items-id-1,items-value-1,items-type-2,items-id-2,items-value-2,items-type-3,items-id-3,items-value-3,
+1,120,2,2,2600456,1,1,9,500,2,1004,1,1,8,2000000,
+2,121,3,2,2600457,1,1,9,500,2,1004,1,1,8,2000000,
+3,122,4,2,2600458,1,1,9,500,2,1004,1,1,8,2000000,
+4,123,5,2,2600459,1,1,9,500,2,1004,1,1,8,2000000,
+5,125,,2,2600460,1,1,9,500,2,800001,1,1,8,2000000,

@@ -1,0 +1,4 @@
+extractNum,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,discountNum,
+1,2,1248,1,s==8|消耗1个进贡诏书,,
+10,2,1248,10,s==9|消耗10个进贡诏书,,
+50,2,1248,45,s==9|消耗45个进贡诏书,9,

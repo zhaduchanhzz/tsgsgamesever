@@ -1,0 +1,4 @@
+extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
+1,2,6495,1,s==8|消耗1个欢乐飞镖,1,,
+2,2,6495,10,s==9|消耗10个欢乐飞镖,10,,
+3,2,6495,45,s==9|消耗45个欢乐飞镖,50,9,

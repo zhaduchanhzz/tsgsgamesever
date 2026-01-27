@@ -1,0 +1,4 @@
+extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
+1,2,6983,1,s==8|消耗1个醒狮福袋,1,,
+2,2,6983,10,s==9|消耗10个醒狮福袋,10,,
+3,2,6983,45,s==9|消耗45个醒狮福袋,50,9,

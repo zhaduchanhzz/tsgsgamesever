@@ -1,0 +1,7 @@
+id,taskDesc,targets-targetType-1,targets-targetId-1,targets-targetValue-1,rewards-type-1,rewards-id-1,rewards-value-1,rewards-type-2,rewards-id-2,rewards-value-2,rewards-type-3,rewards-id-3,rewards-value-3,
+1,s==6|参与1次竞猜,730,0,1,2,30045,1,,,,,,,
+2,s==6|参与3次竞猜,730,0,3,2,1003,3,,,,,,,
+3,s==6|参与5次竞猜,730,0,5,2,1004,1,,,,,,,
+4,s==6|赢得1次竞猜,731,0,1,1,9,300,,,,,,,
+5,s==6|赢得3次竞猜,731,0,3,2,1004,1,,,,,,,
+6,s==6|赢得5次竞猜,731,0,5,2,19623,1,,,,,,,

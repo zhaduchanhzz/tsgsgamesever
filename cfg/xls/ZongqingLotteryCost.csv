@@ -1,0 +1,4 @@
+extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
+1,2,1267,1,s==8|消耗1个翠玉菖蒲,1,,
+2,2,1267,10,s==9|消耗10个翠玉菖蒲,10,,
+3,2,1267,45,s==9|消耗45个翠玉菖蒲,50,9,

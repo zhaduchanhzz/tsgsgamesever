@@ -1,0 +1,6 @@
+id,unlockLv,nextId,dramaId,extraItemType,extraItemId,extraItemValue,items-type-1,items-id-1,items-value-1,items-type-2,items-id-2,items-value-2,items-type-3,items-id-3,items-value-3,
+1,135,2,3001,2,50060,1,1,9,500,2,1004,1,1,8,2000000,
+2,136,3,3021,2,50059,1,1,9,500,2,1004,1,1,8,2000000,
+3,137,4,3041,2,50058,1,1,9,500,2,1004,1,1,8,2000000,
+4,138,5,3061,2,50061,1,1,9,500,2,1004,1,1,8,2000000,
+5,140,,3081,2,50057,1,1,9,500,2,50065,1,1,8,2000000,

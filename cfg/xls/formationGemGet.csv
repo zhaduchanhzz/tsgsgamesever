@@ -1,0 +1,3 @@
+id,freeTime,freeCd,getItemType,getItemId,getItemNum,gemRandom-key-1,gemRandom-val-1,gemRandom-key-2,gemRandom-val-2,gemRandom-key-3,gemRandom-val-3,gemRandom-key-4,gemRandom-val-4,tenTimeRandom,tenTimeRandomValue,tenTimeRandomForP,tenTimeRandomValueForP,
+1,1,86400,1,9,170,2,7000,3,1000,4,1000,5,1000,,,,,
+2,,,1,9,1500,2,8000,3,1400,4,600,5,0,10000,5,10000,4,

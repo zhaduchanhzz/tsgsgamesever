@@ -1,0 +1,4 @@
+extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
+1,2,6973,1,s==8|消耗1个祈福签筒,1,,
+2,2,6973,10,s==9|消耗10个祈福签筒,10,,
+3,2,6973,45,s==9|消耗45个祈福签筒,50,9,

@@ -1,0 +1,5 @@
+id,itemType,itemId,combineNum,resourceType,resourceId,disPrice,buyLimit,autoReset,worldlvLimit,lvLimit,lvLimitEx,vipLimit,desc,oriPrice,discount,sort,
+1,2,1125,1,1,9,45,,,,,,,s==2|青梅,45,,910,
+2,2,1126,1,1,9,45,,,,,,,s==2|黄酒,45,,900,
+3,2,1127,1,1,9,45,,,,,,,s==2|酒瓶,45,,890,
+4,2,1128,1,1,9,45,,,,,,,s==2|白糖,45,,880,

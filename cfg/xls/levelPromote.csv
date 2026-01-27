@@ -1,0 +1,6 @@
+id,needLv,battle%1,battle%2,battle%3,arrayCondition%1,arrayCondition%2,arrayCondition%3,winTimes,rewards-type-1,rewards-id-1,rewards-value-1,rewards-type-2,rewards-id-2,rewards-value-2,rewards-type-3,rewards-id-3,rewards-value-3,rewards-type-4,rewards-id-4,rewards-value-4,rewards-type-5,rewards-id-5,rewards-value-5,raise-key-1,raise-val-1,raise-key-2,raise-val-2,raise-key-3,raise-val-3,raise-key-4,raise-val-4,extraRewards-type-1,extraRewards-id-1,extraRewards-value-1,extraRewards-type-2,extraRewards-id-2,extraRewards-value-2,extraRewards-type-3,extraRewards-id-3,extraRewards-value-3,
+1,200,1510,1511,1512,30,,,2,2,1001,1000,2,1076,1,2,1516,1,2,1527,1,,,,1001,10,1511,5,1891,2,,,1,9,500,2,1004,5,2,3008,50,
+2,210,1520,1521,1522,31,,,2,2,1001,1000,2,2097,2,2,1516,1,2,1527,1,,,,1001,20,1511,10,1891,4,,,1,9,500,2,1004,5,2,3008,50,
+3,220,1530,1531,1532,32,,,2,2,1001,1000,2,1761,2,2,1516,1,2,1527,1,,,,1001,30,1511,15,1891,6,,,1,9,500,2,1004,5,2,3008,50,
+4,230,1540,1541,1542,33,,,2,2,1001,1000,2,1076,1,2,1516,1,2,1527,1,,,,1001,40,1511,20,1891,8,,,1,9,500,2,1004,5,2,3008,50,
+5,240,1550,1551,1552,34,,,2,2,1001,1000,2,2097,2,2,1516,1,2,1527,1,,,,1001,50,1511,25,1891,10,,,1,9,500,2,1004,5,2,3008,50,

@@ -1,0 +1,3 @@
+id,dateStart,dateEnd,rechargeNum,desc,rewards-type-1,rewards-id-1,rewards-value-1,
+1,1,-1,30,s==9|当日累充300元宝,2,1272,1,
+2,1,-1,128,s==10|当日累充1280元宝,2,1273,1,

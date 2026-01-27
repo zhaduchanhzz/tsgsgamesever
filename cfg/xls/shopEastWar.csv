@@ -1,0 +1,5 @@
+id,activityID,itemType,itemId,combineNum,resourceType,resourceId,disPrice,buyLimit,autoReset,worldlvLimit,lvLimit,lvLimitEx,vipLimit,desc,oriPrice,discount,sort,
+1,3060,2,1181,1,1,9,45,,,,,,,s==2|海鱼,45,,910,
+2,3060,2,1182,1,1,9,45,,,,,,,s==2|海蛸,45,,900,
+3,3060,2,1183,1,1,9,45,,,,,,,s==2|海贝,45,,890,
+4,3060,2,1184,1,1,9,45,,,,,,,s==2|海虾,45,,880,

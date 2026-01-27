@@ -1,0 +1,5 @@
+ver_server_bin_version='105691'
+ver_config_version='105370'
+ver_game_sql_version='104365'
+ver_template_version='295882'
+ver_client_version='1.1.1.124345'

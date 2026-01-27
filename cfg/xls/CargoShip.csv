@@ -1,0 +1,7 @@
+id,name,luckrate,ShipQuality,TransTime,iconId,guardRewards-type-1,guardRewards-id-1,guardRewards-value-1,guardRewards-type-2,guardRewards-id-2,guardRewards-value-2,MaxExtraBonus,RobSuccess,RobRequire,Roblost,RobFail,CargoProtect,RobSuccessStop,RobLostStop,Bonus,CargoFightScene,salvageRewards-type-1,salvageRewards-id-1,salvageRewards-value-1,salvageRewards-type-2,salvageRewards-id-2,salvageRewards-value-2,luckyBoat,bonusReward,
+101,s==2|橹船,4000,2,19800,9001,2,1078,87,,,,1500,1500,100000,250,s==8|2|1078|2,600,1800,600,2000,130000,1,8,5000,,,,1000,501|10000,
+201,s==2|商船,4500,3,21600,9002,1,8,200000,,,,1500,1500,100000,250,s==9|1|8|10000,600,1800,600,2000,130000,1,8,6000,,,,1000,501|10000,
+301,s==2|走舸,5000,4,23400,9003,2,1078,232,,,,1500,1500,100000,250,s==8|2|1078|2,600,1800,600,2000,130000,1,8,8000,,,,1000,501|10000,
+401,s==2|楼船,5500,5,25200,9004,1,8,1960000,,,,1500,1500,100000,250,s==9|1|8|10000,600,1800,600,2000,130000,1,8,10000,,,,1000,501|10000,
+501,s==2|门舰,6000,6,27000,9005,2,1078,464,,,,1500,1500,100000,250,s==8|2|1078|2,600,1800,600,2000,130000,1,8,10000,2,1078,1,1000,501|10000,
+601,s==2|龙舰,7000,7,28800,9009,2,1078,500,1,8,2500000,1500,1500,100000,250,s==8|2|1078|2,600,1800,600,2000,130000,1,8,20000,2,1078,2,1000,,

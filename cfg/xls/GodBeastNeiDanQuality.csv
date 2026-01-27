@@ -1,0 +1,5 @@
+quality,qualityName,levelLimit,baseAtt-type-1,baseAtt-way-1,baseAtt-value-1,baseAtt-type-2,baseAtt-way-2,baseAtt-value-2,exp,qualityWeight,
+3,s==2|蓝色,5,1,1,200,2,1,200,300,76,
+4,s==2|紫色,10,1,1,250,2,1,250,900,20,
+5,s==2|橙色,15,1,1,300,2,1,300,2700,4,
+6,s==2|红色,20,1,1,500,2,1,500,8100,0,

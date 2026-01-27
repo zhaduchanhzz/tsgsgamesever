@@ -1,0 +1,7 @@
+id,activityId,round,luckAward-type-1,luckAward-id-1,luckAward-value-1,luckAward-type-2,luckAward-id-2,luckAward-value-2,luckAward-type-3,luckAward-id-3,luckAward-value-3,luckAward-type-4,luckAward-id-4,luckAward-value-4,luckAward-type-5,luckAward-id-5,luckAward-value-5,luckAward-type-6,luckAward-id-6,luckAward-value-6,luckAward-type-7,luckAward-id-7,luckAward-value-7,luckAward-type-8,luckAward-id-8,luckAward-value-8,luckAward-type-9,luckAward-id-9,luckAward-value-9,luckAward-type-10,luckAward-id-10,luckAward-value-10,luckAward-type-11,luckAward-id-11,luckAward-value-11,
+1,3008,1,2,1030,15,2,1006,3000,2,1003,12,2,3008,100,2,1014,3,2,1004,2,2,1044,30,2,1009,15,2,1104,15,2,1037,15,2,1082,15,
+2,3008,2,2,13001,1,2,1001,4000,2,1056,100,2,1473,120,2,1761,2,,,,,,,,,,,,,,,,,,,
+3,3008,3,2,1027,600,2,1075,2,2,1105,15,,,,,,,,,,,,,,,,,,,,,,,,,
+4,3009,1,2,1030,15,2,1006,3000,2,1003,12,2,3008,100,2,1014,3,2,1004,2,2,1044,30,2,1009,15,2,1104,15,2,1037,15,2,1082,15,
+5,3009,2,2,1054,2,2,1001,4000,2,1056,100,2,1473,120,2,1761,2,,,,,,,,,,,,,,,,,,,
+6,3009,3,2,13001,1,2,1027,600,2,1076,2,2,1105,15,,,,,,,,,,,,,,,,,,,,,,

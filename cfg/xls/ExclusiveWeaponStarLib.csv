@@ -1,0 +1,8 @@
+libId,needItemsFun-type-1,needItemsFun-star-1,needItemsFun-num-1,needItemsFun-itemID-1,needItemsFun-type-2,needItemsFun-star-2,needItemsFun-num-2,needItemsFun-itemID-2,needItemsFun-type-3,needItemsFun-star-3,needItemsFun-num-3,needItemsFun-itemID-3,needItemsFun-type-4,needItemsFun-star-4,needItemsFun-num-4,needItemsFun-itemID-4,needItemsFun-type-5,needItemsFun-star-5,needItemsFun-num-5,needItemsFun-itemID-5,
+1,5,0,1,800203,,,,,,,,,,,,,,,,,
+2,5,0,2,800203,,,,,,,,,,,,,,,,,
+3,5,0,3,800203,,,,,,,,,,,,,,,,,
+4,6,0,1,800204,,,,,,,,,,,,,,,,,
+5,6,0,1,800204,5,0,1,800203,,,,,,,,,,,,,
+6,6,0,2,800204,5,0,2,800203,,,,,,,,,,,,,
+7,6,0,1,800204,5,0,2,800203,,,,,,,,,,,,,

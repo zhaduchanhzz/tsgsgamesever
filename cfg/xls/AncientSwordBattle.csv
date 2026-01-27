@@ -1,0 +1,6 @@
+id,type,eType,name,brushNum,fightPowerMin,fightPowerMax,upDownPrecent,robotGroup,boutCount,weaponWinGroup,weaponLoseGroup,renovateWeight,showHeroId,
+1,1,1,s==2|逃兵,3,55,65,5,1,17,1,6,,22101,
+2,1,2,s==2|叛将,1,75,85,5,2,17,2,7,,25301,
+3,2,1,s==4|普通守将,4,80,90,5,3,17,3,,3000,,
+4,2,2,s==4|精英守将,8,90,95,5,4,17,4,,2000,,
+5,2,3,s==4|噩梦守将,4,95,100,5,5,17,5,,1000,,

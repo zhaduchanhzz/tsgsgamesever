@@ -1,0 +1,8 @@
+day,rewards-type-1,rewards-id-1,rewards-value-1,rewards-type-2,rewards-id-2,rewards-value-2,rewards-type-3,rewards-id-3,rewards-value-3,rewards-type-4,rewards-id-4,rewards-value-4,desc,
+1,2,1003,2,,,,,,,,,,,
+2,1,10,100000,,,,,,,,,,,
+3,2,1003,1,,,,,,,,,,,
+4,1,8,200000,,,,,,,,,,,
+5,1,9,100,,,,,,,,,,,
+6,2,1006,1000,,,,,,,,,,,
+7,1,9,500,2,1014,1,1,8,200000,2,1006,200,,

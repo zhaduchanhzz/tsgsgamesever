@@ -1,0 +1,4 @@
+id,startDay,endDay,needPoint1,needPoint2,needPoint3,centreType,artName,itemName,scoreName,explainText,
+2,1,2,110,110,110,1950,s==10|h_hfhd_ffb,s==10|h_hfhd_tb3,s==5|寻访次数：,s==126|<outline color=#1d1106 width=2><color=#dec39c>使用<color=#ff5d5d>高级寻访令</c>进行<color=#ffd800>武将寻访</c>，可参加合服冲榜，获取排名豪礼</c></outline>,
+1,3,4,35,35,35,2000,s==10|h_hfhd_zmb,s==10|h_hfhd_tb1,s==5|招募次数：,s==124|<outline color=#1d1106 width=2><color=#dec39c>使用<color=#ff5d5d>聚贤令</c>进行<color=#ffd800>武将招募</c>，可参加合服冲榜，获取排名豪礼</c></outline>,
+3,5,7,280,280,280,2050,s==10|h_hfhd_bsb,s==10|h_hfhd_tb2,s==5|宝石积分：,s==114|<outline color=#1d1106 width=2><color=#dec39c>以<color=#ff5d5d>除合成外的方式获得宝石</c>时，增加相应积分，并参加合服冲榜，获取排名豪礼</c></outline>,

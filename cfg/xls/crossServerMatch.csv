@@ -1,0 +1,4 @@
+id,matchingRange,screenNumber,extendedParameter,rangeMax,
+1,100,5,-5,15,
+2,100,3,5,15,
+3,110,2,5,15,

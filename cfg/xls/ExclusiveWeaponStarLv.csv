@@ -1,0 +1,5 @@
+quality,starLimit,levelMax,starLevelMax,perStar,isExchange,exchangeMaterial,
+3,0,10,,,1,2|800200|10,
+4,0,15,,,1,2|800200|30,
+5,3,25,25,5,1,2|800200|100,
+6,5,35,25,5,0,,

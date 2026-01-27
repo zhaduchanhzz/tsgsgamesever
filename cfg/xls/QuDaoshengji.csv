@@ -1,0 +1,7 @@
+id,type,rewards-type-1,rewards-id-1,rewards-value-1,rewards-type-2,rewards-id-2,rewards-value-2,rewards-type-3,rewards-id-3,rewards-value-3,rewards-type-4,rewards-id-4,rewards-value-4,rewards-type-5,rewards-id-5,rewards-value-5,rewards-type-6,rewards-id-6,rewards-value-6,rewards-type-7,rewards-id-7,rewards-value-7,
+1,s==9|累计充值1000元,1,9,666,2,1527,10,2,1105,20,,,,,,,,,,,,,
+2,s==9|累计充值5000元,1,9,888,2,2088,3,1,8,6880000,,,,,,,,,,,,,
+3,s==10|累计充值20000元,1,9,1888,2,6674,1,,,,,,,,,,,,,,,,
+4,s==10|累计充值50000元,1,9,6888,2,6674,1,2,1527,10,2,1516,20,,,,,,,,,,
+5,s==11|累计充值100000元,1,9,16888,2,6675,1,2,6674,1,2,1527,10,2,1516,20,2,1105,100,,,,
+6,s==21|累计充值200000元（更高档位咨询客服）,1,9,20000,2,6675,1,2,6674,1,2,1527,10,2,1516,20,2,1105,100,,,,

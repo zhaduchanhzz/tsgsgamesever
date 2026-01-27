@@ -1,0 +1,6 @@
+id,name,skillKey,nextId,describe,artifactSkill,tasks%1,tasks%2,tasks%3,tasks%4,passiveBuffs-key-1,passiveBuffs-val-1,passiveBuffs-property-1,passiveBuffs-way-1,passiveBuffs-propertyValue-1,passiveBuffs-key-2,passiveBuffs-val-2,passiveBuffs-property-2,passiveBuffs-way-2,passiveBuffs-propertyValue-2,passiveBuffs-key-3,passiveBuffs-val-3,passiveBuffs-property-3,passiveBuffs-way-3,passiveBuffs-propertyValue-3,
+101,s==4|方天画戟,1,102,s==4|方天画戟,100001,1011,1012,1013,1014,10040,4,2,1,1000,10080,8,8,0,1000,10120,12,4,0,40,
+102,s==5|青龙偃月刀,2,103,s==5|青龙偃月刀,200001,1021,1022,1023,1024,20040,4,3,1,1000,20080,8,11,1,1000,20120,12,4,0,40,
+103,s==5|雌雄双股剑,3,104,s==5|雌雄双股剑,300001,1031,1032,1033,1034,40040,4,9,0,1000,40080,8,7,0,1000,40120,12,4,0,40,
+104,s==4|诸葛连弩,4,105,s==4|诸葛连弩,400001,1041,1042,1043,1044,30040,4,7,0,1000,30080,8,19,0,1000,30120,12,4,0,40,
+105,s==5|星陨龙头锤,5,0,s==5|星陨龙头锤,500001,1051,1052,1053,1054,50040,4,5,0,1000,50080,8,6,0,2000,50120,12,4,0,40,

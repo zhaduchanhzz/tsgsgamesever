@@ -1,0 +1,4 @@
+id,name,speedupType,speedupId,speedupNum,speedupRate,
+1071,s==3|鉴定符,1,9,20,240000,
+1072,s==3|望气符,1,9,100,1200000,
+1073,s==3|天眼符,1,9,200,2400000,

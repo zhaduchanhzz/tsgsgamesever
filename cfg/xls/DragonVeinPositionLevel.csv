@@ -1,0 +1,8 @@
+id,levelDown,levelUP,level-correct-1,level-weight-1,level-correct-2,level-weight-2,level-correct-3,level-weight-3,level-correct-4,level-weight-4,level-correct-5,level-weight-5,
+1,1,2,-2,0,-1,25,0,50,1,25,2,0,
+2,3,5,-2,0,-1,25,0,50,1,25,2,0,
+3,6,10,-2,0,-1,25,0,50,1,25,2,0,
+4,11,20,-2,0,-1,25,0,50,1,25,2,0,
+5,21,50,-2,0,-1,25,0,50,1,25,2,0,
+6,51,100,-2,0,-1,25,0,50,1,25,2,0,
+7,101,99999,-2,0,-1,25,0,50,1,25,2,0,

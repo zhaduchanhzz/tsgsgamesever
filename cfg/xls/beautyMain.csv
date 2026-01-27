@@ -1,0 +1,5 @@
+id,actType,times,title,beautyshow,show1,stageshow,centreshow,dishow,group1,spend,codeTimes,codeTimes2,delayTimes,showtimes,timesspend,
+1,39,604800|0,s==7|g_gqhd7,s==13|225072|225072,s==17|z_zphd16|z_zphd16,s==17|g_gqhd15|g_gqhd36,s==15|z_zphd6|z_zphd6,47005|47005,11|12,2|1187|1,100,100,5,0,2|1187|50,
+2,39,604800|0,s==8|g_gqhd30,s==13|225072|225072,s==15|z_zphd4|z_zphd4,s==17|g_gqhd15|g_gqhd36,s==15|z_zphd6|z_zphd6,47006|47006,21|22,2|1226|1,100,100,5,1,2|1226|50,
+3,54,604800|0,s==7|g_gqhd7,s==13|235102|235102,s==15|z_zphd2|z_zphd2,s==17|g_gqhd15|g_gqhd36,s==15|z_zphd6|z_zphd6,47005|47005,31|32,2|1173|1,100,100,5,0,2|1173|50,
+4,54,604800|0,s==8|g_gqhd30,s==13|235102|235102,s==15|z_zphd4|z_zphd4,s==17|g_gqhd15|g_gqhd36,s==15|z_zphd6|z_zphd6,47006|47006,41|42,2|1225|1,100,100,5,1,2|1225|50,

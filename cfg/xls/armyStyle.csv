@@ -1,0 +1,8 @@
+arrayId,name,pattern,smallPattern,wordArt,uiBackGround,Button1,Button2,Button3,wordsColour,activationEffect,
+1001,s==5|绝影·锋矢,s==9|j_zhenfa4,s==10|j_zhenfa41,s==8|j_wenzi6,s==11|j_bg_yellow,s==7|j_kuang,s==12|p_chengkuang,s==12|p_chengkuang,s==13|efebad|463520,110290,
+1002,s==5|巨阙·武锋,s==9|j_zhenfa5,s==10|j_zhenfa51,s==8|j_wenzi4,s==9|j_bg_blue,s==7|j_kuang,s==10|p_lankuang,s==10|p_lankuang,s==13|add2ef|203546,110270,
+1003,s==5|蜃灵·玄襄,s==9|j_zhenfa6,s==10|j_zhenfa61,s==8|j_wenzi2,s==10|j_bg_green,s==7|j_kuang,s==11|f_fwlvkuang,s==11|f_fwlvkuang,s==13|c0efad|143b07,110280,
+1004,s==2|锋矢,s==9|j_zhenfa1,s==10|j_zhenfa11,s==8|j_wenzi5,s==11|j_bg_yellow,s==12|p_chengkuang,s==12|p_chengkuang,s==12|p_chengkuang,s==13|efebad|463520,110293,
+1005,s==2|武锋,s==9|j_zhenfa2,s==10|j_zhenfa21,s==8|j_wenzi3,s==9|j_bg_blue,s==10|p_lankuang,s==10|p_lankuang,s==10|p_lankuang,s==13|add2ef|203546,110291,
+1006,s==2|玄襄,s==9|j_zhenfa3,s==10|j_zhenfa31,s==8|j_wenzi1,s==10|j_bg_green,s==11|f_fwlvkuang,s==11|f_fwlvkuang,s==11|f_fwlvkuang,s==13|c0efad|143b07,110292,
+1007,s==2|韬铃,s==9|j_zhenfa7,s==10|j_zhenfa71,s==8|j_wenzi7,s==9|j_bg_blue,s==9|p_zikuang,s==9|p_zikuang,s==9|p_zikuang,s==13|d080fe|352046,110294,

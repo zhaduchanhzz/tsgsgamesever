@@ -1,0 +1,39 @@
+package com.gzbz.gameDefine;
+
+public interface ChineseNewYearActivityDefine {
+   int INIT_STAGE = 1;
+   int INIT_STAGE_RECHARGE = 0;
+   int TASK_TYPE_DAILY = 1;
+   int TASK_TYPE_ATTAINMENT = 2;
+   int EVENT_TYPE_BUILDING_UPGRADE = 1;
+   int DICE_RANDOM = 1;
+   int DICE_GOLD = 2;
+   int EVENT_ID_LUCKY = 301;
+   int EVENT_TYPE_BUILDING_ARRIVE = 1;
+   int EVENT_TYPE_LUCKY_REWARD = 2;
+   int EVENT_TYPE_MOVE = 3;
+   int EVENT_TYPE_BATTLE = 4;
+   int EVENT_TYPE_BUY = 5;
+   int EVENT_TYPE_CHOICE = 6;
+   int BUILD_TYPE_1 = 1;
+   int BUILD_TYPE_2 = 2;
+   int BUILD_TYPE_3 = 3;
+   int BUILD_TYPE_4 = 4;
+   int ANSWER_RIGHT = 1;
+   int ANSWER_WRONG = 0;
+   int ANSWER_OVERTIME = -1;
+   int FIST_1 = 1;
+   int FIST_2 = 2;
+   int FIST_3 = 3;
+   int ERROR_NUM = 3000;
+   String CONFIG_GAME_POINT_RES_ID = "ChunJieBoomPoint";
+   String CONFIG_GAME_DICE_RECOVER = "ChunJieDiceTime";
+   String CONFIG_GAME_DICE_INIT = "ChunJieDiceNum";
+   String CONFIG_GAME_DICE_LIMIT = "ChunJieDiceUpLimit";
+   String CONFIG_GAME_DICE_GOLD_INIT = "ChunJieGoldDiceNum";
+   String CONFIG_GAME_DICE_GOLD_BUY = "ChunJieGoldDicePrice";
+   String CONFIG_GAME_DICE_ITEM = "ChunJieDiceID";
+   String CONFIG_GAME_GOLD_DICE_ITEM = "ChunJieGoldDiceID";
+   String CONFIG_GAME_WOOD_ITEM = "DFWmucai";
+   int INFINITY = -1;
+}

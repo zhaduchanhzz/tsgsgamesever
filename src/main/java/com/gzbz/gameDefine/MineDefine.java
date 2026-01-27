@@ -1,0 +1,48 @@
+package com.gzbz.gameDefine;
+
+public interface MineDefine {
+   int STATUS_SERVER_READY = 0;
+   int STATUS_MINING = 1;
+   int STATUS_REWARD = 2;
+   int ENTER_MINE = 1;
+   int ATK_REVENGE = 2;
+   int ATK_EMPTY_APPOINT = 3;
+   int ATK_PVP = 2;
+   String MINE_ENERGY_MAX = "MineEnergyMax";
+   String MINE_ENERGY_RECOVERY = "MineEnergyRecovery";
+   String MINE_ENERGY_COST = "MineEnergyCost";
+   String MINE_OCCUPANCY2 = "MineOccupancy2";
+   String MINE_SUPPORT_AEARD = "MineSupportAward";
+   String MINE_ATTACK_CD = "MineAttackCd";
+   String DEF_NEED_COMBAT = "defNeedCombat";
+   String MAX_ROUND = "mineMaxRound";
+   String DROP_OUT_NO_DISPLAY = "MineDropOutNoDisplay";
+   String UNION_BUFF_LIMIT = "MineUnionBuffLimit";
+   String MINE_DEF_ARRAY_HEROS = "mine_def_array_heros";
+   String MINE_ATK_PRE_TYPE = "mineAtkPreType";
+   String MINE_SETTLEMENT_TIME = "MineSettlementTime";
+   String MINE_CLEAR_MINUTE = "MineClearMinute";
+   String MINE_TQ_ADD_NUM = "mineTQAddNum";
+   String MINE_TQ_ADD_AWARD_PRO = "mineTQAddAwardPro";
+   int MAIL_GET_REWARD = 1;
+   int STATE_MONSTER = 1;
+   int STATE_PLAYER = 2;
+   int STATE_EMPTY = 3;
+   byte MINE_NOTE_1 = 1;
+   byte MINE_NOTE_2 = 2;
+   byte MINE_NOTE_3 = 3;
+   byte MINE_NOTE_4 = 4;
+   byte MINE_NOTE_5 = 5;
+   byte MINE_NOTE_6 = 6;
+   byte MINE_NOTE_7 = 7;
+   byte MINE_NOTE_8 = 8;
+   byte MINE_NOTE_9 = 9;
+   byte MINE_NOTE_10 = 10;
+   int CENTRE_AWARD_ID = 300;
+   int RANK_PERSON = 1;
+   int RANK_UNION = 2;
+   int VEIN_SUBCLASS_BIG_BUF = 2;
+   byte ERROR_FROM_CLIENT = 1;
+   byte ERROR_FROM_SERVER = 2;
+   String MINE_ATK_WITH_EMPLOY_NUM_LIMIT = "atkWithEmployNumLimit";
+}

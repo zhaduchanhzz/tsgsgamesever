@@ -1,0 +1,4 @@
+id,freeTimes,costs-type-1,costs-id-1,costs-value-1,costs-type-2,costs-id-2,costs-value-2,defaultList,accelerateCost,accelerateCostMax,flushNumMap-key-1,flushNumMap-val-1,flushNumMap-key-2,flushNumMap-val-2,
+0,2,2,1019,1,1,9,30,1402|2301|3201|4104|5102|6105,5,30,3,4,20,5,
+1,2,2,1019,1,1,9,30,1402|2301|3201|4104|5102|6105,5,30,1,4,10,5,
+2,2,2,1019,1,1,9,30,1402|2301|3201|4104|5102|6105,5,30,1,4,3,5,

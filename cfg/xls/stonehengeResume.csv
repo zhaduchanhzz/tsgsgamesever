@@ -1,0 +1,4 @@
+id,resumeType,resumeValue,resumeValue2,icon,resumedesc,
+1,1,1,,s==6|huifu1,s==8|复活阵中1名武将,
+2,2,3,50,s==6|huifu2,s==17|给予阵中3名武将进行单体恢复50%,
+3,3,30,     ,s==6|huifu3,s==26|为所有上阵武将恢复30%的生命值（已阵亡武将不生效）,

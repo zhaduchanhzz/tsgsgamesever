@@ -1,0 +1,4 @@
+id,DiceName,targetNum,diceNum,
+1,s==3|双吉骰,30,2,
+2,s==3|四吉骰,60,4,
+3,s==3|六吉骰,100,6,

@@ -1,0 +1,6 @@
+id,giftId,grantItem-type-1,grantItem-id-1,grantItem-value-1,grantItem-type-2,grantItem-id-2,grantItem-value-2,grantItem-type-3,grantItem-id-3,grantItem-value-3,redPacketNum,redPacketItemType,redPacketItemId,redPacketItemNum,desTip,
+1,6000,1,9,120,1,17,555,,,,10,1,8,600000,s==5|小清新红包,
+2,6010,1,9,600,1,17,2775,,,,10,1,8,3000000,s==5|小清新红包,
+3,6020,1,9,1200,1,17,5550,,,,10,1,8,6000000,s==5|小清新红包,
+4,6030,1,9,500,1,17,655,2,1003,5,10,1,9,500,s==6|高端大气红包,
+5,6040,1,9,6480,1,17,10100,2,1004,12,15,1,9,6480,s==6|至尊土豪红包,
