@@ -816,7 +816,7 @@ public class BuffManager implements Serializable {
          }
       }
 
-      for(int code : new ArrayList(this.codeBuffMap.keySet())) {
+      for(int code : this.codeBuffMap.keySet()) {
          Buff buff = this.getBuff(code);
          if (buff != null) {
             buff.update(action);
@@ -1133,7 +1133,7 @@ public class BuffManager implements Serializable {
                         this.entity.getScene().getActionManager().addAction(antiAtkAction);
                      }
 
-                     for(int code : new ArrayList(allZhaoYunCode)) {
+                     for(int code : allZhaoYunCode) {
                         this.deleteBuffByCode(action, code, false);
                      }
                   }
@@ -1142,7 +1142,7 @@ public class BuffManager implements Serializable {
             case 8:
                TreeSet<Integer> allZhaoYunCodeAtt = this.getSubBuff(buffModel.getSubCls());
                if (allZhaoYunCodeAtt.size() >= buffModel.getCombine()) {
-                  for(int code : new ArrayList(allZhaoYunCodeAtt)) {
+                  for(int code : allZhaoYunCodeAtt) {
                      this.deleteBuffByCode(action, code, false);
                   }
                }

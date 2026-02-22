@@ -19,7 +19,7 @@
         <!--<os.detected.classifier>windows-x86_64</os.detected.classifier>-->
         <!--<os.detected.classifier>osx-x86_64</os.detected.classifier>-->
         <!--<grpc.version>1.28.1</grpc.version>-->
-        <!--<protobuf.version>3.11.4</protobuf.version>-->
+        <protobuf.version>3.11.4</protobuf.version>
     </properties>
 
     <dependencies>
@@ -58,11 +58,7 @@
         <!--<scope>runtime</scope>-->
         <!--<optional>true</optional>-->
         <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.google.protobuf</groupId>-->
-        <!--<artifactId>protobuf-java</artifactId>-->
-        <!--<version>${protobuf.version}</version>-->
-        <!--</dependency>-->
+
         <!--<dependency>-->
         <!--<groupId>io.grpc</groupId>-->
         <!--<artifactId>grpc-all</artifactId>-->
@@ -129,6 +125,103 @@
             <groupId>com.github.luben</groupId>
             <artifactId>zstd-jni</artifactId>
             <version>1.5.0-4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.51.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/protobuf-java-3.11.4.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>1.0.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/protostuff-core-1.0.7.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>1.0.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/protostuff-runtime-1.0.7.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-collectionschema</artifactId>
+            <version>1.0.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/protostuff-collectionschema-1.0.7.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-api</artifactId>
+            <version>1.0.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/protostuff-api-1.0.7.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.2-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.3.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.13.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.reactivex.rxjava2</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>2.2.19</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.3.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+            <version>0.7.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>de.ruedigermoeller</groupId>
+            <artifactId>fst</artifactId>
+            <version>2.57</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.1</version>
         </dependency>
     </dependencies>
     <build>

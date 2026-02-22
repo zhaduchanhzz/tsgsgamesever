@@ -103,7 +103,7 @@ public class EventListener implements Serializable {
                         for(Map.Entry<Listener, HashSet<ListenerContext>> entry : priorityEntry.entrySet()) {
                            Listener listener = (Listener)entry.getKey();
                            if (this.checkRecord(listener)) {
-                              for(ListenerContext context : (HashSet)entry.getValue()) {
+                              for(ListenerContext context : entry.getValue()) {
                                  if ((Short)subEntry.getKey() > 0 && this._checkListen(event, listener, context)) {
                                     if (Math.random() * (double)10000.0F < (double)context.rate) {
                                        ListenerArgs args = (ListenerArgs)subTypeArgsMap.get(subEntry.getKey());
