@@ -34,7 +34,7 @@ public class CheckDeathEvent extends ListenerChecker {
                return source == context.entity;
             } else {
                int skillIndex = Integer.parseInt(context.exParams);
-               EntitySkill entitySkill = (EntitySkill)event.getAction().getBlackboard().getSkillParam(4, (Object)null);
+               EntitySkill entitySkill = (EntitySkill)event.getAction().getBlackboard().getSkillParam(4, null);
                if (Objects.isNull(entitySkill)) {
                   return false;
                } else {

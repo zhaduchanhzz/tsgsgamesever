@@ -399,7 +399,7 @@ public class ActivityMgr extends GameMgr {
       PrayMsg.S2C_PlayerAwardInfo_7510.Builder builder = PrayMsg.S2C_PlayerAwardInfo_7510.newBuilder();
       builder.setPrayId(prayId);
       if (this.prayRecordMap.containsKey(prayId)) {
-         for(PrayRewardRecord record : (LinkedList)this.prayRecordMap.get(prayId)) {
+         for(PrayRewardRecord record : this.prayRecordMap.get(prayId)) {
             PrayMsg.Pray_RecordData.Builder recordData = PrayMsg.Pray_RecordData.newBuilder();
             recordData.setPlayerName(record.playerName);
             CommonMsg.ItemInfo.Builder itemInfo = CommonMsg.ItemInfo.newBuilder();
@@ -645,7 +645,7 @@ public class ActivityMgr extends GameMgr {
    public void activityEndOffLineHandle() {
       Map<Integer, ActivityJoinDao> activityJoinDaoMap = this.getActivityJoinMap();
 
-      for(int activityId : new HashSet(activityJoinDaoMap.keySet())) {
+      for(int activityId : activityJoinDaoMap.keySet()) {
          ActivityJoinDao activityJoinDao = (ActivityJoinDao)activityJoinDaoMap.get(activityId);
          if (activityJoinDao != null && activityJoinDao.isEnd) {
             ActivityOpenTimeModel activityOpenTimeModel = (ActivityOpenTimeModel)ApplicationContextProvider.getModelPoolEntity("activityopenTime", activityJoinDao.activityId);
@@ -1287,7 +1287,7 @@ public class ActivityMgr extends GameMgr {
       } else if (activityOpenTimeModel.getActivityType() == 2) {
          Map<Integer, TreeMap<Integer, ActivityOpenTimeModel>> activityModelMap = ApplicationContextProvider.<Integer, TreeMap<Integer, ActivityOpenTimeModel>>getModelPoolMap("customActivityOpenTime");
 
-         for(int activityId : ((TreeMap)MapUtil.getOrDefault(activityModelMap, activityOpenTimeModel.getActivityType(), TreeMap.class)).keySet()) {
+         for(int activityId : (MapUtil.getOrDefault(activityModelMap, activityOpenTimeModel.getActivityType(), TreeMap.class)).keySet()) {
             this.rankMgr.removeRanks(RankDefine.RankModule.ACTIVITY_POINT, String.valueOf(2), String.valueOf(activityId));
          }
       } else if (activityOpenTimeModel.getActivityType() == 17) {
@@ -2194,7 +2194,7 @@ public class ActivityMgr extends GameMgr {
          boolean b1 = broodMainModel.getDateEnd() == 9999 && maxActOpenDay >= broodMainModel.getDateStart();
          boolean b2 = broodMainModel.getDateStart() <= maxActOpenDay && maxActOpenDay <= broodMainModel.getDateEnd();
          return b1 || b2;
-      }).filter((broodMainModel) -> broodMainModel.getRankMin() <= rank && rank <= broodMainModel.getRankMax()).findFirst().orElse((Object)null);
+      }).filter((broodMainModel) -> broodMainModel.getRankMin() <= rank && rank <= broodMainModel.getRankMax()).findFirst().orElse(null);
    }
 
    @MsgHandlerAnno

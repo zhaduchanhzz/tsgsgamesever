@@ -51,7 +51,7 @@ public class DBMsgReceiveList extends MsgReceiveList {
          DBReceiveFrame receiveFrame = (DBReceiveFrame)frame;
          Class<?> cls = (Class)this.protoScanContext.protobufBuilderMap.get(frame.cmd);
          Method method = cls.getDeclaredMethod("parseFrom", byte[].class);
-         MessageLiteOrBuilder protoBuf = (MessageLiteOrBuilder)method.invoke((Object)null, stream);
+         MessageLiteOrBuilder protoBuf = (MessageLiteOrBuilder)method.invoke(null, stream);
          GamePlayer gamePlayer = this.worldMgr.getPlayerById(receiveFrame.mgrId);
          if (frame.cmd == 6102) {
             gamePlayer.pushTaskEx("battleResult", new Object[]{protoBuf, receiveFrame.param1, receiveFrame.param2});

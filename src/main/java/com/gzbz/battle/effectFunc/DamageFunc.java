@@ -133,7 +133,7 @@ public abstract class DamageFunc extends EffectFunc {
          hurtEvent.addParam(23, critiRealValue);
       }
 
-      EntitySkill skill = (EntitySkill)action.getBlackboard().getSkillParam(4, (Object)null);
+      EntitySkill skill = (EntitySkill)action.getBlackboard().getSkillParam(4, null);
       if (skill != null) {
          hurtEvent.addParam(5, skill);
          source.getScene().getEventListener().pushEvent(hurtEvent);

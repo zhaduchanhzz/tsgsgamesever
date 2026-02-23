@@ -22,7 +22,7 @@ public class ConditionTargetNationRestrain implements ConditionFunc {
          if (Objects.isNull(atkerModel)) {
             return false;
          } else {
-            Entity targetEntity = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+            Entity targetEntity = (Entity)action.getBlackboard().getSkillParam(3, null);
             if (Objects.isNull(targetEntity)) {
                return false;
             } else {

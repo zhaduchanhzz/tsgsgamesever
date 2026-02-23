@@ -9,7 +9,7 @@ import com.gzbz.spring.ApplicationContextProvider;
 
 class check_self_nation implements ConditionFunc {
    public boolean check(Action action, Entity source, Entity target, ConditionModel conditionModel, Event event) {
-      target = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
+      target = (Entity)action.getBlackboard().getSkillParam(1, null);
       if (target == null) {
          return false;
       } else {

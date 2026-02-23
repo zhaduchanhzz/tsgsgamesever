@@ -350,7 +350,7 @@ public class RankMgr extends GameMgr {
          rewardBuilder.setIsGot(playerRankExtend.rankReward.contains(rankRewardDao.modelId));
          int rank = 0;
 
-         for(Map.Entry<Integer, Integer> finishData : (List)rankRewardDao.finishDataList.entrySet().stream().sorted(Comparator.comparingInt(Map.Entry::getValue)).collect(Collectors.toList())) {
+         for(Map.Entry<Integer, Integer> finishData : rankRewardDao.finishDataList.entrySet().stream().sorted(Comparator.comparingInt(Map.Entry::getValue)).collect(Collectors.toList())) {
             GamePlayer rankPlayer = this.worldMgr.getPlayerById((Integer)finishData.getKey());
             if (rankPlayer != null) {
                PlayerPublicDao rankPlayerDao = rankPlayer.getPublicDao();

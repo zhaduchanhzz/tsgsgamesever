@@ -792,7 +792,7 @@ public class EffectUtil implements Serializable {
                }
             }
 
-            Integer convertRate = (Integer)action.getBlackboard().getSkillParam(2800 + source.getBattlePos(), (Object)null);
+            Integer convertRate = (Integer)action.getBlackboard().getSkillParam(2800 + source.getBattlePos(), null);
             if (convertRate != null && convertRate > 0) {
                long covertValue = damage * (long)convertRate / 10000L;
                if (covertValue == damage) {
@@ -836,9 +836,9 @@ public class EffectUtil implements Serializable {
 
             Integer convertRate;
             if (isHurt) {
-               convertRate = (Integer)action.getBlackboard().getSkillParam(2300 + source.getBattlePos(), (Object)null);
+               convertRate = (Integer)action.getBlackboard().getSkillParam(2300 + source.getBattlePos(), null);
             } else {
-               convertRate = (Integer)action.getBlackboard().getSkillParam(2400 + source.getBattlePos(), (Object)null);
+               convertRate = (Integer)action.getBlackboard().getSkillParam(2400 + source.getBattlePos(), null);
             }
 
             if (convertRate != null && convertRate > 0) {

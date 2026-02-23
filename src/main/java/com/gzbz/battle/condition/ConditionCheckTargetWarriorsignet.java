@@ -12,8 +12,8 @@ import java.util.Set;
 )
 public class ConditionCheckTargetWarriorsignet implements ConditionFunc {
    public boolean check(Action action, Entity source, Entity target, ConditionModel conditionModel, Event event) {
-      Entity skillSource = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
-      Entity skillTarget = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity skillSource = (Entity)action.getBlackboard().getSkillParam(1, null);
+      Entity skillTarget = (Entity)action.getBlackboard().getSkillParam(3, null);
       if (skillSource != source && target == skillTarget) {
          return false;
       } else {

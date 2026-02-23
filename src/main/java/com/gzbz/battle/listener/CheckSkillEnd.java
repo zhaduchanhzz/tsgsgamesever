@@ -78,7 +78,7 @@ public class CheckSkillEnd extends ListenerChecker {
             if (event.getAction().getType() != 4) {
                return false;
             } else {
-               Entity attacker = (Entity)event.getAction().getBlackboard().getSkillParam(1, (Object)null);
+               Entity attacker = (Entity)event.getAction().getBlackboard().getSkillParam(1, null);
                if (attacker != null && attacker == context.entity) {
                   HashSet<SkillEffectModel> mainEffects = (HashSet)event.getAction().getBlackboard().getSkillParam(37);
                   if (mainEffects == null) {

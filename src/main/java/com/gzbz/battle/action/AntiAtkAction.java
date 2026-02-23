@@ -53,7 +53,7 @@ public class AntiAtkAction extends Action {
                this.blackboard.addSkillParam(28, this.recoverRate);
                this.blackboard.addSkillParam(29, this.entity);
                if (this.useNewSkill) {
-                  this.blackboard.addSkillParam(9, (Object)null);
+                  this.blackboard.addSkillParam(9, null);
                }
 
                Collection<ConditionProperty> mustHitEffects = this.entity.getConditionPropertyManager().getMustHitEffectEffectList();

@@ -1017,7 +1017,7 @@ public class HeroDao extends DBDao {
       } else {
          this.warcrafts = JsonUtil.jsonToMap(data, Integer.class, Integer.class);
 
-         for(Integer warcraft : new ArrayList(this.warcrafts.keySet())) {
+         for(Integer warcraft : this.warcrafts.keySet()) {
             if ((Integer)this.warcrafts.get(warcraft) == 0) {
                this.warcrafts.remove(warcraft);
                this.updateOp();

@@ -128,7 +128,7 @@ public class PassiveActionEffect extends PassiveSkillEffect {
                                        return;
                                     }
 
-                                    continueAtkAction.setSkill((EntitySkill)event.getAction().getBlackboard().getSkillParam(4, (Object)null), actionDamageRate, actionControlRate, actionRecoverRate, actionReviveRate);
+                                    continueAtkAction.setSkill((EntitySkill)event.getAction().getBlackboard().getSkillParam(4, null), actionDamageRate, actionControlRate, actionRecoverRate, actionReviveRate);
                                     continueAtkAction.setPriority((byte)2);
                                     action.setEntity(this.entity);
                                     this.entity.getScene().getActionManager().addAction(action);
@@ -158,7 +158,7 @@ public class PassiveActionEffect extends PassiveSkillEffect {
                                              this.entity.getScene().getActionManager().addAction(action);
                                              break;
                                           case 42:
-                                             List<Entity> blackBroad = (List)event.getAction().getBlackboard().getSkillParam(7, (Object)null);
+                                             List<Entity> blackBroad = (List)event.getAction().getBlackboard().getSkillParam(7, null);
                                              boolean ignore = false;
                                              if ((context.type == 15 || context.type == 32 || context.type == 35) && (context.param == 13 || context.param == 19) && blackBroad != null && source != this.entity) {
                                                 ignore = true;
@@ -189,7 +189,7 @@ public class PassiveActionEffect extends PassiveSkillEffect {
                                                 return;
                                              }
 
-                                             continueAtkAction.setSkill((EntitySkill)event.getAction().getBlackboard().getSkillParam(4, (Object)null), actionDamageRate, actionControlRate, actionRecoverRate, actionReviveRate);
+                                             continueAtkAction.setSkill((EntitySkill)event.getAction().getBlackboard().getSkillParam(4, null), actionDamageRate, actionControlRate, actionRecoverRate, actionReviveRate);
                                              continueAtkAction.setPriority((byte)2);
                                              action.setEntity(this.entity);
                                              this.entity.getScene().getActionManager().addAction(action);

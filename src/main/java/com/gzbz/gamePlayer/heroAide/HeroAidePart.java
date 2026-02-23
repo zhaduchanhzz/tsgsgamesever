@@ -471,7 +471,7 @@ public class HeroAidePart extends PlayerPart {
             return;
          }
 
-         changeMap.put((HeroAideItem)itemBase, (Object)null);
+         changeMap.put((HeroAideItem)itemBase, null);
       }
 
       if (CollectionUtils.isEmpty(changeMap)) {

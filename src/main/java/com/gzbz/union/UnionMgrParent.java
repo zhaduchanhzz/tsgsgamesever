@@ -361,15 +361,15 @@ public class UnionMgrParent extends GameMgr {
       unionMgr.clearMembers();
       unionMgr.getUnionRedPackets().values().forEach(unionMgr::removeGiveRedPacket);
 
-      for(UnionLog unionLog : new ArrayList(unionMgr.getUnionLogList())) {
+      for(UnionLog unionLog : unionMgr.getUnionLogList()) {
          unionMgr.removeUnionLog(unionLog);
       }
 
-      for(UnionWarAttackLogDao unionWarAttackLogDao : new ArrayList(unionMgr.getAttackLogs())) {
+      for(UnionWarAttackLogDao unionWarAttackLogDao : unionMgr.getAttackLogs()) {
          this.getGameCachePool().deleteDao(unionWarAttackLogDao, false);
       }
 
-      for(UnionApplyDao unionApplyDao : new ArrayList(unionMgr.getUnionAllApply().values())) {
+      for(UnionApplyDao unionApplyDao : unionMgr.getUnionAllApply().values()) {
          this.getGameCachePool().deleteDao(unionApplyDao, false);
       }
 
@@ -408,7 +408,7 @@ public class UnionMgrParent extends GameMgr {
 
    private UnionDao getUnion(String unionName) {
       Optional<UnionMgr> optional = this.getUnionMgrMap().values().stream().filter((unionMgr) -> unionMgr.getUnion().unionName.equals(unionName)).findFirst();
-      return (UnionDao)optional.map(UnionMgr::getUnion).orElse((Object)null);
+      return (UnionDao)optional.map(UnionMgr::getUnion).orElse(null);
    }
 
    public Map<Integer, UnionMgr> getUnionMgrMap() {

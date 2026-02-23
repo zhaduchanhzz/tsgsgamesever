@@ -114,7 +114,7 @@ public class VideoRewardPart extends PlayerPart {
          }
 
          Map<Integer, VideoTimeRewardModel> videoTimeRewardModelMap = ApplicationContextProvider.<Integer, VideoTimeRewardModel>getModelPoolMap("videoTimeReward");
-         VideoTimeRewardModel nextVideoTimeRewardModel = (VideoTimeRewardModel)videoTimeRewardModelMap.values().stream().filter((checkModel) -> checkModel.getTime() > lastGetTimes).min(Comparator.comparingInt(VideoTimeRewardModel::getTime)).orElse((Object)null);
+         VideoTimeRewardModel nextVideoTimeRewardModel = (VideoTimeRewardModel)videoTimeRewardModelMap.values().stream().filter((checkModel) -> checkModel.getTime() > lastGetTimes).min(Comparator.comparingInt(VideoTimeRewardModel::getTime)).orElse(null);
          if (nextVideoTimeRewardModel == null) {
             this.player.failure(24);
          } else if (dao.viewVideoCount < nextVideoTimeRewardModel.getTime()) {
@@ -198,7 +198,7 @@ public class VideoRewardPart extends PlayerPart {
          } else {
             return worldMgr.getOpenServerDays() >= model.getDateStart() && worldMgr.getOpenServerDays() <= model.getDateEnd();
          }
-      }).findAny().orElse((Object)null);
+      }).findAny().orElse(null);
    }
 
    public VideoRewardDao getDao() {

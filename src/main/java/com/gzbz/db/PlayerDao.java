@@ -190,7 +190,7 @@ public class PlayerDao extends PlayerPublicDao {
       try {
          Field singleoneInstanceField = Unsafe.class.getDeclaredField("theUnsafe");
          singleoneInstanceField.setAccessible(true);
-         unsafe = (Unsafe)singleoneInstanceField.get((Object)null);
+         unsafe = (Unsafe)singleoneInstanceField.get(null);
          PlayerDefine.map.forEach((key, value) -> {
             long valueOffset = -1L;
 

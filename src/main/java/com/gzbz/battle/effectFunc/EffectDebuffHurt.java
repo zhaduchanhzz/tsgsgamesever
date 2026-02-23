@@ -35,7 +35,7 @@ public class EffectDebuffHurt extends EffectFunc {
          target.addDeadTimesAndClear(action);
       }
 
-      EntitySkill skill = (EntitySkill)action.getBlackboard().getSkillParam(4, (Object)null);
+      EntitySkill skill = (EntitySkill)action.getBlackboard().getSkillParam(4, null);
       if (Objects.isNull(skill)) {
          return false;
       } else {

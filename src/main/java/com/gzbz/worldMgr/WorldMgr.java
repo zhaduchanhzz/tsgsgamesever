@@ -819,7 +819,7 @@ public class WorldMgr extends GameMgr {
                   byte isTempReConnect = 0;
                   if (gamePlayer.getChannel() != null && gamePlayer.getChannel() != channel) {
                      this.channelMap.remove(gamePlayer.getChannel().id().asLongText());
-                     gamePlayer.getChannel().attr(AttributeKey.valueOf("playerId")).set((Object)null);
+                     gamePlayer.getChannel().attr(AttributeKey.valueOf("playerId")).set(null);
                      gamePlayer.closeChannel(LoginMsg.resultType.OTHER);
                      isTempReConnect = 1;
                   }

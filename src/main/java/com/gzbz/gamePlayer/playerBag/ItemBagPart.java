@@ -1678,7 +1678,7 @@ public class ItemBagPart extends PlayerPart {
    }
 
    public ItemBase getAnyItemById(int id) {
-      return (ItemBase)this.getItemBaseById(id).stream().findAny().orElse((Object)null);
+      return (ItemBase)this.getItemBaseById(id).stream().findAny().orElse(null);
    }
 
    public ItemBase getItemByCode(int code) {

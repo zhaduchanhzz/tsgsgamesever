@@ -564,7 +564,7 @@ public class Entity implements Serializable {
          int beConvertValue = 0;
 
          for(ConditionProperty conditionProperty : conditionProperties) {
-            Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+            Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
             if (ConditionProcessor.checkCondition(action, conditionProperty.skillEffectModel.getConditionType(), conditionProperty.skillEffectModel.getConditions(), this, target, (Event)null)) {
                int minValue = conditionProperty.skillEffectModel.getParam("minValue");
                if (value >= (long)minValue) {
@@ -585,7 +585,7 @@ public class Entity implements Serializable {
          int convertValue = 0;
 
          for(ConditionProperty conditionProperty : conditionProperties) {
-            Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+            Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
             if (ConditionProcessor.checkCondition(action, conditionProperty.skillEffectModel.getConditionType(), conditionProperty.skillEffectModel.getConditions(), this, target, (Event)null)) {
                int cId = conditionProperty.skillEffectModel.getParam("cId");
                if (cId != 0) {

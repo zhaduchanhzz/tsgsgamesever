@@ -49,7 +49,7 @@ public class EffectHurtHpPercent extends EffectFunc {
          hurtEvent.addParam(3, target);
          hurtEvent.addParam(34, shieldPreHurt);
          hurtEvent.addParam(14, targets);
-         EntitySkill skill = (EntitySkill)action.getBlackboard().getSkillParam(4, (Object)null);
+         EntitySkill skill = (EntitySkill)action.getBlackboard().getSkillParam(4, null);
          if (Objects.isNull(skill)) {
             return false;
          } else {

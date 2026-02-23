@@ -333,9 +333,9 @@ public class ConditionPropertyManager implements Serializable {
       if (map == null) {
          return value;
       } else {
-         Entity attacker = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
-         Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
-         EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, (Object)null);
+         Entity attacker = (Entity)action.getBlackboard().getSkillParam(1, null);
+         Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
+         EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, null);
 
          for(ConditionProperty conditionProperty : map.values()) {
             if ((conditionProperty.skillModel == null || entitySkill == null || conditionProperty.skillModel.getId() == entitySkill.getSkillId()) && (conditionProperty.skillEffectModel.getRate() == 0 || RandomUtil.randTenThousand() <= conditionProperty.skillEffectModel.getRate()) && (conditionProperty.skillEffectModel.getIsPassive() != 1 || conditionProperty.skillEffectModel.getIsForce() != 0 || !this.entity.getStateManager().checkState((short)17)) && (conditionProperty.skillEffectModel.getNeedDressId() <= 0 || attacker != null && attacker.getActiveDressIds().contains(conditionProperty.skillEffectModel.getNeedDressId()))) {
@@ -477,7 +477,7 @@ public class ConditionPropertyManager implements Serializable {
 
    private long getValue101(Action action, int property, HashMap<Integer, Integer> percentMap, long value, ConditionProperty conditionProperty) {
       SkillEffectModel model = conditionProperty.skillEffectModel;
-      Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
       boolean success = ConditionProcessor.checkCondition(action, model.getConditionType(), model.getConditions(), this.entity, target, (Event)null);
       if (success) {
          if (BattleMisc.isMultiplyProperty(property)) {
@@ -497,11 +497,11 @@ public class ConditionPropertyManager implements Serializable {
 
    private long getValue105(Action action, int property, HashMap<Integer, Integer> percentMap, long value, ConditionProperty conditionProperty) {
       SkillEffectModel model = conditionProperty.skillEffectModel;
-      Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
       if (Objects.isNull(target)) {
          return 0L;
       } else {
-         Entity attacker = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
+         Entity attacker = (Entity)action.getBlackboard().getSkillParam(1, null);
          if (attacker != this.entity) {
             return 0L;
          } else {
@@ -533,7 +533,7 @@ public class ConditionPropertyManager implements Serializable {
 
    private long getValue110(Action action, int property, HashMap<Integer, Integer> percentMap, long value, ConditionProperty conditionProperty) {
       SkillEffectModel model = conditionProperty.skillEffectModel;
-      Entity target = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(1, null);
       if (Objects.isNull(target)) {
          return 0L;
       } else {
@@ -691,7 +691,7 @@ public class ConditionPropertyManager implements Serializable {
    public long getValue119(Action action, int property, HashMap<Integer, Integer> percentMap, long value, ConditionProperty conditionProperty) {
       SkillEffectModel model = conditionProperty.skillEffectModel;
       if (model != null) {
-         Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+         Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
          if (target != null && !ConditionProcessor.checkCondition(action, model.getConditionType(), model.getConditions(), this.entity, target, (Event)null)) {
             return value;
          }
@@ -701,7 +701,7 @@ public class ConditionPropertyManager implements Serializable {
       int num = this.entity.getBuffManager().getPriorityBuffsNum(buffType.byteValue());
       Integer targetType = (Integer)model.getFuncParam().get("targetType");
       if (targetType != null && targetType.byteValue() == 2) {
-         Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+         Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
          if (target == null) {
             return value;
          }
@@ -957,7 +957,7 @@ public class ConditionPropertyManager implements Serializable {
    }
 
    public long getValue130(Action action, long damage) {
-      Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
       int rate = 10000;
       int addRate = 0;
 
@@ -986,7 +986,7 @@ public class ConditionPropertyManager implements Serializable {
    }
 
    public boolean ignoreShieldEffect(Action action) {
-      Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
 
       for(ConditionProperty conditionProperty : this.ignoreShieldEffect.values()) {
          SkillEffectModel model = conditionProperty.skillEffectModel;
@@ -1014,7 +1014,7 @@ public class ConditionPropertyManager implements Serializable {
    }
 
    public int getValue132(Action action, int rate) {
-      Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
 
       for(ConditionProperty conditionProperty : this.noApportionRate.values()) {
          SkillEffectModel model = conditionProperty.skillEffectModel;
@@ -1126,7 +1126,7 @@ public class ConditionPropertyManager implements Serializable {
 
    private long getValue137(Action action, int property, HashMap<Integer, Integer> percentMap, long value, ConditionProperty conditionProperty) {
       SkillEffectModel model = conditionProperty.skillEffectModel;
-      Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
       if (Objects.isNull(target)) {
          return 0L;
       } else {
@@ -1153,7 +1153,7 @@ public class ConditionPropertyManager implements Serializable {
 
    private long getValue138(Action action, int property, HashMap<Integer, Integer> percentMap, long value, ConditionProperty conditionProperty) {
       SkillEffectModel model = conditionProperty.skillEffectModel;
-      Entity target = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
+      Entity target = (Entity)action.getBlackboard().getSkillParam(1, null);
       if (Objects.isNull(target)) {
          return 0L;
       } else {
@@ -1252,7 +1252,7 @@ public class ConditionPropertyManager implements Serializable {
    public long getValue143(Action action, int property, HashMap<Integer, Integer> percentMap, long value, ConditionProperty conditionProperty) {
       SkillEffectModel model = conditionProperty.skillEffectModel;
       if (model != null) {
-         Entity target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+         Entity target = (Entity)action.getBlackboard().getSkillParam(3, null);
          if (target != null && !ConditionProcessor.checkCondition(action, model.getConditionType(), model.getConditions(), this.entity, target, (Event)null)) {
             return value;
          }

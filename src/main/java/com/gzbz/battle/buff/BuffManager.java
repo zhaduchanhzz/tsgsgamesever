@@ -108,7 +108,7 @@ public class BuffManager implements Serializable {
                      dependentEntity = this.entity;
                      break;
                   case 3:
-                     dependentEntity = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+                     dependentEntity = (Entity)action.getBlackboard().getSkillParam(3, null);
                      break;
                   case 4:
                      for(Entity member : this.entity.getPkTeam().getEntityMap().values()) {
@@ -190,7 +190,7 @@ public class BuffManager implements Serializable {
                         dependentValue = (Long)action.getBlackboard().getSkillParam(700 + dependentEntity.getBattlePos(), 0L);
                         break;
                      case 7:
-                        dependentEntity = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+                        dependentEntity = (Entity)action.getBlackboard().getSkillParam(3, null);
                         if (Objects.isNull(dependentEntity) || Objects.isNull(sourceEntity)) {
                            return false;
                         }

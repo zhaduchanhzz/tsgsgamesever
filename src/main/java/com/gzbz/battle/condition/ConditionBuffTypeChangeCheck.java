@@ -21,7 +21,7 @@ public class ConditionBuffTypeChangeCheck implements ConditionFunc {
       } else {
          short buffType = (Short)event.getParam(7);
          List<String> params = Splitter.on("|").trimResults().splitToList(conditionModel.getConditionParam());
-         Entity targetEntity = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+         Entity targetEntity = (Entity)action.getBlackboard().getSkillParam(3, null);
          if (Objects.isNull(targetEntity)) {
             return false;
          } else {

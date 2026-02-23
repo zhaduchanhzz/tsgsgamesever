@@ -15,7 +15,7 @@ import java.util.Objects;
 public class ConditionCheckBuffId implements ConditionFunc {
    public boolean check(Action action, Entity source, Entity target, ConditionModel conditionModel, Event event) {
       List<String> params = Splitter.on("|").trimResults().splitToList(conditionModel.getConditionParam());
-      Entity targetEntity = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+      Entity targetEntity = (Entity)action.getBlackboard().getSkillParam(3, null);
       if (Objects.isNull(targetEntity)) {
          return false;
       } else {

@@ -568,7 +568,7 @@ public class MonsterManager {
             bw.write(String.format("id：%d--[", entry.getKey()));
             long totalPower = 0L;
 
-            for(Map.Entry<Integer, Long> integerLongEntry : ((Map)entry.getValue()).entrySet()) {
+            for(Map.Entry<Integer, Long> integerLongEntry : (entry.getValue()).entrySet()) {
                bw.write(String.format("%d:%d,", integerLongEntry.getKey(), integerLongEntry.getValue()));
                totalPower += (Long)integerLongEntry.getValue();
             }

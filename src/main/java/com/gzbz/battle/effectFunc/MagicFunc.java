@@ -23,7 +23,7 @@ public class MagicFunc extends DamageFunc {
       } else if (model.getFuncParam().containsKey("damageRate" + (index + 1))) {
          rate = (Integer)model.getFuncParam().get("damageRate" + (index + 1));
       } else if (model.getFuncParam().containsKey("exDamageRate" + (index + 1))) {
-         EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, (Object)null);
+         EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, null);
          if (entitySkill == null) {
             return false;
          }

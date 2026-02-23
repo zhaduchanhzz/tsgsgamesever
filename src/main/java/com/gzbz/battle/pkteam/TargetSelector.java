@@ -120,7 +120,7 @@ public class TargetSelector implements Serializable {
             this.selectExincludeMain(action, list, num);
             break;
          case 28:
-            Entity blackBroad = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
+            Entity blackBroad = (Entity)action.getBlackboard().getSkillParam(1, null);
             if (blackBroad != null && blackBroad.isAlive()) {
                list.add(blackBroad);
             }
@@ -132,7 +132,7 @@ public class TargetSelector implements Serializable {
             this.selectLifeMaxRow(list);
             break;
          case 31:
-            List<Entity> lastEntity = (List)action.getBlackboard().getSkillParam(22, (Object)null);
+            List<Entity> lastEntity = (List)action.getBlackboard().getSkillParam(22, null);
             ArrayList<Entity> tmpList = new ArrayList();
 
             for(Entity value : this.team.entityMap.values()) {
@@ -759,7 +759,7 @@ public class TargetSelector implements Serializable {
    }
 
    private void selectExincludeMain(Action action, List<Entity> list, int num) {
-      List<Entity> mainList = (List)action.getBlackboard().getSkillParam(10, (Object)null);
+      List<Entity> mainList = (List)action.getBlackboard().getSkillParam(10, null);
       HashSet<Entity> entitySet = new HashSet();
       if (mainList != null) {
          entitySet.addAll(mainList);
@@ -902,7 +902,7 @@ public class TargetSelector implements Serializable {
    }
 
    private void selectSelfRow(Action action, List<Entity> list, int num, String param) {
-      Entity attacker = (Entity)action.getBlackboard().getSkillParam(1, (Object)null);
+      Entity attacker = (Entity)action.getBlackboard().getSkillParam(1, null);
       HashMap<Byte, HashSet<Byte>> rowMap = (HashMap)BattleMisc.ROW_SET.get(this.team.getForce());
       if (!MapUtil.isEmpty(rowMap)) {
          byte isSelf = Byte.parseByte(param);
@@ -1161,7 +1161,7 @@ public class TargetSelector implements Serializable {
    private void selectRandNumExMain(Action action, List<Entity> list, int num) {
       if (num != 0) {
          ArrayList<Entity> allList = new ArrayList();
-         List<Entity> mainList = (List)action.getBlackboard().getSkillParam(10, (Object)null);
+         List<Entity> mainList = (List)action.getBlackboard().getSkillParam(10, null);
          HashSet<Entity> entitySet = new HashSet();
          if (mainList != null) {
             entitySet.addAll(mainList);

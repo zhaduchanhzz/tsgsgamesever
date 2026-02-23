@@ -621,7 +621,7 @@ public class HeroUpgradePart extends PlayerPart {
                            heroBagPart.recordMaxStar(upHeroDao.id, upHeroDao.getStar(), false);
                         }
 
-                        HeroDao linkHeroDao = (HeroDao)heroBagPart.getHeroDaoMap().values().stream().filter((heroDao) -> heroDao.type == HeroDefine.HERO_SP_TYPE_LINK && heroDao.linkCode == upHeroDao.code).findFirst().orElse((Object)null);
+                        HeroDao linkHeroDao = (HeroDao)heroBagPart.getHeroDaoMap().values().stream().filter((heroDao) -> heroDao.type == HeroDefine.HERO_SP_TYPE_LINK && heroDao.linkCode == upHeroDao.code).findFirst().orElse(null);
                         if (linkHeroDao != null) {
                            heroBagPart.flushHero(HeroDefine.HeroPropertyModel.MODEL_HERO_UP_STAR, linkHeroDao);
                         }

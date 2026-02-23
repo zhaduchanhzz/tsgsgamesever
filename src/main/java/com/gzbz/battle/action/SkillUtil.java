@@ -329,8 +329,8 @@ public class SkillUtil implements Serializable {
             targets = attacker.getScene().selectTarget(action, attacker, skillEffectModel.getTargetType(), type, num, skillEffectModel.getSelectParam());
          }
 
-         List<Entity> allEnemyTargets = (List)action.getBlackboard().getSkillParam(7, (Object)null);
-         List<Entity> allFriendTargets = (List)action.getBlackboard().getSkillParam(8, (Object)null);
+         List<Entity> allEnemyTargets = (List)action.getBlackboard().getSkillParam(7, null);
+         List<Entity> allFriendTargets = (List)action.getBlackboard().getSkillParam(8, null);
          if (allEnemyTargets == null) {
             allEnemyTargets = new ArrayList();
          }
@@ -353,7 +353,7 @@ public class SkillUtil implements Serializable {
             action.getBlackboard().addSkillParam(2, targets);
          }
       } else {
-         targets = (List)action.getBlackboard().getSkillParam(2, (Object)null);
+         targets = (List)action.getBlackboard().getSkillParam(2, null);
          if (skillEffectModel.getFunc() == 8 && targets != null) {
             boolean self = false;
 

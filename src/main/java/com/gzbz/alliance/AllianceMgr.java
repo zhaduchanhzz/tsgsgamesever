@@ -1450,7 +1450,7 @@ public class AllianceMgr extends GameMgr {
 
    @TaskMethod
    public void allianceReqClearInvite(GamePlayer player) {
-      for(int teamId : (Set)MapUtil.getOrDefault(this.playerInviteTeamMap, player.getPlayerId(), ConcurrentHashSet.class)) {
+      for(int teamId : MapUtil.getOrDefault(this.playerInviteTeamMap, player.getPlayerId(), ConcurrentHashSet.class)) {
          AllianceTeamDao allianceTeamDao = this.getAllianceTeam(teamId);
          if (allianceTeamDao != null) {
             allianceTeamDao.invitePlayers.remove(player.getPlayerId());

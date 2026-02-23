@@ -164,7 +164,7 @@ public class LittleGamePart extends PlayerPart {
 
    @MsgHandlerAnno
    public void C2S_CleansingTowerInfo_20805(LittleGameMsg.C2S_CleansingTowerInfo_20805 msg, String source) {
-      this.sendCleansingTowerInfo(LittleGameMsg.CleansingTowerNotifyReason.CLEANSING_TOWER_NOTIFY_REASON_REQ, (Object)null);
+      this.sendCleansingTowerInfo(LittleGameMsg.CleansingTowerNotifyReason.CLEANSING_TOWER_NOTIFY_REASON_REQ, null);
    }
 
    @MsgHandlerAnno
@@ -228,7 +228,7 @@ public class LittleGamePart extends PlayerPart {
                   dao.updateOp();
                   List<ResourceModel> rewards = ResourceModel.buildResources(levelModel.getRewards());
                   this.player.addResource(rewards, PlayerMsg.ShowType.SHOW_TYPE_COMMON, 105, 10501, 0, 0, "");
-                  this.sendCleansingTowerInfo(LittleGameMsg.CleansingTowerNotifyReason.CLEANSING_TOWER_NOTIFY_REASON_PASS, (Object)null);
+                  this.sendCleansingTowerInfo(LittleGameMsg.CleansingTowerNotifyReason.CLEANSING_TOWER_NOTIFY_REASON_PASS, null);
                }
             }
          }
@@ -270,7 +270,7 @@ public class LittleGamePart extends PlayerPart {
                   dao.updateOp();
                   List<ResourceModel> rewards = ResourceModel.buildResources(modelItem.getRewards());
                   this.player.addResource(rewards, PlayerMsg.ShowType.SHOW_TYPE_COMMON, 105, 10502, 0, 0, "");
-                  this.sendCleansingTowerInfo(LittleGameMsg.CleansingTowerNotifyReason.CLEANSING_TOWER_NOTIFY_REASON_REWARD, (Object)null);
+                  this.sendCleansingTowerInfo(LittleGameMsg.CleansingTowerNotifyReason.CLEANSING_TOWER_NOTIFY_REASON_REWARD, null);
                }
             }
          } else {

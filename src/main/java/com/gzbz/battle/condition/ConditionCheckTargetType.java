@@ -15,7 +15,7 @@ import com.gzbz.spring.ApplicationContextProvider;
 public class ConditionCheckTargetType implements ConditionFunc {
    public boolean check(Action action, Entity source, Entity target, ConditionModel conditionModel, Event event) {
       if (target == null) {
-         target = (Entity)action.getBlackboard().getSkillParam(3, (Object)null);
+         target = (Entity)action.getBlackboard().getSkillParam(3, null);
       }
 
       if (target == null) {

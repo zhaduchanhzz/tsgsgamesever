@@ -15,7 +15,7 @@ import com.gzbz.model.fun.ConditionModel;
 public class ConditionCheckSkillFunc implements ConditionFunc {
    public boolean check(Action action, Entity source, Entity target, ConditionModel conditionModel, Event event) {
       BattleScene scene = source.getScene();
-      EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, (Object)null);
+      EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, null);
       if (entitySkill != null) {
          for(String param : Splitter.on("|").trimResults().splitToList(conditionModel.getConditionParam())) {
             if (entitySkill.funcTypes.contains(Integer.parseInt(param))) {

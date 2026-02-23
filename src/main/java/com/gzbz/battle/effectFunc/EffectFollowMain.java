@@ -21,7 +21,7 @@ public class EffectFollowMain extends EffectFunc {
       if (target.isDead()) {
          return false;
       } else {
-         EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, (Object)null);
+         EntitySkill entitySkill = (EntitySkill)action.getBlackboard().getSkillParam(4, null);
          if (entitySkill == null) {
             return false;
          } else {

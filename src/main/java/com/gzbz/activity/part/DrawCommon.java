@@ -63,7 +63,7 @@ public class DrawCommon {
             boolean isStageDay = model.getStageStart() <= activityDay && activityDay <= model.getStageEnd();
             return isOpenDay && isStageDay;
          }
-      }).filter((model) -> model.getRewardSlot() == type).findAny().orElse((Object)null);
+      }).filter((model) -> model.getRewardSlot() == type).findAny().orElse(null);
    }
 
    public AbstractDrawItemModel drawItem(DrawActData dao, Map<Integer, AbstractDrawItemModel> itemModelMap) {

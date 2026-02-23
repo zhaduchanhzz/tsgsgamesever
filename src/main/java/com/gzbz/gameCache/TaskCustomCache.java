@@ -212,7 +212,7 @@ public class TaskCustomCache extends CustomCacheData<TaskDao> {
          for(Map.Entry<Short, Map<Integer, TaskData>> taskEntry : this.tasks.entrySet()) {
             stringBuilder.append("#module=").append(taskEntry.getKey()).append("#");
 
-            for(TaskData taskData : ((Map)taskEntry.getValue()).values()) {
+            for(TaskData taskData : (taskEntry.getValue()).values()) {
                for(Field field : taskData.getClass().getFields()) {
                   if (!field.getName().contains("module") && !field.getName().contains("player")) {
                      stringBuilder.append(field.getName()).append("=").append(field.getInt(taskData)).append("_");

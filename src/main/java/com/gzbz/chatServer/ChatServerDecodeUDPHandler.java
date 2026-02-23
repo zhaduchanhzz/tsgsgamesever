@@ -83,7 +83,7 @@ public class ChatServerDecodeUDPHandler extends SimpleChannelInboundHandler<Data
                   return;
                }
 
-               GeneratedMessageV3 proto = (GeneratedMessageV3)method.invoke((Object)null, transmitUdpMsg.proto);
+               GeneratedMessageV3 proto = (GeneratedMessageV3)method.invoke(null, transmitUdpMsg.proto);
                this.process((TransmitUdpMsg)msg, proto);
             } catch (Exception e) {
                e.printStackTrace();
