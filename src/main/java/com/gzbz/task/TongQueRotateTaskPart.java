@@ -58,7 +58,7 @@ public class TongQueRotateTaskPart extends AbstractActivityTaskPart {
             PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
             Map<Integer, TongQueActivityTaskNewModel> tongQueActivityTaskModelMap = ApplicationContextProvider.<Integer, TongQueActivityTaskNewModel>getModelPoolMap("TongQueActivityTaskNew");
             if (tongQueActivityTaskModelMap != null && !tongQueActivityTaskModelMap.isEmpty()) {
-               for(Integer taskId : (Set)MapUtil.getOrDefault(groupTasksModelMap, playerActivityDao.activityTongQueRotateData.taskGroup, HashSet.class)) {
+               for(Integer taskId : MapUtil.getOrDefault(groupTasksModelMap, playerActivityDao.activityTongQueRotateData.taskGroup, HashSet.class)) {
                   TongQueActivityTaskNewModel taskModel = (TongQueActivityTaskNewModel)tongQueActivityTaskModelMap.get(taskId);
                   if (taskModel != null) {
                      super.createTask(taskId);

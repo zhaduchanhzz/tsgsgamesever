@@ -854,7 +854,7 @@ public class PlayerChatPart extends PlayerPart {
                break;
             }
 
-            allPlayerChatList.add(((Map)entry.getValue()).get(keyList.get(i)));
+            allPlayerChatList.add((entry.getValue()).get(keyList.get(i)));
          }
 
          for(int i = allPlayerChatList.size() - 1; i >= 0; --i) {

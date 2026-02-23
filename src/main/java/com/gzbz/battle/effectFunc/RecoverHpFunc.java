@@ -180,8 +180,8 @@ public class RecoverHpFunc extends EffectFunc {
                }
                break;
             case 2:
-               float SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -195,7 +195,7 @@ public class RecoverHpFunc extends EffectFunc {
                }
                break;
             case 3:
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -219,7 +219,7 @@ public class RecoverHpFunc extends EffectFunc {
                value = (long)((float)value * totalRate);
                break;
             case 4:
-               float totalRate = (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -247,7 +247,7 @@ public class RecoverHpFunc extends EffectFunc {
                value = (long)((float)value + (float)(target.getBattleProperty(action, (Integer)model.getFuncParam().get("propertyId")) * (long)(Integer)model.getFuncParam().get("targetRate")) / 10000.0F);
                break;
             case 6:
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -267,7 +267,7 @@ public class RecoverHpFunc extends EffectFunc {
                value = (long)((float)value * totalRate);
                break;
             case 7:
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -300,8 +300,8 @@ public class RecoverHpFunc extends EffectFunc {
                value /= (long)num;
                break;
             case 8:
-               float SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -311,7 +311,7 @@ public class RecoverHpFunc extends EffectFunc {
                break;
             case 9:
             case 18:
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -335,7 +335,7 @@ public class RecoverHpFunc extends EffectFunc {
                value = (long)((float)value * totalRate);
                break;
             case 10:
-               float totalRate = (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -359,7 +359,7 @@ public class RecoverHpFunc extends EffectFunc {
                }
                break;
             case 11:
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -384,7 +384,7 @@ public class RecoverHpFunc extends EffectFunc {
                   return 0L;
                }
 
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -398,7 +398,7 @@ public class RecoverHpFunc extends EffectFunc {
                   return 0L;
                }
 
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -417,7 +417,7 @@ public class RecoverHpFunc extends EffectFunc {
                }
                break;
             case 14:
-               float SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
+                SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
                Entity entity = (Entity)event.getParam(3);
                int property = (Integer)model.getFuncParam().get("propertyId");
                if (property == 1) {
@@ -427,7 +427,7 @@ public class RecoverHpFunc extends EffectFunc {
                }
                break;
             case 15:
-               float totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
+                totalRate = (float)(10000L + source.getBattleProperty(action, 18)) / 10000.0F * (float)(10000L + target.getBattleProperty(action, 19)) / 10000.0F;
                totalRate *= target.getBuffManager().getBeCureValue();
                if (totalRate < 0.001F) {
                   totalRate = 0.001F;
@@ -451,7 +451,7 @@ public class RecoverHpFunc extends EffectFunc {
                value = (long)((float)value * totalRate);
                break;
             case 16:
-               float SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
+                SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
                int propertyId1 = (Integer)model.getFuncParam().get("propertyId");
                if (propertyId1 == 1) {
                   value = (long)((float)source.getBaseProperty(propertyId1) * SKILL_RATE);
@@ -460,7 +460,7 @@ public class RecoverHpFunc extends EffectFunc {
                }
                break;
             case 17:
-               float SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
+                SKILL_RATE = ApplicationContextProvider.getConfigFloat("Skill_Rate", 1.0F);
                int propertyId2 = (Integer)model.getFuncParam().get("propertyId");
                if (propertyId2 == 1) {
                   value = (long)((float)target.getBaseProperty(propertyId2) * SKILL_RATE);

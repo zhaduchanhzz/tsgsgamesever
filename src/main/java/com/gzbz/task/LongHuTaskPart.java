@@ -58,7 +58,7 @@ public class LongHuTaskPart extends AbstractActivityTaskPart {
          long updateTime = this.player.getPlayerDao().updateTime;
          PlayerRechargeDao playerRechargeDao = (PlayerRechargeDao)this.player.getData("tb_player_recharge", this.player.getPlayerId());
 
-         for(LongHuTaskModel taskModel : ((Map)modelMap.get(3350)).values()) {
+         for(LongHuTaskModel taskModel : (modelMap.get(3350)).values()) {
             if (taskModel.getTime() == 1 && taskModel.getDays() != activityDay) {
                TaskData taskData = this.getTask(taskModel.getId());
                if (taskData != null) {

@@ -168,7 +168,7 @@ public class MartPlayerDao extends DBDao {
          for(Map.Entry<Integer, List<String>> entry : this.opRecordMap.entrySet()) {
             sb.append(entry.getKey()).append(":");
 
-            for(String str : (List)entry.getValue()) {
+            for(String str : entry.getValue()) {
                sb.append(str).append(",");
             }
 

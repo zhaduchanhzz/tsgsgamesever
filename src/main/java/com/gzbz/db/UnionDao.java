@@ -268,7 +268,7 @@ public class UnionDao extends DBDao {
    }
 
    public int getWarStrongholdCurrentStar(int position) {
-      return ((List)this.warStrongholds.getOrDefault(position, new ArrayList())).stream().mapToInt((value) -> value).sum();
+      return ((List)this.warStrongholds.getOrDefault(position, new ArrayList())).stream().mapToInt((value) -> (int) value).sum();
    }
 
    public int getWarStrongholdCurrentStar() {
@@ -282,7 +282,7 @@ public class UnionDao extends DBDao {
    }
 
    public int getWarStrongholdChallengeCount(int position) {
-      return (int)((List)this.warStrongholds.getOrDefault(position, new ArrayList())).stream().filter((value) -> value == 0).count();
+      return (int)((List)this.warStrongholds.getOrDefault(position, new ArrayList())).stream().filter((value) -> (int)value == 0).count();
    }
 
    public void loadHasHead(String data) {

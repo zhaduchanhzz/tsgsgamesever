@@ -72,7 +72,7 @@ public class GameCachePool extends CachePool {
                   break;
                case "tb_union":
                   UnionDao unionDao = (UnionDao)dao;
-                  int curIncreaseVal = unionDao.unionId;
+                   curIncreaseVal = unionDao.unionId;
                   if (this.getDbPool().reviseAutoIncrease(tableNode.tbName, curIncreaseVal, increaseStart)) {
                      this.deleteDao(dao, true);
                      unionDao.unionId = 0;
@@ -84,7 +84,7 @@ public class GameCachePool extends CachePool {
                   break;
                case "tb_alliance_team":
                   AllianceTeamDao allianceTeamDao = (AllianceTeamDao)dao;
-                  int curIncreaseVal = allianceTeamDao.teamId;
+                   curIncreaseVal = allianceTeamDao.teamId;
                   if (this.getDbPool().reviseAutoIncrease(tableNode.tbName, curIncreaseVal, increaseStart)) {
                      this.deleteDao(dao, true);
                      allianceTeamDao.teamId = 0;

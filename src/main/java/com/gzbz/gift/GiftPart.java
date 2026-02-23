@@ -229,7 +229,7 @@ public class GiftPart extends PlayerPart {
             PlayerGiftExtend playerGiftExtend = this.getPlayerGiftExtend();
             playerGiftExtend.addTrigger(popupPackageModel.getType());
             Map<Integer, Map<Integer, Map<Integer, ShopLimitModel>>> shopLimitMap = ApplicationContextProvider.<Integer, Map<Integer, Map<Integer, ShopLimitModel>>>getModelPoolMap("customShopLimit");
-            Map<Integer, ShopLimitModel> timeLimitGiftMap = (Map)MapUtil.getOrDefault((Map)MapUtil.getOrDefault(shopLimitMap, giftType, ConcurrentHashMap.class), shopLimitModel.getActivityId(), TreeMap.class);
+            Map<Integer, ShopLimitModel> timeLimitGiftMap = MapUtil.getOrDefault(MapUtil.getOrDefault(shopLimitMap, giftType, ConcurrentHashMap.class), shopLimitModel.getActivityId(), TreeMap.class);
             Set<Integer> emptyGifts = new HashSet();
 
             for(GiftDao giftDao : giftDaoMap.values()) {
@@ -748,7 +748,7 @@ public class GiftPart extends PlayerPart {
 
    public TreeMap<Integer, ShopLimitModel> getShopLimits(int giftType, int activityId) {
       Map<Integer, Map<Integer, TreeMap<Integer, ShopLimitModel>>> tempHashMap = ApplicationContextProvider.<Integer, Map<Integer, TreeMap<Integer, ShopLimitModel>>>getModelPoolMap("customShopLimit");
-      return MapUtil.getOrDefault((Map)MapUtil.getOrDefault(tempHashMap, giftType, ConcurrentHashMap.class), activityId, TreeMap.class);
+      return MapUtil.getOrDefault(MapUtil.getOrDefault(tempHashMap, giftType, ConcurrentHashMap.class), activityId, TreeMap.class);
    }
 
    public void resetDaily() {

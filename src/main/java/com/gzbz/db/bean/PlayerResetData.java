@@ -29,19 +29,19 @@ public class PlayerResetData<T> {
       switch (clsInt) {
          case 1:
             resetData = new PlayerResetData();
-            resetData.num = (T)Byte.parseByte(num);
+            resetData.num = Byte.parseByte(num);
             break;
          case 2:
             resetData = new PlayerResetData();
-            resetData.num = (T)Short.parseShort(num);
+            resetData.num = Short.parseShort(num);
             break;
          case 3:
             resetData = new PlayerResetData();
-            resetData.num = (T)Integer.parseInt(num);
+            resetData.num = Integer.parseInt(num);
             break;
          case 4:
             resetData = new PlayerResetData();
-            resetData.num = (T)Long.parseLong(num);
+            resetData.num = Long.parseLong(num);
       }
 
       resetData.uqId = Integer.parseInt(uqId);

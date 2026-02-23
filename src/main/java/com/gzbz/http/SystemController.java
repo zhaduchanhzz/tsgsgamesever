@@ -545,7 +545,7 @@ public class SystemController {
                               }
                               break;
                            case 1:
-                              for(DBDao listDBDao : gamePlayer.getGameCachePool().getList(dbTableNode.tbName, new Object[]{playerId})) {
+                              for(DBDao listDBDao : new ArrayList<DBDao>(gamePlayer.getGameCachePool().getList(dbTableNode.tbName, new Object[]{playerId}))) {
                                  primaryNode.field.set(listDBDao, dao.playerId);
                                  worldMgr.getGameCachePool().insertDao(this.copyDao(dbTableNode, listDBDao), true);
                                  primaryNode.field.set(listDBDao, playerId);
@@ -564,7 +564,7 @@ public class SystemController {
                            case 3:
                               CustomCacheData customCacheData = gamePlayer.getGameCachePool().getCustomCache(dbTableNode.tbName, new Object[]{playerId});
 
-                              for(DBDao customDao : customCacheData.save()) {
+                              for(DBDao customDao : new ArrayList<DBDao>(customCacheData.save())) {
                                  primaryNode.field.set(customDao, dao.playerId);
                                  worldMgr.getGameCachePool().insertDao(this.copyDao(dbTableNode, customDao), true);
                                  primaryNode.field.set(customDao, playerId);

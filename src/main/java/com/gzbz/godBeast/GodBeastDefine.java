@@ -85,7 +85,7 @@ public class GodBeastDefine {
          Set<Integer> worldMaxTriggerTimesQualitySet = new HashSet();
          Map<Integer, GodBeastFloorModel> godBeastFloorModelMap = getGodBeastFloorModelMap();
          if (godBeastFloorModelMap.size() > 0 && hatchType == 1) {
-            for(Integer quality : (List)godBeastFloorModelMap.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
+            for(Integer quality : godBeastFloorModelMap.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
                GodBeastFloorModel godBeastFloorModel = (GodBeastFloorModel)godBeastFloorModelMap.get(quality);
                int baseNum = godBeastFloorModel.getBaseNum();
                long qualityMaxTriggerNum = worldPlayerCount / (long)baseNum;
@@ -111,7 +111,7 @@ public class GodBeastDefine {
          int playerFloorTriggerQuality = 0;
          Map<Integer, GodBeastHatchFloorData> godBeastPlayerFloorMap = getGodBeastPlayerFloorMap();
          if (godBeastPlayerFloorMap.size() > 0 && hatchType == 1) {
-            for(int quality : (List)godBeastPlayerFloorMap.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
+            for(int quality : godBeastPlayerFloorMap.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
                GodBeastHatchFloorData godBeastHatchFloorData = (GodBeastHatchFloorData)godBeastPlayerFloorMap.get(quality);
                int hatchNum = godBeastHatchFloorData.getHatchNum();
                Integer curHatchNum = (Integer)playerQualityHatchNum.getOrDefault(quality, 0);
@@ -779,7 +779,7 @@ public class GodBeastDefine {
       } else {
          List<GodBeastStarMaterialModel> modelList = (List)ApplicationContextProvider.getModelPoolEntity("customTypeGodBeastStarMaterial", 1);
 
-         for(GodBeastStarMaterialModel model : (List)modelList.stream().sorted((o1, o2) -> o2.getProgramNum() - o1.getProgramNum()).collect(Collectors.toList())) {
+         for(GodBeastStarMaterialModel model : (List<GodBeastStarMaterialModel>)modelList.stream().sorted((o1, o2) -> o2.getProgramNum() - o1.getProgramNum()).collect(Collectors.toList())) {
             int programNum = model.getProgramNum();
             int num = starUpProgress / programNum;
             if (num > 0) {

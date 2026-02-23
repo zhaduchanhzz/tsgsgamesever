@@ -95,7 +95,7 @@ public class SupremePvpMgr extends GameMgr {
                if (!map.containsKey(msg.getGrade())) {
                   logger.error("【九州至尊PVP】结算奖励,找不到段位排行奖励配置");
                } else {
-                  for(SupremePvpRewardModel pvpRewardModel : ((TreeMap)map.get(msg.getGrade())).values()) {
+                  for(SupremePvpRewardModel pvpRewardModel : (map.get(msg.getGrade())).values()) {
                      Map<Integer, String> needPlayerRank = new HashMap();
 
                      for(SupremePvpMsg.SettleInfo settleInfo : msg.getSettleInfoList()) {

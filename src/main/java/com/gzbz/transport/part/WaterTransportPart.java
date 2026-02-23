@@ -1536,9 +1536,10 @@ public class WaterTransportPart extends PlayerPart {
 
          if (point > 0) {
             RankMgr rankMgr = (RankMgr)ApplicationContextProvider.getContext().getBean(RankMgr.class);
+            int finalPoint = point;
             rankMgr.pushTask(() -> {
                int curPoint = (int)rankMgr.getScore(rankModule, this.player.getPlayerId());
-               rankMgr.updateRank(rankModule, (long)(point + curPoint), this.player.getPlayerId());
+               rankMgr.updateRank(rankModule, (long)(finalPoint + curPoint), this.player.getPlayerId());
             });
          }
       }

@@ -1337,7 +1337,7 @@ public class HeroBagPart extends PlayerPart {
          } else if (!heroDao.warcrafts.isEmpty()) {
             HeroWearPart wearPart = (HeroWearPart)this.player.getMgrPart(HeroWearPart.class);
 
-            for(ResourceModel resourceModel : wearPart.forgetWarcraft(heroDao, new ArrayList(heroDao.warcrafts.keySet()), false)) {
+            for(ResourceModel resourceModel : wearPart.forgetWarcraft(heroDao, new ArrayList<>(heroDao.warcrafts.keySet()), false)) {
                ResourceModel.addResourceToList(returnList, resourceModel);
             }
          }
@@ -1712,6 +1712,8 @@ public class HeroBagPart extends PlayerPart {
                }
             }
          }
+         HeroModel heroModel = (HeroModel)this.player.getGameModelPool().getEntity("hero", heroDao.id);
+         Map<Integer, Integer> materialMap = this.getStarUpMaterial(heroDao.id, heroModel.getStar(), heroDao.getStar());
 
          if (isDel) {
             switch (type) {
@@ -1730,12 +1732,10 @@ public class HeroBagPart extends PlayerPart {
                      }
                   }
 
-                  HeroModel heroModel = (HeroModel)this.player.getGameModelPool().getEntity("hero", heroDao.id);
                   if (heroModel == null) {
                      break;
                   }
 
-                  Map<Integer, Integer> materialMap = this.getStarUpMaterial(heroDao.id, heroModel.getStar(), heroDao.getStar());
 
                   for(Map.Entry<Integer, Integer> entry : materialMap.entrySet()) {
                      ResourceModel.addResourceToList(heroReturns_NoTask, new ResourceModel(2, (Integer)entry.getKey(), (Integer)entry.getValue()));
@@ -1747,7 +1747,6 @@ public class HeroBagPart extends PlayerPart {
                   }
 
                   int shrine_rebirth_type = 1;
-                  HeroModel heroModel = (HeroModel)this.player.getGameModelPool().getEntity("hero", heroDao.id);
                   if (heroModel.getNation() == 10) {
                      shrine_rebirth_type = 4;
                   }
@@ -1760,8 +1759,6 @@ public class HeroBagPart extends PlayerPart {
                   if (reornHeroModel == null) {
                      break;
                   }
-
-                  Map<Integer, Integer> materialMap = this.getStarUpMaterial(heroDao.id, reornHeroModel.getStar(), heroDao.getStar());
 
                   for(Map.Entry<Integer, Integer> entry : materialMap.entrySet()) {
                      ResourceModel.addResourceToList(heroReturns_NoTask, new ResourceModel(2, (Integer)entry.getKey(), (Integer)entry.getValue()));
@@ -2854,7 +2851,7 @@ public class HeroBagPart extends PlayerPart {
             }
 
             if (((Map)entry.getValue()).containsKey(nation) && ((Map)((Map)entry.getValue()).get(nation)).containsKey(type)) {
-               for(PropertyModel propertyModel : (List)((Map)((Map)entry.getValue()).get(nation)).get(type)) {
+               for(PropertyModel propertyModel : (List<PropertyModel>)((Map)((Map)entry.getValue()).get(nation)).get(type)) {
                   PropertyModel.addLvProtities(resultList, propertyModel);
                }
             }
@@ -3670,7 +3667,7 @@ public class HeroBagPart extends PlayerPart {
 
                for(Map.Entry<Integer, List<ControlData>> entry : kingControlDao.controlData.controlMap.entrySet()) {
                   if ((Integer)entry.getKey() != kingNation) {
-                     for(ControlData controlData : (List)entry.getValue()) {
+                     for(ControlData controlData : entry.getValue()) {
                         otherList.add(controlData.heroCode);
                      }
                   }
@@ -3729,7 +3726,7 @@ public class HeroBagPart extends PlayerPart {
                   }
 
                   if (kingControlDao.controlData.controlMap.containsKey(kingNation)) {
-                     for(ControlData controlData : (List)kingControlDao.controlData.controlMap.get(kingNation)) {
+                     for(ControlData controlData : kingControlDao.controlData.controlMap.get(kingNation)) {
                         if (heroDaoMap.containsKey(controlData.heroCode)) {
                            flushCodeList.add(controlData.heroCode);
                         }
@@ -3833,7 +3830,7 @@ public class HeroBagPart extends PlayerPart {
       if (kingControlDao.controlData.controlMap.containsKey(nation)) {
          Set<Integer> flushCodeList = new HashSet();
 
-         for(ControlData controlData : (List)kingControlDao.controlData.controlMap.get(nation)) {
+         for(ControlData controlData : (List<ControlData>)kingControlDao.controlData.controlMap.get(nation)) {
             HeroDao heroDao = this.getHeroByCode(controlData.heroCode);
             if (heroDao != null) {
                flushCodeList.add(heroDao.code);
@@ -3872,7 +3869,7 @@ public class HeroBagPart extends PlayerPart {
                }
 
                if (this.property_king_extra.containsKey(nation)) {
-                  for(Map.Entry<Integer, List<PropertyModel>> entry : ((Map)this.property_king_extra.get(nation)).entrySet()) {
+                  for(Map.Entry<Integer, List<PropertyModel>> entry : (this.property_king_extra.get(nation)).entrySet()) {
                      if ((Integer)entry.getKey() == 0 || (Integer)entry.getKey() == realNation) {
                         resultList.addAll((Collection)entry.getValue());
                      }
@@ -3977,7 +3974,7 @@ public class HeroBagPart extends PlayerPart {
          KingControlDao kingControlDao = (KingControlDao)this.player.getData("tb_king_control", this.player.getPlayerId());
 
          for(Map.Entry<Integer, List<ControlData>> entry : kingControlDao.controlData.controlMap.entrySet()) {
-            for(ControlData data : (List)entry.getValue()) {
+            for(ControlData data : entry.getValue()) {
                if (data.heroCode == heroDao.code) {
                   return (Integer)entry.getKey();
                }
@@ -4024,7 +4021,7 @@ public class HeroBagPart extends PlayerPart {
          if (controlDao.controlData.controlMap.containsKey(nation)) {
             Set<Integer> flushCodeList = new HashSet();
 
-            for(ControlData data : (List)controlDao.controlData.controlMap.get(nation)) {
+            for(ControlData data : controlDao.controlData.controlMap.get(nation)) {
                HeroDao heroDao = this.getHeroByCode(data.heroCode);
                if (heroDao != null) {
                   flushCodeList.add(heroDao.code);
@@ -4081,7 +4078,7 @@ public class HeroBagPart extends PlayerPart {
                if (controlDao.controlData.controlMap.containsKey(heroModel.getNation())) {
                   Set<Integer> flushCodeList = new HashSet();
 
-                  for(ControlData data : (List)controlDao.controlData.controlMap.get(heroModel.getNation())) {
+                  for(ControlData data : controlDao.controlData.controlMap.get(heroModel.getNation())) {
                      HeroDao heroDao = this.getHeroByCode(data.heroCode);
                      if (heroDao != null) {
                         flushCodeList.add(heroDao.code);
@@ -4162,7 +4159,7 @@ public class HeroBagPart extends PlayerPart {
       } else {
          kingHeroDao.flushHero(HeroDefine.HeroPropertyModel.MODEL_HERO, true, false);
          if (controlDao.controlData.controlMap.containsKey(nation)) {
-            for(ControlData data : (List)controlDao.controlData.controlMap.get(nation)) {
+            for(ControlData data : controlDao.controlData.controlMap.get(nation)) {
                HeroDao heroDao = this.getHeroByCode(data.heroCode);
                if (heroDao != null) {
                   heroDao.flushHero(HeroDefine.HeroPropertyModel.MODULE_KING_CONTROL, false, false);

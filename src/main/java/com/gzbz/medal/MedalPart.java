@@ -87,7 +87,7 @@ public class MedalPart extends AbstractTaskPart {
       ItemBagDao itemBagDao = (ItemBagDao)this.player.getData("tb_bag", this.player.getPlayerId());
       BagParent<ItemBase> medalBag = itemBagDao.getBagBySublass(18);
 
-      for(int code : new HashSet(medalBag.getMap().keySet())) {
+      for(int code : medalBag.getMap().keySet()) {
          ItemBase itemBase = medalBag.getItemByCode(code);
          if (itemBase != null) {
             MedalModel medalModel = (MedalModel)ApplicationContextProvider.getModelPoolEntity("xunzhang", itemBase.id);
@@ -104,7 +104,7 @@ public class MedalPart extends AbstractTaskPart {
       ItemBagDao itemBagDao = (ItemBagDao)this.player.getData("tb_bag", this.player.getPlayerId());
       BagParent<ItemBase> medalBag = itemBagDao.getBagBySublass(18);
 
-      for(int code : new HashSet(medalBag.getMap().keySet())) {
+      for(int code : medalBag.getMap().keySet()) {
          ItemBase itemBase = medalBag.getItemByCode(code);
          if (itemBase != null) {
             MedalModel medalModel = (MedalModel)ApplicationContextProvider.getModelPoolEntity("xunzhang", itemBase.id);

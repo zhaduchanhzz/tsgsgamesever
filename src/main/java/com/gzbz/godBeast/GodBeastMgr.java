@@ -117,7 +117,7 @@ public class GodBeastMgr extends GameMgr {
       }
 
       if (godBeastRecordMap != null && !godBeastRecordMap.isEmpty()) {
-         for(Integer id : new LinkedList(this.recordIdDeque)) {
+         for(Integer id : this.recordIdDeque) {
             GodBeastRecordDao godBeastRecordDao = (GodBeastRecordDao)godBeastRecordMap.get(id);
             if (null != godBeastRecordDao) {
                msg.addAllRecordList(this.buildRecordDataMsg(godBeastRecordDao));

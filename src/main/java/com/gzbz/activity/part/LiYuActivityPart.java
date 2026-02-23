@@ -321,7 +321,7 @@ public class LiYuActivityPart extends AbstractActivityPart {
          if (playerActivityDao.activityLiYuData.prays.isEmpty()) {
             Map<Integer, Map<Integer, CustomizeGiftBagModel>> allModelMap = ApplicationContextProvider.<Integer, Map<Integer, CustomizeGiftBagModel>>getModelPoolMap("customCustomizeGiftBag");
 
-            for(CustomizeGiftBagModel customizeGiftBagModel : ((Map)MapUtil.getOrDefault(allModelMap, activityInfo.id, TreeMap.class)).values()) {
+            for(CustomizeGiftBagModel customizeGiftBagModel : (MapUtil.getOrDefault(allModelMap, activityInfo.id, TreeMap.class)).values()) {
                SpecificGroupModel specificGroupModel = (SpecificGroupModel)ApplicationContextProvider.getModelPoolEntity("specificGroup", (Integer)customizeGiftBagModel.getGroup().get(1));
                if (specificGroupModel != null && specificGroupModel.getRewards() != null && !specificGroupModel.getRewards().isEmpty()) {
                   playerActivityDao.activityLiYuData.prays.put(customizeGiftBagModel.getId(), MiscUtil.comboInteger(0, 0));
@@ -479,7 +479,7 @@ public class LiYuActivityPart extends AbstractActivityPart {
             if (playerActivityDao.activityLiYuData.prays.isEmpty()) {
                Map<Integer, Map<Integer, CustomizeGiftBagModel>> allModelMap = ApplicationContextProvider.<Integer, Map<Integer, CustomizeGiftBagModel>>getModelPoolMap("customCustomizeGiftBag");
 
-               for(CustomizeGiftBagModel customizeGiftBagModel : ((Map)MapUtil.getOrDefault(allModelMap, activityInfo.id, TreeMap.class)).values()) {
+               for(CustomizeGiftBagModel customizeGiftBagModel : (MapUtil.getOrDefault(allModelMap, activityInfo.id, TreeMap.class)).values()) {
                   SpecificGroupModel specificGroupModel = (SpecificGroupModel)ApplicationContextProvider.getModelPoolEntity("specificGroup", (Integer)customizeGiftBagModel.getGroup().get(1));
                   if (specificGroupModel != null && specificGroupModel.getRewards() != null && !specificGroupModel.getRewards().isEmpty()) {
                      playerActivityDao.activityLiYuData.prays.put(customizeGiftBagModel.getId(), MiscUtil.comboInteger(0, 0));

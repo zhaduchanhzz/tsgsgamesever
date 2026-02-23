@@ -662,7 +662,7 @@ public class StonehengePart extends PlayerPart {
                      posMap = (Map)stonehengeDao.battlePosMap2.computeIfAbsent(roomModel.getId(), (k) -> new HashMap());
                   }
 
-                  posMap.replaceAll((heroCode, pos) -> -1);
+                  posMap.replaceAll((heroCode, pos) -> (byte) -1);
 
                   for(Entity entity : myPKTeam.getAllEntity().values()) {
                      posMap.put(entity.getHeroCode(), entity.getTeamPos());
@@ -935,6 +935,7 @@ public class StonehengePart extends PlayerPart {
    public void gmOp(String order) {
       StonehengeDao stonehengeDao = this.getStonehengeDao();
       String[] split = order.split(",");
+      WorldDao<ArrayList<Integer>> worldDao = this.worldMgr.<ArrayList<Integer>>getWorldDao(GameDefine.WorldModule.WORLD_DAO_STONEHENGE_PATH);
       switch (split[0]) {
          case "room":
             int id = Integer.parseInt(split[1]);
@@ -966,7 +967,7 @@ public class StonehengePart extends PlayerPart {
             break;
          case "move":
             int roomId = Integer.parseInt(split[1]);
-            int id = 0;
+             id = 0;
             Map<Integer, StonehengeRoomModel> roomModelMap = ApplicationContextProvider.<Integer, StonehengeRoomModel>getModelPoolMap("stonehengeRoom");
 
             for(StonehengeRoomModel value : roomModelMap.values()) {
@@ -999,8 +1000,7 @@ public class StonehengePart extends PlayerPart {
             stonehengeDao.inType = Integer.parseInt(split[1]);
             break;
          case "reset3":
-            WorldDao<ArrayList<Integer>> worldDao = this.worldMgr.<ArrayList<Integer>>getWorldDao(GameDefine.WorldModule.WORLD_DAO_STONEHENGE_PATH);
-            ((ArrayList)worldDao.jsonData).clear();
+            (worldDao.jsonData).clear();
             worldDao.updateOp();
             break;
          case "buff":
@@ -1011,7 +1011,7 @@ public class StonehengePart extends PlayerPart {
          case "100":
             int level = Integer.parseInt(split[1]);
             Map<Integer, StonehengeRoomModel> roomMap = ApplicationContextProvider.<Integer, StonehengeRoomModel>getModelPoolMap("stonehengeRoom");
-            WorldDao<ArrayList<Integer>> worldDao = this.worldMgr.<ArrayList<Integer>>getWorldDao(GameDefine.WorldModule.WORLD_DAO_STONEHENGE_PATH);
+           worldDao = this.worldMgr.<ArrayList<Integer>>getWorldDao(GameDefine.WorldModule.WORLD_DAO_STONEHENGE_PATH);
             int type = CollectionUtils.isEmpty((Collection)worldDao.jsonData) ? 1 : (Integer)((ArrayList)worldDao.jsonData).get(((ArrayList)worldDao.jsonData).size() - 1);
             ArrayList<Integer> awards = new ArrayList();
             roomMap.values().stream().filter((room) -> room.getType() == type && (room.getEventType() == 1 || room.getEventType() == 2)).forEach((room) -> {

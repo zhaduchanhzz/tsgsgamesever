@@ -355,7 +355,7 @@ public class MergeWarBossPart extends PlayerPart {
                   BattleMsg.S2C_BattleResult_6102.Builder battleMsg = null;
                   long totalDamage = 0L;
 
-                  for(CommonMsg.HeroState heroState : (List)HeroArrayingPart.MULTIPLE_ARRAYING.get(4207)) {
+                  for(CommonMsg.HeroState heroState : HeroArrayingPart.MULTIPLE_ARRAYING.get(4207)) {
                      ArrayingMirror arrayingMirror = this.player.getPlayerArraying(heroState);
                      PlayerDao playerDao = this.player.getPlayerDao();
                      BattlePKTeam leftTeam = new BattlePKTeam(playerDao.playerId, playerDao.playerName, arrayingMirror, playerDao.lv, playerDao.head, playerDao.headFrame, (Map)null);
@@ -379,7 +379,8 @@ public class MergeWarBossPart extends PlayerPart {
                   this.player.triggerTask(673, 0, (long)chDamage, 1);
                   PlayerPublicDao publicDao = this.player.getPublicDao();
                   long oriScore = this.rankMgr.getScore(RankDefine.RankModule.MERGE_WAR_BOSS_UNION_DAMAGE, publicDao.unionId);
-                  this.coreWarMgr.pushTask(() -> this.coreWarMgr.recordBossDamage(this.player.getPlayerId(), publicDao.unionId, totalDamage));
+                   long finalTotalDamage = totalDamage;
+                   this.coreWarMgr.pushTask(() -> this.coreWarMgr.recordBossDamage(this.player.getPlayerId(), publicDao.unionId, finalTotalDamage));
                   List<ResourceModel> resourceModelList = new ArrayList();
 
                   for(ResourceModel resourceModel : this.configManager.getResourceModelList("hefuBattleReward1", "2|1003|1,2|1001|200")) {

@@ -1462,7 +1462,7 @@ public class PlayerRechargePart extends PlayerPart {
             this.player.notifyPlayerData(PlayerDefine.COIN_TOTAL_RECHARGE, playerRechargeDao.coinTotalRecharge);
             MailPart mailPart = (MailPart)this.player.getMgrPart(MailPart.class);
 
-            for(CoinAddRechargeModel coinAddRechargeModel : ((Map)modelMap.get(this.worldMgr.PLATFORM_NAME)).values()) {
+            for(CoinAddRechargeModel coinAddRechargeModel : (modelMap.get(this.worldMgr.PLATFORM_NAME)).values()) {
                if (coinAddRechargeModel.getRechargeNum() > playerRechargeDao.coinTotalRecharge) {
                   break;
                }
