@@ -108,7 +108,7 @@ public class SkinActivityTaskPart extends AbstractActivityTaskPart {
                themeActivityDao.skinActivity.taskGroup.add(groupId);
                themeActivityDao.updateOp();
 
-               for(SkinActivityTaskGroupModel task : (List)tempGroupMap.get(groupId)) {
+               for(SkinActivityTaskGroupModel task : tempGroupMap.get(groupId)) {
                   super.createTask(task.getIncludeTaskId());
                }
 

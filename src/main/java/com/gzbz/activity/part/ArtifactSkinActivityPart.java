@@ -142,7 +142,7 @@ public class ArtifactSkinActivityPart extends AbstractActivityPart {
          builder.setResetTimes(artifactData.resetNum);
          TreeMap<Integer, List<ArtifactTreasureNewestModel>> modelMap = ActivityOpenServerTimeBaseModel.getModelMap("customArtifactTreasureNewest", this.getPlayerActivityOpenDay());
 
-         for(ArtifactTreasureNewestModel model : (List)modelMap.getOrDefault(artifactData.round, new ArrayList())) {
+         for(ArtifactTreasureNewestModel model : (List<ArtifactTreasureNewestModel>)modelMap.getOrDefault(artifactData.round, new ArrayList())) {
             if (!artifactData.hadLoots.contains(model.getId())) {
                builder.addRewardId(model.getId());
             }
@@ -961,7 +961,7 @@ public class ArtifactSkinActivityPart extends AbstractActivityPart {
       totalActiveBox += themeActivityDao.artifactSkinData.totalLineBoxes;
       Map<Integer, TreeMap<Integer, ArtifactBoxRewardNewestModel>> boxModelMap = ActivityOpenServerTimeBaseModel.getModelMap("customArtifactBoxRewardNewest", this.getPlayerActivityOpenDay());
 
-      for(ArtifactBoxRewardNewestModel artifactBoxRewardModel : ((TreeMap)boxModelMap.getOrDefault(themeActivityDao.artifactSkinData.actDay, new TreeMap())).values()) {
+      for(ArtifactBoxRewardNewestModel artifactBoxRewardModel : (boxModelMap.getOrDefault(themeActivityDao.artifactSkinData.actDay, new TreeMap<>())).values()) {
          if (this.checkTaskBoxReward(artifactBoxRewardModel) == 1) {
             ++totalActiveBox;
          }
@@ -975,7 +975,7 @@ public class ArtifactSkinActivityPart extends AbstractActivityPart {
       List<ResourceModel> rewardList = new ArrayList();
       Map<Integer, TreeMap<Integer, ArtifactBoxRewardNewestModel>> boxModelMap = ActivityOpenServerTimeBaseModel.getModelMap("customArtifactBoxRewardNewest", this.getPlayerActivityOpenDay());
 
-      for(ArtifactBoxRewardNewestModel artifactBoxRewardModel : ((TreeMap)boxModelMap.getOrDefault(themeActivityDao.artifactSkinData.actDay, new TreeMap())).values()) {
+      for(ArtifactBoxRewardNewestModel artifactBoxRewardModel : (boxModelMap.getOrDefault(themeActivityDao.artifactSkinData.actDay, new TreeMap<>())).values()) {
          if (!themeActivityDao.artifactSkinData.lineBoxes.contains(artifactBoxRewardModel.getId()) && this.checkTaskBoxReward(artifactBoxRewardModel) == 1) {
             rewardList.addAll(artifactBoxRewardModel.getRewards());
             themeActivityDao.artifactSkinData.lineBoxes.add(artifactBoxRewardModel.getId());
