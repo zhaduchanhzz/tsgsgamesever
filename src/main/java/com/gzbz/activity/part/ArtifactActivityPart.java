@@ -892,11 +892,11 @@ public class ArtifactActivityPart extends AbstractActivityPart {
 
    private int checkTaskBoxReward(ArtifactBoxRewardModel artifactBoxRewardModel) {
       Map<Integer, TreeMap<Integer, ArtifactGridTaskModel>> taskModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customArtifactGridTask", this.getPlayerActivityId());
-      if (taskModelMap != null && taskModelMap.containsKey(artifactBoxRewardModel.getDays()) && !((TreeMap)taskModelMap.get(artifactBoxRewardModel.getDays())).isEmpty()) {
+      if (taskModelMap != null && taskModelMap.containsKey(artifactBoxRewardModel.getDays()) && !(taskModelMap.get(artifactBoxRewardModel.getDays())).isEmpty()) {
          ActivityArtifactTaskPart activityArtifactTaskPart = (ActivityArtifactTaskPart)this.player.getMgrPart(ActivityArtifactTaskPart.class);
 
          for(Integer grid : artifactBoxRewardModel.getGridId()) {
-            ArtifactGridTaskModel artifactGridTaskModel = (ArtifactGridTaskModel)((TreeMap)taskModelMap.get(artifactBoxRewardModel.getDays())).get(grid);
+            ArtifactGridTaskModel artifactGridTaskModel = (ArtifactGridTaskModel)(taskModelMap.get(artifactBoxRewardModel.getDays())).get(grid);
             if (artifactGridTaskModel == null) {
                return 0;
             }

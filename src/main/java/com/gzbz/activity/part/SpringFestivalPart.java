@@ -471,7 +471,7 @@ public class SpringFestivalPart extends AbstractActivityPart {
       ActivityInfo activityInfo = this.getActivityMgr().getActivityInfo(this.getActivityType());
       if (activityInfo != null && activityInfo.end <= DateUtil.getIntTime(System.currentTimeMillis()) && activityId == activityInfo.id) {
          Map<Integer, TreeMap<Integer, CustomizeGiftBagModel>> allModelMap = ApplicationContextProvider.<Integer, TreeMap<Integer, CustomizeGiftBagModel>>getModelPoolMap("customCustomizeGiftBag");
-         TreeMap<Integer, CustomizeGiftBagModel> springFestivalModelMap = (TreeMap)MapUtil.getOrDefault(allModelMap, activityId, TreeMap.class);
+         TreeMap<Integer, CustomizeGiftBagModel> springFestivalModelMap = MapUtil.getOrDefault(allModelMap, activityId, TreeMap.class);
          PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
          int blessingGiftBag = ApplicationContextProvider.getConfigInt("blessingGiftBag", 0);
 

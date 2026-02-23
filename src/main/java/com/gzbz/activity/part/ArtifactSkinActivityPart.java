@@ -812,7 +812,7 @@ public class ArtifactSkinActivityPart extends AbstractActivityPart {
          Map<Integer, TaskData> taskDataMap = activityArtifactTaskPart.getTasksMap();
          Map<Integer, TreeMap<Integer, ArtifactGridTaskNewestModel>> taskModelMap = ActivityOpenServerTimeBaseModel.getModelMap("customArtifactGridTaskNewest", this.getPlayerActivityOpenDay());
          if (taskModelMap != null && taskModelMap.containsKey(themeActivityDao.artifactSkinData.actDay)) {
-            for(ArtifactGridTaskNewestModel artifactGridTaskModel : ((TreeMap)taskModelMap.get(themeActivityDao.artifactSkinData.actDay)).values()) {
+            for(ArtifactGridTaskNewestModel artifactGridTaskModel : (taskModelMap.get(themeActivityDao.artifactSkinData.actDay)).values()) {
                ArtifactSkinActivityMsg.GridTaskData.Builder builder = ArtifactSkinActivityMsg.GridTaskData.newBuilder();
                builder.setGrid(artifactGridTaskModel.getGridNum());
                TaskData taskData = (TaskData)taskDataMap.get(artifactGridTaskModel.getTaskId());
@@ -934,11 +934,11 @@ public class ArtifactSkinActivityPart extends AbstractActivityPart {
 
    private int checkTaskBoxReward(ArtifactBoxRewardNewestModel artifactBoxRewardModel) {
       TreeMap<Integer, TreeMap<Integer, ArtifactGridTaskNewestModel>> taskModelMap = ActivityOpenServerTimeBaseModel.getModelMap("customArtifactGridTaskNewest", this.getPlayerActivityOpenDay());
-      if (taskModelMap.containsKey(artifactBoxRewardModel.getDays()) && !((TreeMap)taskModelMap.get(artifactBoxRewardModel.getDays())).isEmpty()) {
+      if (taskModelMap.containsKey(artifactBoxRewardModel.getDays()) && !(taskModelMap.get(artifactBoxRewardModel.getDays())).isEmpty()) {
          ActivityArtifactSkinTaskPart activityArtifactTaskPart = (ActivityArtifactSkinTaskPart)this.player.getMgrPart(ActivityArtifactSkinTaskPart.class);
 
          for(Integer grid : artifactBoxRewardModel.getGridId()) {
-            ArtifactGridTaskNewestModel artifactGridTaskModel = (ArtifactGridTaskNewestModel)((TreeMap)taskModelMap.get(artifactBoxRewardModel.getDays())).get(grid);
+            ArtifactGridTaskNewestModel artifactGridTaskModel = (ArtifactGridTaskNewestModel)(taskModelMap.get(artifactBoxRewardModel.getDays())).get(grid);
             if (artifactGridTaskModel == null) {
                return 0;
             }
@@ -1067,7 +1067,7 @@ public class ArtifactSkinActivityPart extends AbstractActivityPart {
       if (taskModelMap.containsKey(day)) {
          ActivityArtifactSkinTaskPart activityArtifactTaskPart = (ActivityArtifactSkinTaskPart)this.player.getMgrPart(ActivityArtifactSkinTaskPart.class);
 
-         for(ArtifactGridTaskNewestModel artifactGridTaskModel : ((TreeMap)taskModelMap.get(day)).values()) {
+         for(ArtifactGridTaskNewestModel artifactGridTaskModel : (taskModelMap.get(day)).values()) {
             TaskData taskData = activityArtifactTaskPart.getTask(artifactGridTaskModel.getTaskId());
             if (taskData != null && taskData.state != 3) {
                SevenDaysTaskModel sevenDaysTaskModel = (SevenDaysTaskModel)ApplicationContextProvider.getModelPoolEntity("sevenDaysTasks", artifactGridTaskModel.getTaskId());
@@ -1085,7 +1085,7 @@ public class ArtifactSkinActivityPart extends AbstractActivityPart {
       ThemeActivityDao themeActivityDao = (ThemeActivityDao)this.player.getData("tb_player_theme_activity", this.player.getPlayerId());
       Map<Integer, TreeMap<Integer, ArtifactBoxRewardNewestModel>> boxModelMap = ActivityOpenServerTimeBaseModel.getModelMap("customArtifactBoxRewardNewest", this.getPlayerActivityOpenDay());
       if (boxModelMap != null) {
-         for(ArtifactBoxRewardNewestModel artifactBoxRewardModel : ((TreeMap)MapUtil.getOrDefault(boxModelMap, day, TreeMap.class)).values()) {
+         for(ArtifactBoxRewardNewestModel artifactBoxRewardModel : (MapUtil.getOrDefault(boxModelMap, day, TreeMap.class)).values()) {
             if (!themeActivityDao.artifactSkinData.lineBoxes.contains(artifactBoxRewardModel.getId())) {
                for(ResourceModel reward : artifactBoxRewardModel.getRewards()) {
                   reward.addResourceToList(rewardList);

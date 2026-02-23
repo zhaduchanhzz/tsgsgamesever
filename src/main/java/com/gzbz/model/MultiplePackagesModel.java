@@ -45,7 +45,7 @@ public class MultiplePackagesModel {
 
       for(Map.Entry<?, ?> entry : map.entrySet()) {
          MultiplePackagesModel model = (MultiplePackagesModel)entry.getValue();
-         ((TreeMap)MapUtil.computeIfAbsent(tempHashMap, model.getUseFuncId(), TreeMap.class)).put(model.getId(), model);
+         (MapUtil.computeIfAbsent(tempHashMap, model.getUseFuncId(), TreeMap.class)).put(model.getId(), model);
       }
 
       pool.putMap("customMultiplePackages", tempHashMap);

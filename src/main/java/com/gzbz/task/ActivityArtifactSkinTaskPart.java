@@ -46,7 +46,7 @@ public class ActivityArtifactSkinTaskPart extends AbstractActivityTaskPart {
          int day = this.getActivityDay();
          Map<Integer, TreeMap<Integer, ArtifactGridTaskNewestModel>> taskModelMap = ActivityOpenServerTimeBaseModel.getModelMap("customArtifactGridTaskNewest", this.getActivityOpenDay());
          if (taskModelMap.containsKey(day)) {
-            for(ArtifactGridTaskNewestModel artifactGridTaskModel : ((TreeMap)taskModelMap.get(day)).values()) {
+            for(ArtifactGridTaskNewestModel artifactGridTaskModel : (taskModelMap.get(day)).values()) {
                this.createTask(artifactGridTaskModel.getTaskId());
             }
 

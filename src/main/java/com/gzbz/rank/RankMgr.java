@@ -299,7 +299,7 @@ public class RankMgr extends GameMgr {
          if (rankPlayer != null) {
             PlayerPublicDao rankPlayerDao = rankPlayer.getPublicDao();
             Map<Integer, TreeMap<Integer, RankRewardModel>> allRankRewardMap = this.gameModelPool.getMap("customRankReward");
-            TreeMap<Integer, RankRewardModel> currentTypeModelsMap = (TreeMap)MapUtil.getOrDefault(allRankRewardMap, type, TreeMap.class);
+            TreeMap<Integer, RankRewardModel> currentTypeModelsMap = MapUtil.getOrDefault(allRankRewardMap, type, TreeMap.class);
             List<RankMsg.RankRewardData> firstFinishRankRewards = new ArrayList();
 
             for(RankRewardModel rankRewardModel : currentTypeModelsMap.values()) {

@@ -195,7 +195,7 @@ public class TongQueParkPart extends AbstractActivityPart {
       } else {
          PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
          Map<Integer, TreeMap<Integer, TongQueActivityFloorModel>> allActivityFloorMap = ApplicationContextProvider.<Integer, TreeMap<Integer, TongQueActivityFloorModel>>getModelPoolMap("customTongQueActivityFloor");
-         TreeMap<Integer, TongQueActivityFloorModel> floorModelMap = (TreeMap)MapUtil.getOrDefault(allActivityFloorMap, this.getServerActivityInfo().id, TreeMap.class);
+         TreeMap<Integer, TongQueActivityFloorModel> floorModelMap = MapUtil.getOrDefault(allActivityFloorMap, this.getServerActivityInfo().id, TreeMap.class);
          TongQueActivityFloorModel floorModel = (TongQueActivityFloorModel)floorModelMap.get(playerActivityDao.activityTongQueParkData.floor);
          if (floorModel == null) {
             this.player.failure(0);
@@ -546,7 +546,7 @@ public class TongQueParkPart extends AbstractActivityPart {
             }
 
             Map<Integer, TreeMap<Integer, Set<Integer>>> allTaskModelMap = ApplicationContextProvider.<Integer, TreeMap<Integer, Set<Integer>>>getModelPoolMap("customTongQueActivityTaskGroup");
-            TreeMap<Integer, Set<Integer>> groupTasksModelMap = (TreeMap)MapUtil.getOrDefault(allTaskModelMap, this.getServerActivityInfo().id, TreeMap.class);
+            TreeMap<Integer, Set<Integer>> groupTasksModelMap = MapUtil.getOrDefault(allTaskModelMap, this.getServerActivityInfo().id, TreeMap.class);
             if (!groupTasksModelMap.isEmpty()) {
                int curGroup = playerActivityDao.activityTongQueParkData.taskGroup;
                playerActivityDao.activityTongQueParkData.taskGroup = curGroup >= (Integer)groupTasksModelMap.lastKey() ? (Integer)groupTasksModelMap.firstKey() : curGroup + 1;
@@ -591,7 +591,7 @@ public class TongQueParkPart extends AbstractActivityPart {
       }
 
       Map<Integer, TreeMap<Integer, Set<Integer>>> allTaskModelMap = ApplicationContextProvider.<Integer, TreeMap<Integer, Set<Integer>>>getModelPoolMap("customTongQueActivityTaskGroup");
-      TreeMap<Integer, Set<Integer>> groupTasksModelMap = (TreeMap)MapUtil.getOrDefault(allTaskModelMap, this.getServerActivityInfo().id, TreeMap.class);
+      TreeMap<Integer, Set<Integer>> groupTasksModelMap = MapUtil.getOrDefault(allTaskModelMap, this.getServerActivityInfo().id, TreeMap.class);
       if (!groupTasksModelMap.isEmpty()) {
          playerActivityDao.activityTongQueParkData.taskGroup = (Integer)groupTasksModelMap.firstKey();
          tongQueParkTaskPart.trigger();
@@ -620,7 +620,7 @@ public class TongQueParkPart extends AbstractActivityPart {
          return true;
       } else {
          Map<Integer, TreeMap<Integer, TongQueActivityFloorModel>> allActivityFloorMap = ApplicationContextProvider.<Integer, TreeMap<Integer, TongQueActivityFloorModel>>getModelPoolMap("customTongQueActivityFloor");
-         TreeMap<Integer, TongQueActivityFloorModel> floorModelMap = (TreeMap)MapUtil.getOrDefault(allActivityFloorMap, activityId, TreeMap.class);
+         TreeMap<Integer, TongQueActivityFloorModel> floorModelMap = MapUtil.getOrDefault(allActivityFloorMap, activityId, TreeMap.class);
          TongqueTerracePart tongqueTerracePart = (TongqueTerracePart)this.player.getMgrPart(TongqueTerracePart.class);
 
          for(ResourceWeightModel resourceWeightModel : ((TongQueActivityFloorModel)floorModelMap.lastEntry().getValue()).getGoods()) {

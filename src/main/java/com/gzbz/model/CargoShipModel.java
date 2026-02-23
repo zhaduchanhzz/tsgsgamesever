@@ -134,7 +134,7 @@ public class CargoShipModel extends BaseModel {
 
       for(Map.Entry<?, ?> entry : map.entrySet()) {
          CargoShipModel model = (CargoShipModel)entry.getValue();
-         ((TreeMap)MapUtil.computeIfAbsent(tempHashMap, model.shipQuality, TreeMap.class)).put(model.id, model);
+         (MapUtil.computeIfAbsent(tempHashMap, model.shipQuality, TreeMap.class)).put(model.id, model);
       }
 
       pool.putMap("customCargoShip", tempHashMap);

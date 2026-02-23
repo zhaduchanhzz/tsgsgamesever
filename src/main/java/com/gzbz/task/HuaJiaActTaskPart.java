@@ -53,7 +53,7 @@ public class HuaJiaActTaskPart extends AbstractActivityTaskPart {
             }
          }
 
-         TreeMap<Integer, Set<Integer>> groupTasksModelMap = (TreeMap)MapUtil.getOrDefault(tempHashMap, this.getServerActivityInfo().id, TreeMap.class);
+         TreeMap<Integer, Set<Integer>> groupTasksModelMap = MapUtil.getOrDefault(tempHashMap, this.getServerActivityInfo().id, TreeMap.class);
          if (!groupTasksModelMap.isEmpty()) {
             PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
             Map<Integer, HuaJiaActivityTaskNewModel> tongQueActivityTaskModelMap = ApplicationContextProvider.<Integer, HuaJiaActivityTaskNewModel>getModelPoolMap("HuaJiaActivityTaskNew");

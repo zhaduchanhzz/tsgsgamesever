@@ -157,6 +157,6 @@ public class RechargeTotalDayPart extends AbstractActivityPart {
 
    private TreeMap<Integer, CumulativeAwardModel> currentCumulativeAwardMap(int rechargeTotalDayId) {
       Map<Integer, TreeMap<Integer, CumulativeAwardModel>> cumulativeAwardModelMap = ApplicationContextProvider.<Integer, TreeMap<Integer, CumulativeAwardModel>>getModelPoolMap("customCumulativeAward");
-      return (TreeMap)MapUtil.getOrDefault(cumulativeAwardModelMap, rechargeTotalDayId, TreeMap.class);
+      return MapUtil.getOrDefault(cumulativeAwardModelMap, rechargeTotalDayId, TreeMap.class);
    }
 }

@@ -782,7 +782,7 @@ public class ArtifactRotateActivityPart extends AbstractActivityPart {
          int day = this.getSeverActivityDay();
          Map<Integer, TreeMap<Integer, ArtifactGridTaskNewModel>> taskModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customNewArtifactGridTask", this.getPlayerActivityId());
          if (taskModelMap != null && !taskModelMap.isEmpty() && taskModelMap.containsKey(day)) {
-            for(ArtifactGridTaskNewModel artifactGridTaskModel : ((TreeMap)taskModelMap.get(day)).values()) {
+            for(ArtifactGridTaskNewModel artifactGridTaskModel : (taskModelMap.get(day)).values()) {
                ArtifactRotateActivityMsg.GridTaskData.Builder builder = ArtifactRotateActivityMsg.GridTaskData.newBuilder();
                builder.setGrid(artifactGridTaskModel.getGridNum());
                TaskData taskData = (TaskData)taskDataMap.get(artifactGridTaskModel.getTaskId());
@@ -904,11 +904,11 @@ public class ArtifactRotateActivityPart extends AbstractActivityPart {
 
    private int checkTaskBoxReward(ArtifactBoxRewardNewModel artifactBoxRewardModel) {
       Map<Integer, TreeMap<Integer, ArtifactGridTaskNewModel>> taskModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customNewArtifactGridTask", this.getPlayerActivityId());
-      if (taskModelMap != null && taskModelMap.containsKey(artifactBoxRewardModel.getDays()) && !((TreeMap)taskModelMap.get(artifactBoxRewardModel.getDays())).isEmpty()) {
+      if (taskModelMap != null && taskModelMap.containsKey(artifactBoxRewardModel.getDays()) && !(taskModelMap.get(artifactBoxRewardModel.getDays())).isEmpty()) {
          ActivityArtifactRotateTaskPart activityArtifactTaskPart = (ActivityArtifactRotateTaskPart)this.player.getMgrPart(ActivityArtifactRotateTaskPart.class);
 
          for(Integer grid : artifactBoxRewardModel.getGridId()) {
-            ArtifactGridTaskNewModel artifactGridTaskModel = (ArtifactGridTaskNewModel)((TreeMap)taskModelMap.get(artifactBoxRewardModel.getDays())).get(grid);
+            ArtifactGridTaskNewModel artifactGridTaskModel = (ArtifactGridTaskNewModel)(taskModelMap.get(artifactBoxRewardModel.getDays())).get(grid);
             if (artifactGridTaskModel == null) {
                return 0;
             }
@@ -931,7 +931,7 @@ public class ArtifactRotateActivityPart extends AbstractActivityPart {
       totalActiveBox += themeActivityDao.artifactRotateData.totalLineBoxes;
       Map<Integer, TreeMap<Integer, ArtifactBoxRewardNewModel>> boxModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customNewArtifactBoxReward", this.getPlayerActivityId());
 
-      for(ArtifactBoxRewardNewModel artifactBoxRewardModel : ((TreeMap)MapUtil.getOrDefault(boxModelMap, themeActivityDao.artifactRotateData.actDay, TreeMap.class)).values()) {
+      for(ArtifactBoxRewardNewModel artifactBoxRewardModel : (MapUtil.getOrDefault(boxModelMap, themeActivityDao.artifactRotateData.actDay, TreeMap.class)).values()) {
          if (this.checkTaskBoxReward(artifactBoxRewardModel) == 1) {
             ++totalActiveBox;
          }
@@ -945,7 +945,7 @@ public class ArtifactRotateActivityPart extends AbstractActivityPart {
       List<ResourceModel> rewardList = new ArrayList();
       Map<Integer, TreeMap<Integer, ArtifactBoxRewardNewModel>> boxModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customNewArtifactBoxReward", this.getPlayerActivityId());
 
-      for(ArtifactBoxRewardNewModel artifactBoxRewardModel : ((TreeMap)MapUtil.getOrDefault(boxModelMap, themeActivityDao.artifactRotateData.actDay, TreeMap.class)).values()) {
+      for(ArtifactBoxRewardNewModel artifactBoxRewardModel : (MapUtil.getOrDefault(boxModelMap, themeActivityDao.artifactRotateData.actDay, TreeMap.class)).values()) {
          if (!themeActivityDao.artifactRotateData.lineBoxes.contains(artifactBoxRewardModel.getId()) && this.checkTaskBoxReward(artifactBoxRewardModel) == 1) {
             rewardList.addAll(artifactBoxRewardModel.getRewards());
             themeActivityDao.artifactRotateData.lineBoxes.add(artifactBoxRewardModel.getId());
@@ -1037,7 +1037,7 @@ public class ArtifactRotateActivityPart extends AbstractActivityPart {
       if (taskModelMap != null && !taskModelMap.isEmpty() && taskModelMap.containsKey(day)) {
          ActivityArtifactRotateTaskPart activityArtifactTaskPart = (ActivityArtifactRotateTaskPart)this.player.getMgrPart(ActivityArtifactRotateTaskPart.class);
 
-         for(ArtifactGridTaskNewModel artifactGridTaskModel : ((TreeMap)taskModelMap.get(day)).values()) {
+         for(ArtifactGridTaskNewModel artifactGridTaskModel : (taskModelMap.get(day)).values()) {
             TaskData taskData = activityArtifactTaskPart.getTask(artifactGridTaskModel.getTaskId());
             if (taskData != null && taskData.state != 3) {
                SevenDaysTaskModel sevenDaysTaskModel = (SevenDaysTaskModel)ApplicationContextProvider.getModelPoolEntity("sevenDaysTasks", artifactGridTaskModel.getTaskId());
@@ -1055,7 +1055,7 @@ public class ArtifactRotateActivityPart extends AbstractActivityPart {
       ThemeActivityDao themeActivityDao = (ThemeActivityDao)this.player.getData("tb_player_theme_activity", this.player.getPlayerId());
       Map<Integer, TreeMap<Integer, ArtifactBoxRewardNewModel>> boxModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customNewArtifactBoxReward", this.getPlayerActivityId());
       if (boxModelMap != null) {
-         for(ArtifactBoxRewardNewModel artifactBoxRewardModel : ((TreeMap)MapUtil.getOrDefault(boxModelMap, day, TreeMap.class)).values()) {
+         for(ArtifactBoxRewardNewModel artifactBoxRewardModel : (MapUtil.getOrDefault(boxModelMap, day, TreeMap.class)).values()) {
             if (!themeActivityDao.artifactRotateData.lineBoxes.contains(artifactBoxRewardModel.getId())) {
                for(ResourceModel reward : artifactBoxRewardModel.getRewards()) {
                   reward.addResourceToList(rewardList);

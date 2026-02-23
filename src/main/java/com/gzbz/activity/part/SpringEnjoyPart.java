@@ -209,7 +209,7 @@ public class SpringEnjoyPart extends AbstractActivityPart {
                Map<Integer, TreeMap<Integer, SpringPlantingModel>> roundPlantingModels = (Map)MapUtil.getOrDefault(planMap, springPlantingModel.getChangeType(), ConcurrentHashMap.class);
                int numIndex = 0;
 
-               for(Integer modelId : ((TreeMap)MapUtil.getOrDefault(roundPlantingModels, springPlantingModel.getRounds(), TreeMap.class)).keySet()) {
+               for(Integer modelId : (MapUtil.getOrDefault(roundPlantingModels, springPlantingModel.getRounds(), TreeMap.class)).keySet()) {
                   ++numIndex;
                   if (modelId == msg.getId()) {
                      break;

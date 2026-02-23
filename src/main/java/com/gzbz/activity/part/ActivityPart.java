@@ -519,7 +519,7 @@ public class ActivityPart extends PlayerPart {
 
       for(ActivityRuleModel activityRuleModel : activityRuleModelMap.values()) {
          try {
-            TreeMap<Integer, ActivityOpenTimeModel> activityMap = (TreeMap)MapUtil.getOrDefault(activityAllMap, activityRuleModel.getActivityType(), TreeMap.class);
+            TreeMap<Integer, ActivityOpenTimeModel> activityMap = MapUtil.getOrDefault(activityAllMap, activityRuleModel.getActivityType(), TreeMap.class);
             if (activityMap != null && !activityMap.isEmpty()) {
                ActivityInfo playerActivity = (ActivityInfo)playerActivityDao.activities.get(activityRuleModel.getActivityType());
                if (playerActivity != null && playerActivity.id == 0) {
@@ -807,7 +807,7 @@ public class ActivityPart extends PlayerPart {
          List<ActivityOpenTimeModel> openActivityModels = new ArrayList();
          PlayerDao playerDao = this.player.getPlayerDao();
          Map<Integer, TreeMap<Integer, ActivityOpenTimeModel>> activityAllMap = ApplicationContextProvider.<Integer, TreeMap<Integer, ActivityOpenTimeModel>>getModelPoolMap("customActivityOpenTime");
-         TreeMap<Integer, ActivityOpenTimeModel> activityMap = (TreeMap)MapUtil.getOrDefault(activityAllMap, activityRuleModel.getActivityType(), TreeMap.class);
+         TreeMap<Integer, ActivityOpenTimeModel> activityMap = MapUtil.getOrDefault(activityAllMap, activityRuleModel.getActivityType(), TreeMap.class);
 
          for(ActivityOpenTimeModel checkModel : activityMap.values()) {
             if (checkModel.getIsClose() == 0 && playerDao.lv >= checkModel.getNeedLevel() && !this.activityMgr.checkOpenTimeLimit(checkModel.getTips(), checkModel.getLimitTime())) {

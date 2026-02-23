@@ -376,7 +376,7 @@ public class TongQueRotatePart extends AbstractActivityPart {
                }
             }
 
-            TreeMap<Integer, Set<Integer>> groupTasksModelMap = (TreeMap)MapUtil.getOrDefault(tempHashMap, this.getServerActivityInfo().id, TreeMap.class);
+            TreeMap<Integer, Set<Integer>> groupTasksModelMap = MapUtil.getOrDefault(tempHashMap, this.getServerActivityInfo().id, TreeMap.class);
             if (!groupTasksModelMap.isEmpty()) {
                int curGroup = playerActivityDao.activityTongQueRotateData.taskGroup;
                playerActivityDao.activityTongQueRotateData.taskGroup = curGroup >= (Integer)groupTasksModelMap.lastKey() ? (Integer)groupTasksModelMap.firstKey() : curGroup + 1;
@@ -413,7 +413,7 @@ public class TongQueRotatePart extends AbstractActivityPart {
          }
       }
 
-      TreeMap<Integer, Set<Integer>> groupTasksModelMap = (TreeMap)MapUtil.getOrDefault(tempHashMap, this.getServerActivityInfo().id, TreeMap.class);
+      TreeMap<Integer, Set<Integer>> groupTasksModelMap = MapUtil.getOrDefault(tempHashMap, this.getServerActivityInfo().id, TreeMap.class);
       if (!groupTasksModelMap.isEmpty()) {
          playerActivityDao.activityTongQueRotateData.taskGroup = (Integer)groupTasksModelMap.firstKey();
          tongQueParkTaskPart.trigger();

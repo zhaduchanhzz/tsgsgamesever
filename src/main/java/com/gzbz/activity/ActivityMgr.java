@@ -451,7 +451,7 @@ public class ActivityMgr extends GameMgr {
          try {
             int activityType = activityRuleModel.getActivityType();
             if (activityRuleModel.getOpenTime() >= 0 && activityRuleModel.getRotationRule() == 2) {
-               TreeMap<Integer, ActivityOpenTimeModel> activityOpenTimeModelMap = (TreeMap)MapUtil.getOrDefault(activityAllMap, activityType, TreeMap.class);
+               TreeMap<Integer, ActivityOpenTimeModel> activityOpenTimeModelMap = MapUtil.getOrDefault(activityAllMap, activityType, TreeMap.class);
                if (activityOpenTimeModelMap != null && !activityOpenTimeModelMap.isEmpty()) {
                   Map<Integer, GmActivitySetting> gmActivitySettings = (Map)MapUtil.getOrDefault(((GameManagerData)gmWorldDao.jsonData).activities, activityType, HashMap.class);
                   ActivityInfo currentActivity = (ActivityInfo)activityData.timeRotates.get(activityType);

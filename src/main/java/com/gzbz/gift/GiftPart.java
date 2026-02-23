@@ -748,7 +748,7 @@ public class GiftPart extends PlayerPart {
 
    public TreeMap<Integer, ShopLimitModel> getShopLimits(int giftType, int activityId) {
       Map<Integer, Map<Integer, TreeMap<Integer, ShopLimitModel>>> tempHashMap = ApplicationContextProvider.<Integer, Map<Integer, TreeMap<Integer, ShopLimitModel>>>getModelPoolMap("customShopLimit");
-      return (TreeMap)MapUtil.getOrDefault((Map)MapUtil.getOrDefault(tempHashMap, giftType, ConcurrentHashMap.class), activityId, TreeMap.class);
+      return MapUtil.getOrDefault((Map)MapUtil.getOrDefault(tempHashMap, giftType, ConcurrentHashMap.class), activityId, TreeMap.class);
    }
 
    public void resetDaily() {

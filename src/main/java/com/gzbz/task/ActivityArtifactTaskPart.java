@@ -45,7 +45,7 @@ public class ActivityArtifactTaskPart extends AbstractActivityTaskPart {
          int day = this.getActivityDay();
          Map<Integer, TreeMap<Integer, ArtifactGridTaskModel>> taskModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customArtifactGridTask", this.getPlayerActivityId());
          if (taskModelMap != null && !taskModelMap.isEmpty() && taskModelMap.get(day) != null) {
-            for(ArtifactGridTaskModel artifactGridTaskModel : ((TreeMap)taskModelMap.get(day)).values()) {
+            for(ArtifactGridTaskModel artifactGridTaskModel : (taskModelMap.get(day)).values()) {
                this.createTask(artifactGridTaskModel.getTaskId());
             }
 

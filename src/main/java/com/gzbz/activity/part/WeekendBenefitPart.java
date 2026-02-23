@@ -112,7 +112,7 @@ public class WeekendBenefitPart extends AbstractActivityPart {
       PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
       Map<Integer, Map<Integer, TreeMap<Integer, ShopLimitModel>>> allShopLimitMap = ApplicationContextProvider.<Integer, Map<Integer, TreeMap<Integer, ShopLimitModel>>>getModelPoolMap("customShopLimit");
       Map<Integer, TreeMap<Integer, ShopLimitModel>> allWeekendGiftMap = (Map)MapUtil.getOrDefault(allShopLimitMap, 9, ConcurrentHashMap.class);
-      TreeMap<Integer, ShopLimitModel> curActivityGiftMap = (TreeMap)MapUtil.getOrDefault(allWeekendGiftMap, this.getPlayerActivityId(), TreeMap.class);
+      TreeMap<Integer, ShopLimitModel> curActivityGiftMap = MapUtil.getOrDefault(allWeekendGiftMap, this.getPlayerActivityId(), TreeMap.class);
       List<Integer> modelIds = new ArrayList(curActivityGiftMap.keySet());
 
       for(Integer giftIndex : playerActivityDao.weekendBenefitGifts()) {

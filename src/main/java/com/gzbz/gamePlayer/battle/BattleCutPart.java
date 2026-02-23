@@ -423,7 +423,7 @@ public class BattleCutPart extends PlayerPart {
          battleDao.scene.getBattleMsg().setResult(result);
          this.player.triggerTask(112, 0, 1L, 1);
          this.player.triggerTask(206, 0, (long)(cutHeroModel.getId() % 100), 0);
-         TreeMap<Integer, BattleCutHeroModel> curHardModelMap = (TreeMap)MapUtil.getOrDefault(cutHeroModelMap, cutHeroModel.getHard(), TreeMap.class);
+         TreeMap<Integer, BattleCutHeroModel> curHardModelMap = MapUtil.getOrDefault(cutHeroModelMap, cutHeroModel.getHard(), TreeMap.class);
          if (curHardModelMap.lastKey() != null && (Integer)curHardModelMap.lastKey() == battleDao.modelId) {
             this.player.triggerTask(315, cutHeroModel.getHard(), 1L, 1);
             dao.hardPass(cutHeroModel.getHard());
@@ -834,7 +834,7 @@ public class BattleCutPart extends PlayerPart {
 
    private void buildNextEnemy(BattleCutHeroDao dao, BattleCutHeroModel cutHeroModel) {
       Map<Integer, TreeMap<Integer, BattleCutHeroModel>> cutHeroModelMap = ApplicationContextProvider.<Integer, TreeMap<Integer, BattleCutHeroModel>>getModelPoolMap("customBattleCutHero");
-      TreeMap<Integer, BattleCutHeroModel> curHardModelMap = (TreeMap)MapUtil.getOrDefault(cutHeroModelMap, cutHeroModel.getHard(), TreeMap.class);
+      TreeMap<Integer, BattleCutHeroModel> curHardModelMap = MapUtil.getOrDefault(cutHeroModelMap, cutHeroModel.getHard(), TreeMap.class);
       BattleCutHeroModel nextModel = null;
 
       for(BattleCutHeroModel battleCutHeroModel : curHardModelMap.values()) {

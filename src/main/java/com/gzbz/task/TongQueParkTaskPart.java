@@ -38,7 +38,7 @@ public class TongQueParkTaskPart extends AbstractActivityTaskPart {
    public void trigger() {
       if (!this.isServerActivityInvalid()) {
          Map<Integer, TreeMap<Integer, Set<Integer>>> allTaskModelMap = ApplicationContextProvider.<Integer, TreeMap<Integer, Set<Integer>>>getModelPoolMap("customTongQueActivityTaskGroup");
-         TreeMap<Integer, Set<Integer>> groupTasksModelMap = (TreeMap)MapUtil.getOrDefault(allTaskModelMap, this.getServerActivityInfo().id, TreeMap.class);
+         TreeMap<Integer, Set<Integer>> groupTasksModelMap = MapUtil.getOrDefault(allTaskModelMap, this.getServerActivityInfo().id, TreeMap.class);
          if (!groupTasksModelMap.isEmpty()) {
             PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
             Map<Integer, TongQueActivityTaskModel> tongQueActivityTaskModelMap = ApplicationContextProvider.<Integer, TongQueActivityTaskModel>getModelPoolMap("TongQueActivityTask");
