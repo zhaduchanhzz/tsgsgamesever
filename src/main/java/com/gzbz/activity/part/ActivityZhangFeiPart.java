@@ -627,7 +627,7 @@ public class ActivityZhangFeiPart extends AbstractActivityPart {
       List<ResourceModel> switchResourceModels = new ArrayList();
       ActivityZhangFeiDao activityZhangFeiDao = (ActivityZhangFeiDao)this.player.getData("tb_activity_zhang_fei", this.player.getPlayerId());
 
-      for(EventHeroBonusRewardModel bonusRewardModel : (List)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
+      for(EventHeroBonusRewardModel bonusRewardModel : (List<EventHeroBonusRewardModel>)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
          if (!activityZhangFeiDao.pointReward.contains(bonusRewardModel.getId()) && activityZhangFeiDao.totalPoint >= bonusRewardModel.getBonus()) {
             for(ResourceModel resourceModel : bonusRewardModel.getReward()) {
                if (resourceModel.getType() == 2 && resourceModel.getId() == costId) {

@@ -81,7 +81,7 @@ public class ShiyiActivityPart extends AbstractActivityPart {
       Map<Integer, ShiyiSpecialOfferModel> shiyiSpecialOfferModelMap = this.player.getGameModelPool().getMap("shiyiSpecialOffer");
       Collection<ShiyiSpecialOfferModel> values = shiyiSpecialOfferModelMap.values();
 
-      for(ShiyiSpecialOfferModel shiyiSpecialOfferModel : (List)values.stream().sorted((o1, o2) -> o1.getId() - o2.getId()).collect(Collectors.toList())) {
+      for(ShiyiSpecialOfferModel shiyiSpecialOfferModel : (List<ShiyiSpecialOfferModel>)values.stream().sorted((o1, o2) -> o1.getId() - o2.getId()).collect(Collectors.toList())) {
          int lowMoney = shiyiSpecialOfferModel.getLowMoney();
          int maxMoney = shiyiSpecialOfferModel.getMaxMoney();
          if (maxMoney != -1) {

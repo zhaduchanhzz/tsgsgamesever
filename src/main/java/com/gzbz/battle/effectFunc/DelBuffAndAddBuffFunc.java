@@ -105,7 +105,7 @@ public class DelBuffAndAddBuffFunc extends EffectFunc {
 
             for(Entity invalidEntity : target.getScene().getPKTeam(oppositionForce).getEntityMap().values()) {
                if (!invalidEntity.isDead() && (model.getIsForce() != 0 || !invalidEntity.getStateManager().checkState((short)17)) && invalidEntity.getConditionPropertyManager().cleanBuffInvalid.containsKey(Integer.valueOf(buffModel.getSubCls()))) {
-                  for(ConditionProperty conditionProperty : (ArrayList)invalidEntity.getConditionPropertyManager().cleanBuffInvalid.get(Integer.valueOf(buffModel.getSubCls()))) {
+                  for(ConditionProperty conditionProperty : invalidEntity.getConditionPropertyManager().cleanBuffInvalid.get(Integer.valueOf(buffModel.getSubCls()))) {
                      rate += conditionProperty.skillEffectModel.getParam("rate");
                   }
                }

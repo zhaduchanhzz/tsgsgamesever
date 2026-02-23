@@ -1090,7 +1090,7 @@ public class UnionMgr {
       this.unionDao.warBoxes.clear();
       this.unionDao.updateOp();
 
-      for(UnionWarAttackLogDao unionWarAttackLogDao : new ArrayList(this.getAttackLogs())) {
+      for(UnionWarAttackLogDao unionWarAttackLogDao :this.getAttackLogs()) {
          this.unionMgrParent.getGameCachePool().deleteDao(unionWarAttackLogDao, false);
       }
 
@@ -1701,7 +1701,7 @@ public class UnionMgr {
    }
 
    public void removeGiveRedPacket(UnionRedPacketGiveDao unionRedPacketGiveDao) {
-      for(UnionRedPacketGetDao unionRedPacketGetDao : new ArrayList(this.getGotRedPacketRecord(unionRedPacketGiveDao.id).values())) {
+      for(UnionRedPacketGetDao unionRedPacketGetDao : this.getGotRedPacketRecord(unionRedPacketGiveDao.id).values()) {
          this.unionMgrParent.getGameCachePool().deleteDao(unionRedPacketGetDao, false);
       }
 
@@ -1876,7 +1876,7 @@ public class UnionMgr {
       if (unionHeadModelMap != null && unionHeadModelMap.containsKey(key)) {
          int curTime = DateUtil.getIntTime(System.currentTimeMillis());
 
-         for(UnionHeadModel unionHeadModel : (List)unionHeadModelMap.get(key)) {
+         for(UnionHeadModel unionHeadModel : (List<UnionHeadModel>)unionHeadModelMap.get(key)) {
             if (key != 0L || unionHeadModel.getType() == 1) {
                if (this.unionDao.hasHead.containsKey(unionHeadModel.getId())) {
                   int invalidTime = (Integer)this.unionDao.hasHead.get(unionHeadModel.getId());

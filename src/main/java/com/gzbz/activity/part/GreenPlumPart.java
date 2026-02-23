@@ -352,7 +352,7 @@ public class GreenPlumPart extends AbstractActivityPart {
          if (wineNum >= greenPlumMadevalue) {
             List<ResourceModel> addList = new ArrayList();
 
-            for(GreenPlumAwardModel awardModel : (List)this.player.getGameModelPool().getEntity("customGreenPlumAward", GreenPlumAwardModel.TYPE_3)) {
+            for(GreenPlumAwardModel awardModel : (List<GreenPlumAwardModel>)this.player.getGameModelPool().getEntity("customGreenPlumAward", GreenPlumAwardModel.TYPE_3)) {
                addList.addAll(awardModel.getRewards());
             }
 
@@ -550,7 +550,7 @@ public class GreenPlumPart extends AbstractActivityPart {
       }
 
       if (!playerActivityDao.greenPlumData.isTakePlumNum) {
-         for(GreenPlumAwardModel awardModel : (List)this.player.getGameModelPool().getEntity("customGreenPlumAward", GreenPlumAwardModel.TYPE_3)) {
+         for(GreenPlumAwardModel awardModel : (List<GreenPlumAwardModel>)this.player.getGameModelPool().getEntity("customGreenPlumAward", GreenPlumAwardModel.TYPE_3)) {
             for(ResourceModel reward : awardModel.getRewards()) {
                ResourceModel.addResourceToList(rewardList, reward);
             }

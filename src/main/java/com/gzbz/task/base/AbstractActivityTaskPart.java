@@ -148,7 +148,7 @@ public abstract class AbstractActivityTaskPart extends AbstractTaskPart {
                   int day = this.getActivityDay();
                   Map<Integer, TreeMap<Integer, ArtifactGridTaskModel>> taskModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customArtifactGridTask", model.getActivityId());
                   if (taskModelMap != null) {
-                     for(ArtifactGridTaskModel artifactGridTaskModel : ((TreeMap)MapUtil.getOrDefault(taskModelMap, day, TreeMap.class)).values()) {
+                     for(ArtifactGridTaskModel artifactGridTaskModel : (MapUtil.getOrDefault(taskModelMap, day, TreeMap.class)).values()) {
                         if (artifactGridTaskModel.getTaskId() == taskId) {
                            this.player.getOperationMgr().addReceiveAwardNewLog(this.player, 17, model.getActivityId(), "五魂之阵", day + "-" + artifactGridTaskModel.getGridNum(), day + "-" + artifactGridTaskModel.getGridNum(), 0, 0, 0);
                            break;
@@ -191,7 +191,7 @@ public abstract class AbstractActivityTaskPart extends AbstractTaskPart {
                      int day = this.getActivityDay();
                      Map<Integer, TreeMap<Integer, ArtifactGridTaskNewModel>> taskModelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customNewArtifactGridTask", model.getActivityId());
                      if (taskModelMap != null) {
-                        for(ArtifactGridTaskNewModel artifactGridTaskModel : ((TreeMap)MapUtil.getOrDefault(taskModelMap, day, TreeMap.class)).values()) {
+                        for(ArtifactGridTaskNewModel artifactGridTaskModel : (MapUtil.getOrDefault(taskModelMap, day, TreeMap.class)).values()) {
                            if (artifactGridTaskModel.getTaskId() == taskId) {
                               this.player.getOperationMgr().addReceiveAwardNewLog(this.player, 17, model.getActivityId(), "五魂之阵(新)", day + "-" + artifactGridTaskModel.getGridNum(), day + "-" + artifactGridTaskModel.getGridNum(), 0, 0, 0);
                               break;

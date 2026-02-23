@@ -517,11 +517,11 @@ public class ArtifactPart extends PlayerPart {
          info_builder.addLvPropertys(lvProtity.builder());
       }
 
-      for(PropertyModel refineProtity : (List)this.getRefineProperties().get(1)) {
+      for(PropertyModel refineProtity : (List<PropertyModel>)this.getRefineProperties().get(1)) {
          info_builder.addRefinepropertys(refineProtity.builder());
       }
 
-      for(PropertyModel refineProtity : (List)this.getRefineProperties().get(2)) {
+      for(PropertyModel refineProtity : (List<PropertyModel>)this.getRefineProperties().get(2)) {
          info_builder.addRefinepropertysAdd(refineProtity.builder());
       }
 

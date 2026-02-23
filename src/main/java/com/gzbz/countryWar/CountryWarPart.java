@@ -170,7 +170,7 @@ public class CountryWarPart extends PlayerPart {
                for(Map.Entry<Integer, List<TaskData>> entry : flagMap.entrySet()) {
                   boolean isHaveDoingTask = false;
 
-                  for(TaskData taskData : (List)entry.getValue()) {
+                  for(TaskData taskData : (List<TaskData>)entry.getValue()) {
                      if (taskData.state == 2) {
                         return true;
                      }
@@ -1308,7 +1308,7 @@ public class CountryWarPart extends PlayerPart {
          }
       }
 
-      List<CountryWarTaskModel> taskList = (List)this.player.getGameModelPool().getEntity("customCountryWarTask", 4);
+      List<CountryWarTaskModel> taskList = (List<CountryWarTaskModel>)this.player.getGameModelPool().getEntity("customCountryWarTask", 4);
       if (taskList != null && !taskList.isEmpty()) {
          CountryWarTaskPart countryWarTaskPart = (CountryWarTaskPart)this.player.getMgrPart(CountryWarTaskPart.class);
 

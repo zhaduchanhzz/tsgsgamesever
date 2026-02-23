@@ -575,7 +575,7 @@ public class HeroThemePart extends AbstractActivityPart {
       List<ResourceModel> switchResourceModels = new ArrayList();
       ActivityHeroThemeData themeData = this.getHeroThemeData();
 
-      for(EventHeroBonusRewardModel bonusRewardModel : (List)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
+      for(EventHeroBonusRewardModel bonusRewardModel : (List<EventHeroBonusRewardModel>)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
          if (!themeData.pointReward.contains(bonusRewardModel.getId()) && themeData.totalPoint >= bonusRewardModel.getBonus()) {
             for(ResourceModel resourceModel : bonusRewardModel.getReward()) {
                if (resourceModel.getType() == 2 && resourceModel.getId() == costId) {

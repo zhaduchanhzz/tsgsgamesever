@@ -97,7 +97,7 @@ public class GreenPlumTaskPart extends AbstractActivityTaskPart {
                int groupId = (Integer)enableGroupIdList.get(0);
                playerActivityDao.greenPlumData.taskGroup.add(groupId);
 
-               for(GreenPlumTaskGroupModel task : (List)map.get(groupId)) {
+               for(GreenPlumTaskGroupModel task : map.get(groupId)) {
                   super.createTask(task.getIncludeTaskId());
                }
 

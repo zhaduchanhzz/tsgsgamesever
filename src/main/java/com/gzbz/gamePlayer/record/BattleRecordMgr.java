@@ -1128,7 +1128,7 @@ public class BattleRecordMgr extends GameMgr {
    @TaskMethod
    public void levelPromoteRecord(int modelId, GamePlayer gamePlayer) {
       WorldDao<HashMap<Integer, ArrayList<String>>> worldDao = this.worldMgr.<HashMap<Integer, ArrayList<String>>>getWorldDao(GameDefine.WorldModule.WORLD_DAO_LEVEL_PROMOTE_RECORD);
-      ArrayList<String> list = (ArrayList)MapUtil.computeIfAbsent((Map)worldDao.jsonData, modelId, ArrayList.class);
+      ArrayList<String> list = (ArrayList)MapUtil.computeIfAbsent(worldDao.jsonData, modelId, ArrayList.class);
       int levelPromoteRecordNum = ApplicationContextProvider.getConfigInt("LevelPromoteRecordNum", 3);
       if (list.size() < levelPromoteRecordNum) {
          list.add(gamePlayer.getPlayerId() + "|" + DateUtil.getIntTime(System.currentTimeMillis()));
@@ -1200,7 +1200,7 @@ public class BattleRecordMgr extends GameMgr {
                for(String sectionInfo : sectionArr) {
                   String[] arr = sectionInfo.split("_");
                   int modelId = Integer.parseInt(arr[0]);
-                  ArrayList<String> list = (ArrayList)MapUtil.computeIfAbsent((Map)worldDao.jsonData, modelId, ArrayList.class);
+                  ArrayList<String> list = (ArrayList)MapUtil.computeIfAbsent(worldDao.jsonData, modelId, ArrayList.class);
                   if (list.size() < levelPromoteRecordNum) {
                      int addNum = levelPromoteRecordNum - list.size();
                      String[] records = arr[1].split(",");

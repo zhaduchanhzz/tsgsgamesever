@@ -166,7 +166,7 @@ public class DragonBoatPart extends AbstractActivityPart {
          if (wineNum >= greenPlumMadevalue) {
             List<ResourceModel> addList = new ArrayList();
 
-            for(GreenPlumAwardModel awardModel : (List)this.player.getGameModelPool().getEntity("customGreenPlumAward", GreenPlumAwardModel.TYPE_3)) {
+            for(GreenPlumAwardModel awardModel : (List<GreenPlumAwardModel>)this.player.getGameModelPool().getEntity("customGreenPlumAward", GreenPlumAwardModel.TYPE_3)) {
                addList.addAll(awardModel.getRewards());
             }
 

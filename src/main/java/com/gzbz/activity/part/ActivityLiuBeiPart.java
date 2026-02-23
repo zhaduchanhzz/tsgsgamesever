@@ -653,7 +653,7 @@ public class ActivityLiuBeiPart extends AddUpAndConRechargeActivityPart {
       List<ResourceModel> switchResourceModels = new ArrayList();
       ActivityLiuBeiDao activityLiuBeiDao = this.getDao();
 
-      for(EventHeroBonusRewardModel bonusRewardModel : (List)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
+      for(EventHeroBonusRewardModel bonusRewardModel : (List<EventHeroBonusRewardModel>)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
          if (!activityLiuBeiDao.pointReward.contains(bonusRewardModel.getId()) && activityLiuBeiDao.totalPoint >= bonusRewardModel.getBonus()) {
             for(ResourceModel resourceModel : bonusRewardModel.getReward()) {
                if (resourceModel.getType() == 2 && resourceModel.getId() == costId) {

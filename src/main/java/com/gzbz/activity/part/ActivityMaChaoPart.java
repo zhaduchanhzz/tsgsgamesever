@@ -657,7 +657,7 @@ public class ActivityMaChaoPart extends AddUpAndConRechargeActivityPart {
       List<ResourceModel> switchResourceModels = new ArrayList();
       ActivityMaChaoDao activityMaChaoDao = this.getDao();
 
-      for(EventHeroBonusRewardModel bonusRewardModel : (List)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
+      for(EventHeroBonusRewardModel bonusRewardModel : (List<EventHeroBonusRewardModel>)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
          if (!activityMaChaoDao.pointReward.contains(bonusRewardModel.getId()) && activityMaChaoDao.totalPoint >= bonusRewardModel.getBonus()) {
             for(ResourceModel resourceModel : bonusRewardModel.getReward()) {
                if (resourceModel.getType() == 2 && resourceModel.getId() == costId) {

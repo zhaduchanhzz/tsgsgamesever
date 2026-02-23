@@ -624,7 +624,7 @@ public class ActivitySiMaYiPart extends AbstractActivityPart {
       List<ResourceModel> switchResourceModels = new ArrayList();
       ActivitySiMaYiDao activitySiMaYiDao = (ActivitySiMaYiDao)this.player.getData("tb_activity_simayi", this.player.getPlayerId());
 
-      for(EventHeroBonusRewardModel bonusRewardModel : (List)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
+      for(EventHeroBonusRewardModel bonusRewardModel : (List<EventHeroBonusRewardModel>)this.player.getGameModelPool().getEntity("customEventHeroBonusReward", this.getPlayerActivityId())) {
          if (!activitySiMaYiDao.pointReward.contains(bonusRewardModel.getId()) && activitySiMaYiDao.totalPoint >= bonusRewardModel.getBonus()) {
             for(ResourceModel resourceModel : bonusRewardModel.getReward()) {
                if (resourceModel.getType() == 2 && resourceModel.getId() == costId) {

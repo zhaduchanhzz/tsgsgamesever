@@ -91,8 +91,8 @@ public class CheckDamageEvent extends ListenerChecker {
                return source == context.entity;
             }
 
-            EntitySkill entitySkill = (EntitySkill)event.getAction().getBlackboard().getSkillParam(4);
-            return source == context.entity && entitySkill != null && entitySkill.index == Integer.parseInt(context.exParams);
+            EntitySkill entitySkill1 = (EntitySkill)event.getAction().getBlackboard().getSkillParam(4);
+            return source == context.entity && entitySkill1 != null && entitySkill1.index == Integer.parseInt(context.exParams);
          case 10:
             return target == context.entity && this.checkPhysical(event);
          case 11:

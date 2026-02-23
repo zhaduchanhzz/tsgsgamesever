@@ -158,7 +158,7 @@ public class BattleTempleMgr extends GameMgr {
       down.setId(battleTempleModel.getId());
       Map<Integer, BattleTempleModel> map = player.getGameModelPool().getMap("battleTemple");
 
-      for(Integer id : new TreeSet(map.keySet())) {
+      for(Integer id : map.keySet()) {
          BattleTempleModel model = (BattleTempleModel)map.get(id);
          BattleTempleDao dao = (BattleTempleDao)this.gameCachePool.getData("tb_battle_temple", new Object[]{model.getId()});
          down.addInfo(this.packTempleInfo(dao));
@@ -211,7 +211,7 @@ public class BattleTempleMgr extends GameMgr {
       BattleDailyMsg.S2C_GetTempleInfo_6638.Builder down = BattleDailyMsg.S2C_GetTempleInfo_6638.newBuilder();
       Map<Integer, BattleTempleModel> map = player.getGameModelPool().getMap("battleTemple");
 
-      for(Integer id : new TreeSet(map.keySet())) {
+      for(Integer id : map.keySet()) {
          BattleTempleModel model = (BattleTempleModel)map.get(id);
          BattleTempleDao dao = (BattleTempleDao)this.gameCachePool.getData("tb_battle_temple", new Object[]{model.getId()});
          down.addInfo(this.packTempleInfo(dao));
@@ -275,7 +275,7 @@ public class BattleTempleMgr extends GameMgr {
    public void _slaveServerMergeBegin(int mainServerId) throws Exception {
       Map<Integer, BattleTempleModel> map = this.gameModelPool.getMap("battleTemple");
 
-      for(Integer id : new TreeSet(map.keySet())) {
+      for(Integer id : map.keySet()) {
          BattleTempleDao dao = (BattleTempleDao)this.gameCachePool.getData("tb_battle_temple", new Object[]{id});
          if (dao.playerCode > 0) {
             GamePlayer gamePlayer = this.worldMgr.getPlayerById(dao.playerCode);

@@ -466,7 +466,7 @@ public class TongqueTerracePart extends PlayerPart {
                tongqueTerraceDao.state = 2;
                tongqueTerraceDao.trystLv = 0;
 
-               for(TongQueSkillModel skillModel : (List)this.player.getGameModelPool().getEntity("customTongQueSkill", tongqueTerraceModel.getId())) {
+               for(TongQueSkillModel skillModel : (List<TongQueSkillModel>)this.player.getGameModelPool().getEntity("customTongQueSkill", tongqueTerraceModel.getId())) {
                   if (skillModel.getLv() == 1) {
                      tongqueTerraceDao.skillId = skillModel.getSkillId();
                      break;
