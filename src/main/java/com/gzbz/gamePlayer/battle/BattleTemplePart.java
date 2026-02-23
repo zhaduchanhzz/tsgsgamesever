@@ -102,7 +102,7 @@ public class BattleTemplePart extends PlayerPart {
       down.setId(battleTempleModel.getId());
       Map<Integer, BattleTempleModel> map = this.player.getGameModelPool().getMap("battleTemple");
 
-      for(Integer id : new TreeSet(map.keySet())) {
+      for(Integer id : map.keySet()) {
          BattleTempleModel model = (BattleTempleModel)map.get(id);
          BattleTempleDao dao = (BattleTempleDao)this.player.getGameCachePool().getData("tb_battle_temple", new Object[]{model.getId()});
          down.addInfo(this.packTempleInfo(dao));

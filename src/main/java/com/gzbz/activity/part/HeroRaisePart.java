@@ -307,12 +307,12 @@ public class HeroRaisePart extends AbstractActivityPart {
                if (!playerActivityDao.hasNext()) {
                   this.checkUpgrade(resourceModels);
                   if (playerDao.privilege_marquis > 0) {
-                     PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
+                     PlayerActivityDao playerActivityDao1 = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
                      Map<Integer, HeroRiseSharplyLevelModel> heroRiseSharplyLevelModelMap = ApplicationContextProvider.<Integer, HeroRiseSharplyLevelModel>getModelPoolMap("heroRiseSharplyLevel");
                      TreeMap<Integer, HeroRiseSharplyLevelModel> heroRiseSharplyLevelModelTreeMap = new TreeMap(heroRiseSharplyLevelModelMap);
 
                      for(HeroRiseSharplyLevelModel heroRiseSharplyLevelModel : heroRiseSharplyLevelModelTreeMap.values()) {
-                        if (heroRiseSharplyLevelModel.getLv() > playerActivityDao.heroRise.level) {
+                        if (heroRiseSharplyLevelModel.getLv() > playerActivityDao1.heroRise.level) {
                            if (heroRiseSharplyLevelModel.getLv() == (Integer)heroRiseSharplyLevelModelTreeMap.lastKey()) {
                               break;
                            }

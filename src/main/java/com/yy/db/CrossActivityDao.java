@@ -57,7 +57,7 @@ public class CrossActivityDao extends DBDao {
       for(Map.Entry<Integer, Map<Integer, ActivityInfo>> entry : this.activities.entrySet()) {
          stringBuffer.append(entry.getKey()).append("=");
 
-         for(Map.Entry<Integer, ActivityInfo> subEntry : ((Map)entry.getValue()).entrySet()) {
+         for(Map.Entry<Integer, ActivityInfo> subEntry : (entry.getValue()).entrySet()) {
             ActivityInfo activityInfo = (ActivityInfo)subEntry.getValue();
             stringBuffer.append(subEntry.getKey()).append(":");
             stringBuffer.append(activityInfo.drop).append("_");

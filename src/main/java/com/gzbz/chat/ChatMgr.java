@@ -2183,11 +2183,11 @@ public class ChatMgr extends GameMgr {
                anniversaryCelebrationPart.gmTest(order[2]);
                break;
             case "resethp":
-               AnniversaryCelebrationPart anniversaryCelebrationPart = (AnniversaryCelebrationPart)player.getMgrPart(AnniversaryCelebrationPart.class);
-               ActivityAnniversaryCelebrationDao dao = anniversaryCelebrationPart.getDao();
+               AnniversaryCelebrationPart anniversaryCelebrationPartz = (AnniversaryCelebrationPart)player.getMgrPart(AnniversaryCelebrationPart.class);
+               ActivityAnniversaryCelebrationDao dao = anniversaryCelebrationPartz.getDao();
                dao.buyHPTime = 0;
                dao.updateOp();
-               anniversaryCelebrationPart.sendTowerInfo(ActivityAnniversaryCelebrationMsg.TowerReturnType.OPEN_MAIN);
+               anniversaryCelebrationPartz.sendTowerInfo(ActivityAnniversaryCelebrationMsg.TowerReturnType.OPEN_MAIN);
                break;
             case "worldcup":
                WorldCupPart worldCupPart = (WorldCupPart)player.getMgrPart(WorldCupPart.class);
@@ -2262,13 +2262,13 @@ public class ChatMgr extends GameMgr {
                   attrMap.put(proType, new PropertyModel(proType, proWay, (long)proVal));
                }
 
-               GodBeastPart godBeastPart = (GodBeastPart)player.getMgrPart(GodBeastPart.class);
-               godBeastPart.gmAddGodBeast(godBeastId, attrMap);
+               GodBeastPart addgodbeast2 = (GodBeastPart)player.getMgrPart(GodBeastPart.class);
+               addgodbeast2.gmAddGodBeast(godBeastId, attrMap);
                break;
             case "godbeasthatch":
                int hatchNum = Integer.parseInt(order[2]);
-               GodBeastPart godBeastPart = (GodBeastPart)player.getMgrPart(GodBeastPart.class);
-               godBeastPart.gmGodBeastHatch(hatchNum);
+               GodBeastPart godbeasthatch1 = (GodBeastPart)player.getMgrPart(GodBeastPart.class);
+               godbeasthatch1.gmGodBeastHatch(hatchNum);
                break;
             case "remgodbeasttaskprogress":
                GodBeastTaskPart godBeastTaskPart = (GodBeastTaskPart)player.getMgrPart(GodBeastTaskPart.class);
@@ -2293,10 +2293,10 @@ public class ChatMgr extends GameMgr {
                eventHeroPart1.gmTriggerOptionGift();
                break;
             case "remeventherogift":
-               ActivityEventHeroPart eventHeroPart = (ActivityEventHeroPart)player.getMgrPart(ActivityEventHeroPart.class);
-               eventHeroPart.gmClearOptionGift();
-               ActivityKrEventHeroPart eventHeroPart1 = (ActivityKrEventHeroPart)player.getMgrPart(ActivityKrEventHeroPart.class);
-               eventHeroPart1.gmClearOptionGift();
+               ActivityEventHeroPart eventHeroPart1z = (ActivityEventHeroPart)player.getMgrPart(ActivityEventHeroPart.class);
+               eventHeroPart1z.gmClearOptionGift();
+               ActivityKrEventHeroPart eventHeroPart11 = (ActivityKrEventHeroPart)player.getMgrPart(ActivityKrEventHeroPart.class);
+               eventHeroPart11.gmClearOptionGift();
                break;
             case "actheroimprove":
                ActHeroImprovePart actHeroImprovePart = (ActHeroImprovePart)player.getMgrPart(ActHeroImprovePart.class);
@@ -2322,8 +2322,7 @@ public class ChatMgr extends GameMgr {
                player.pushPartTaskEx(QqBigPlayerPart.class, "updateWanKaInfo", new Object[]{score1, level, binding, discount, payReturnCount, isUsingCard, realLevel, cardExpireTs});
                break;
             case "updatepayreturncount":
-               int payReturnCount = Integer.parseInt(order[2]);
-               player.pushPartTaskEx(QqBigPlayerPart.class, "updatePayReturnCount", new Object[]{payReturnCount});
+               player.pushPartTaskEx(QqBigPlayerPart.class, "updatePayReturnCount", new Object[]{ Integer.parseInt(order[2])});
                break;
             case "wankahighorder":
                int day = Integer.parseInt(order[2]);
@@ -2336,11 +2335,11 @@ public class ChatMgr extends GameMgr {
                qqBigPlayerPart.pushTaskEx("addHighOrder", new Object[]{day});
                break;
             case "clearwankaweekgift":
-               QqBigPlayerPart qqBigPlayerPart = (QqBigPlayerPart)player.getMgrPart(QqBigPlayerPart.class);
-               QqBigPlayerDao wanKaDao = qqBigPlayerPart.getDao();
+               QqBigPlayerPart qqBigPlayerPart1 = (QqBigPlayerPart)player.getMgrPart(QqBigPlayerPart.class);
+               QqBigPlayerDao wanKaDao = qqBigPlayerPart1.getDao();
                wanKaDao.recWeekGifts.clear();
                wanKaDao.updateOp();
-               qqBigPlayerPart.sendInfoMsg();
+               qqBigPlayerPart1.sendInfoMsg();
                break;
             case "setcrossopenday":
                String[] actType_dayArr = order[2].split(",");
@@ -2357,9 +2356,8 @@ public class ChatMgr extends GameMgr {
                });
                break;
             case "uploadactcross":
-               int actType = Integer.parseInt(order[2]);
-               ActivityMgr activityMgr = (ActivityMgr)ApplicationContextProvider.getContext().getBean(ActivityMgr.class);
-               activityMgr.pushTask(() -> activityMgr.uploadCross(actType));
+               ActivityMgr activityMgrr = (ActivityMgr)ApplicationContextProvider.getContext().getBean(ActivityMgr.class);
+               activityMgrr.pushTask(() -> activityMgrr.uploadCross(Integer.parseInt(order[2])));
                break;
             case "setkrwelfareday":
                int day1 = Integer.parseInt(order[2]);

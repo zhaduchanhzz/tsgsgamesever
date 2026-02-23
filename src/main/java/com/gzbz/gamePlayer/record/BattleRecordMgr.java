@@ -838,8 +838,9 @@ public class BattleRecordMgr extends GameMgr {
             }
 
             if (Objects.nonNull(map)) {
+               Map<Object, BattleRecordExtendDao> finalMap = map;
                this.pushTask(() -> {
-                  for(Map.Entry<Object, BattleRecordExtendDao> entry : map.entrySet()) {
+                  for(Map.Entry<Object, BattleRecordExtendDao> entry : finalMap.entrySet()) {
                      ((BattleRecordExtendDao)entry.getValue()).setOpTime();
                      allObj2.put(entry.getKey(), entry.getValue());
                   }

@@ -30,7 +30,7 @@ public class ComDelBuffFunc extends EffectFunc {
             if (MapUtils.isEmpty(typeBuffsMap)) {
                return false;
             } else {
-               for(int id : new ArrayList(typeBuffsMap.keySet())) {
+               for(int id : typeBuffsMap.keySet()) {
                   target.getBuffManager().deleteBuffById(action, id);
                }
 

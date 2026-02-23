@@ -84,7 +84,7 @@ public class DuelTaskPart extends AbstractTaskPart {
                duelDao.updateOp();
                taskGroupDataList.add(taskGroupData);
 
-               for(WuDaoTaskModel wuDaoTaskModel : ((Map)entry.getValue()).values()) {
+               for(WuDaoTaskModel wuDaoTaskModel : (entry.getValue()).values()) {
                   TaskData taskData = this.getTask(wuDaoTaskModel.getId());
                   if (taskData != null) {
                      taskData.delete();
@@ -92,7 +92,7 @@ public class DuelTaskPart extends AbstractTaskPart {
                }
             }
 
-            for(WuDaoTaskModel wuDaoTaskModel : ((Map)entry.getValue()).values()) {
+            for(WuDaoTaskModel wuDaoTaskModel : (entry.getValue()).values()) {
                if (wuDaoTaskModel.getDay() == dayNum) {
                   this.createTask(wuDaoTaskModel.getId());
                }
@@ -219,7 +219,7 @@ public class DuelTaskPart extends AbstractTaskPart {
             duelDao.updateOp();
          }
 
-         for(WuDaoTaskModel taskModel : ((Map)wuDaoTaskModelMap.get(4)).values()) {
+         for(WuDaoTaskModel taskModel : (wuDaoTaskModelMap.get(4)).values()) {
             TaskData taskData = this.getTask(taskModel.getId());
             if (taskData == null) {
                updateFlag = true;

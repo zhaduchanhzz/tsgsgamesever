@@ -1063,31 +1063,32 @@ public class BattleChapterPart extends PlayerPart {
       }
    }
 
-//   public void gmTest(String orderStr) {
-//      String[] orders = orderStr.split(",");
-//      if (orders.length < 1) {
-//         this.logger.info("GM命令参数错误，oder={}", orderStr);
-//      } else {
-//         switch (cmd.toLowerCase()) {
-//            case "state":
-//               int type = Integer.parseInt(orders[1]);
-//               int accept = Integer.parseInt(orders[2]);
-//               String channelId = orders[3];
-//               this.battleChapterMgr.updatePlayerState(this.player.getPlayerId(), type, accept, channelId, "openId");
-//               break;
-//            case "dojob":
-//               int hour = Integer.parseInt(orders[1]);
-//               this.battleChapterMgr.pushTaskEx("doJob", new Object[]{hour});
-//               break;
-//            case "del":
-//               this.battleChapterMgr.clearPlayer(this.player.getPlayerId());
-//               break;
-//            case "send":
-//               this.battleChapterMgr.gmTest();
-//         }
-//
-//      }
-//   }
+   public void gmTest(String orderStr) {
+      String[] orders = orderStr.split(",");
+      if (orders.length < 1) {
+         this.logger.info("GM命令参数错误，oder={}", orderStr);
+      } else {
+         for (String cmd : orders){
+            switch (cmd.toLowerCase()) {
+               case "state":
+                  int type = Integer.parseInt(orders[1]);
+                  int accept = Integer.parseInt(orders[2]);
+                  String channelId = orders[3];
+                  this.battleChapterMgr.updatePlayerState(this.player.getPlayerId(), type, accept, channelId, "openId");
+                  break;
+               case "dojob":
+                  int hour = Integer.parseInt(orders[1]);
+                  this.battleChapterMgr.pushTaskEx("doJob", new Object[]{hour});
+                  break;
+               case "del":
+                  this.battleChapterMgr.clearPlayer(this.player.getPlayerId());
+                  break;
+               case "send":
+                  this.battleChapterMgr.gmTest();
+            }
+         }
+      }
+   }
 
    public int getChapterId() {
       BattleChapterDao battleChapterDao = (BattleChapterDao)this.player.getData("tb_battle_chapter", this.player.getPlayerId());

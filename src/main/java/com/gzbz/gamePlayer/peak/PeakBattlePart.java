@@ -1649,7 +1649,7 @@ public class PeakBattlePart extends PlayerPart {
       new HashMap();
       new HashMap();
 
-      for(PeakBattleTotalDao totalDao : this.worldMgr.getGameCachePool().getAllTableByList("tb_peak_battle_info")) {
+      for(PeakBattleTotalDao totalDao : new ArrayList<PeakBattleTotalDao>(this.worldMgr.getGameCachePool().getAllTableByList("tb_peak_battle_info"))) {
          PeakBattleTotalData data = totalDao.data;
          if (stepMap.containsKey(data.leftStep)) {
             for(Integer heroId : data.leftHeros) {

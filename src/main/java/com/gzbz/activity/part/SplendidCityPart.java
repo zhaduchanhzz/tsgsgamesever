@@ -1175,18 +1175,20 @@ public class SplendidCityPart extends AbstractActivityPart {
       }
    }
 
-//   public void gmTest(String orderStr) {
-//      String[] orders = orderStr.split(",");
-//      if (orders.length < 1) {
-//         this.logger.info("GM命令参数错误，oder={}", orderStr);
-//      } else {
-//         switch (cmd.toLowerCase()) {
-//            case "clearegg":
-//               this.resetEggs();
-//            default:
-//         }
-//      }
-//   }
+   public void gmTest(String orderStr) {
+      String[] orders = orderStr.split(",");
+      if (orders.length < 1) {
+         this.logger.info("GM命令参数错误，oder={}", orderStr);
+      } else {
+         for (String cmd : orders){
+            switch (cmd.toLowerCase()) {
+               case "clearegg":
+                  this.resetEggs();
+               default:
+            }
+         }
+      }
+   }
 
    public void resetEggs() {
       ActivitySplendidCityDao dao = this.getDao();

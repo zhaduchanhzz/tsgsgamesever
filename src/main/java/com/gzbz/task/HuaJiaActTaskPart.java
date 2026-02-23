@@ -58,7 +58,7 @@ public class HuaJiaActTaskPart extends AbstractActivityTaskPart {
             PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
             Map<Integer, HuaJiaActivityTaskNewModel> tongQueActivityTaskModelMap = ApplicationContextProvider.<Integer, HuaJiaActivityTaskNewModel>getModelPoolMap("HuaJiaActivityTaskNew");
             if (tongQueActivityTaskModelMap != null && !tongQueActivityTaskModelMap.isEmpty()) {
-               for(Integer taskId : (Set)MapUtil.getOrDefault(groupTasksModelMap, playerActivityDao.activityHuaJiaData.taskGroup, HashSet.class)) {
+               for(Integer taskId : MapUtil.getOrDefault(groupTasksModelMap, playerActivityDao.activityHuaJiaData.taskGroup, HashSet.class)) {
                   HuaJiaActivityTaskNewModel taskModel = (HuaJiaActivityTaskNewModel)tongQueActivityTaskModelMap.get(taskId);
                   if (taskModel != null) {
                      super.createTask(taskId);

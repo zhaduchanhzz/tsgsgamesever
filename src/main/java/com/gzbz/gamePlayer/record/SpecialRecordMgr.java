@@ -96,13 +96,13 @@ public class SpecialRecordMgr extends GameMgr {
                List<SpecialRecordData> finalList = new ArrayList();
 
                for(Map.Entry<String, List<SpecialRecordData>> next : this.allRecordDataMap.entrySet()) {
-                  ((List)next.getValue()).sort((o1, o2) -> NumberUtil.compare(o2.powerDif, o1.powerDif));
-                  int size = ((List)next.getValue()).size();
+                  ((List<SpecialRecordData>)next.getValue()).sort((o1, o2) -> NumberUtil.compare(o2.powerDif, o1.powerDif));
+                  int size = ((List<SpecialRecordData>)next.getValue()).size();
                   if (size > 2) {
-                     ((List)next.getValue()).removeAll(((List)next.getValue()).subList(2, size));
+                     ((List<SpecialRecordData>)next.getValue()).removeAll(((List)next.getValue()).subList(2, size));
                   }
 
-                  finalList.addAll((Collection)next.getValue());
+                  finalList.addAll((Collection<SpecialRecordData>)next.getValue());
                }
 
                this.allRecordDataMap.clear();

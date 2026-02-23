@@ -559,8 +559,8 @@ public class FriendPart extends PlayerPart {
                   }
                }
 
-               FriendDao friendDao = (FriendDao)this.player.getData("tb_friend", this.player.getPlayerId());
-               friendDao.updateOp();
+               FriendDao friendDao1 = (FriendDao)this.player.getData("tb_friend", this.player.getPlayerId());
+               friendDao1.updateOp();
                if (operateResult != 1) {
                   this.player.failure(operateResult);
                }

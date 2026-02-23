@@ -299,7 +299,7 @@ public class DemonRotateMgr extends GameMgr {
       DemonRotateBossDao bossDao = this.getBossDao();
       DemonRotateActivityMsg.S2C_OneHeroInfo_16331.Builder builder = DemonRotateActivityMsg.S2C_OneHeroInfo_16331.newBuilder();
       if (bossDao.heroMap.containsKey(heroPlayerId)) {
-         for(DemonBossData bossData : (ArrayList)bossDao.heroMap.get(heroPlayerId)) {
+         for(DemonBossData bossData : bossDao.heroMap.get(heroPlayerId)) {
             if (bossData.heroCode == heroCode) {
                HeroMirror mirror = HeroMirror.toHeroMirror(bossData.bytes);
                builder.setInfo(mirror.toBuilder());
@@ -390,7 +390,7 @@ public class DemonRotateMgr extends GameMgr {
 
       for(Map.Entry<Integer, ArrayList<DemonBossData>> entry : bossDao.heroMap.entrySet()) {
          if ((Integer)entry.getKey() != playerId) {
-            for(DemonBossData bossData : (ArrayList)entry.getValue()) {
+            for(DemonBossData bossData : entry.getValue()) {
                if (bossData.heroType == heroType && (existHero == null || !existHero.contains(bossData.heroFlag))) {
                   tempList.add(bossData);
                }

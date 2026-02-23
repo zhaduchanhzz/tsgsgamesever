@@ -309,7 +309,7 @@ public class HeroCardPart extends PlayerPart {
             if (needExp > dao.exp) {
                return false;
             } else {
-               for(Integer taskId : (List)ApplicationContextProvider.getModelPoolEntity("customHeroGameBoxLevel", dao.curLevel)) {
+               for(Integer taskId : (List<Integer>)ApplicationContextProvider.getModelPoolEntity("customHeroGameBoxLevel", dao.curLevel)) {
                   if (!this.isTaskComplete(taskId)) {
                      return this.player.failure(3000);
                   }
@@ -713,7 +713,7 @@ public class HeroCardPart extends PlayerPart {
       } else {
          Map<Integer, Integer> qualityFloorConfig = this.getQualityFloorConfig(boxLv);
          if (qualityFloorConfig != null && qualityFloorConfig.size() > 0) {
-            for(Integer quality : (List)qualityFloorConfig.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
+            for(Integer quality : (List<Integer>)qualityFloorConfig.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
                Integer floor = (Integer)qualityFloorConfig.getOrDefault(quality, 0);
                Integer curLotteryNum = (Integer)qualityLotteryNum.getOrDefault(quality, 0);
                if (floor > 0 && curLotteryNum >= floor) {

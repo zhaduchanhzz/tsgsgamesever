@@ -122,7 +122,7 @@ public class DragonStrengthenPart extends PlayerPart {
       for(Map.Entry<Integer, List<DragonStrengthenModel>> mapEntry : customModelMap.entrySet()) {
          int strengthenNum = dragonDiscipleExtend.breachLv + (dragonDiscipleExtend.tecPlace.contains(mapEntry.getKey()) ? 1 : 0);
 
-         for(DragonStrengthenModel dragonStrengthenModel : (List)mapEntry.getValue()) {
+         for(DragonStrengthenModel dragonStrengthenModel : mapEntry.getValue()) {
             int count = Math.min(dragonStrengthenModel.getMaxCount(), strengthenNum) - dragonStrengthenModel.getMinCount();
             if (count <= 0) {
                break;

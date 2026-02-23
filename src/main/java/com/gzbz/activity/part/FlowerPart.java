@@ -577,7 +577,7 @@ public class FlowerPart extends AbstractActivityPart {
             if (null != unionMgr) {
                Map<Integer, UnionMemberDao> unionMemberDaoMap = unionMgr.getUnionMembers();
 
-               for(Integer unionPlayerId : new HashSet(unionMemberDaoMap.keySet())) {
+               for(Integer unionPlayerId : unionMemberDaoMap.keySet()) {
                   GamePlayer unionPlayer = this.worldMgr.getPlayerById(unionPlayerId);
                   if (null != unionPlayer) {
                      PlayerDao unionPlayerDao = unionPlayer.getPlayerDao();

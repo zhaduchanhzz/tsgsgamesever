@@ -173,7 +173,7 @@ public class CopyPlayerTest extends PlayerPart {
             for(Map.Entry<Integer, Map<Integer, UnionTechnologyPlaceData>> entry : sourceUnionExtend.technology.entrySet()) {
                Map<Integer, UnionTechnologyPlaceData> dataMap = new HashMap();
 
-               for(Map.Entry<Integer, UnionTechnologyPlaceData> subEntry : ((Map)entry.getValue()).entrySet()) {
+               for(Map.Entry<Integer, UnionTechnologyPlaceData> subEntry : (entry.getValue()).entrySet()) {
                   UnionTechnologyPlaceData data = new UnionTechnologyPlaceData(((UnionTechnologyPlaceData)subEntry.getValue()).place, ((UnionTechnologyPlaceData)subEntry.getValue()).modelId, ((UnionTechnologyPlaceData)subEntry.getValue()).isLight);
                   dataMap.put(subEntry.getKey(), data);
                }

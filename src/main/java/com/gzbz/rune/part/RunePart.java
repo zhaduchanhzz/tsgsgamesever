@@ -648,7 +648,7 @@ public class RunePart extends PlayerPart {
       List<ResourceModel> rewardList = new ArrayList();
       Map<Integer, RuneExpRewardsModel> runeExpRewardMap = this.player.getGameModelPool().getMap("RuneExpRewards");
 
-      for(Integer e : (List)runeExpRewardMap.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
+      for(Integer e : runeExpRewardMap.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
          if (e > 0 && exp / e > 0) {
             int multiple = exp / e;
             exp -= multiple * e;

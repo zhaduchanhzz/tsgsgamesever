@@ -298,7 +298,7 @@ public class DemonMgr extends GameMgr {
       DemonBossDao bossDao = this.getBossDao();
       DemonMsg.S2C_OneHeroInfo_4831.Builder builder = DemonMsg.S2C_OneHeroInfo_4831.newBuilder();
       if (bossDao.heroMap.containsKey(heroPlayerId)) {
-         for(DemonBossData bossData : (ArrayList)bossDao.heroMap.get(heroPlayerId)) {
+         for(DemonBossData bossData : (ArrayList<DemonBossData>)bossDao.heroMap.get(heroPlayerId)) {
             if (bossData.heroCode == heroCode) {
                HeroMirror mirror = HeroMirror.toHeroMirror(bossData.bytes);
                builder.setInfo(mirror.toBuilder());
@@ -389,7 +389,7 @@ public class DemonMgr extends GameMgr {
 
       for(Map.Entry<Integer, ArrayList<DemonBossData>> entry : bossDao.heroMap.entrySet()) {
          if ((Integer)entry.getKey() != playerId) {
-            for(DemonBossData bossData : (ArrayList)entry.getValue()) {
+            for(DemonBossData bossData : (ArrayList<DemonBossData>)entry.getValue()) {
                if (bossData.heroType == heroType && (existHero == null || !existHero.contains(bossData.heroFlag))) {
                   tempList.add(bossData);
                }

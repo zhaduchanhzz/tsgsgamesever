@@ -334,7 +334,7 @@ public class EffectUtil implements Serializable {
                   }
 
                   if (Objects.nonNull(initiativeBuffCodes) && initiativeBuffCodes.size() > 0) {
-                     for(int code : new TreeSet(initiativeBuffCodes)) {
+                     for(int code : initiativeBuffCodes) {
                         Buff buff = target.getBuffManager().getBuff(code);
                         if (buff.caster != null && !buff.caster.isDead() && buff.caster != target) {
                            apportionSet.add(buff.caster);
@@ -380,7 +380,7 @@ public class EffectUtil implements Serializable {
                   }
 
                   if (Objects.nonNull(initiativeBuffCodes) && initiativeBuffCodes.size() > 0) {
-                     for(int code : new TreeSet(initiativeBuffCodes)) {
+                     for(int code : initiativeBuffCodes) {
                         Buff buff = target.getBuffManager().getBuff(code);
                         BuffModel initiativeModel = (BuffModel)ApplicationContextProvider.getModelPoolEntity("buff", buff.id);
                         if (buff.caster != null && !buff.caster.isDead() && buff.caster != target) {

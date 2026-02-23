@@ -97,7 +97,7 @@ public class EastWarTaskRotatePart extends AbstractActivityTaskPart {
                int groupId = (Integer)enableGroupIdList.get(0);
                playerActivityDao.eastWarRotateData.taskGroup.add(groupId);
 
-               for(EastWarTaskGroupModel task : (List)map.get(groupId)) {
+               for(EastWarTaskGroupModel task : map.get(groupId)) {
                   super.createTask(task.getIncludeTaskId());
                }
 

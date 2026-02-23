@@ -33,7 +33,7 @@ public class BuffSuckBlood extends Buff implements Listener {
       if (sourceEntity == this.source) {
          long damage = 0L;
 
-         for(Entity target : (ArrayList)event.getParam(14)) {
+         for(Entity target : (ArrayList<Entity>)event.getParam(14)) {
             damage += (Long)event.getAction().getBlackboard().getSkillParam(1200 + target.getBattlePos(), 0L);
          }
 

@@ -1568,36 +1568,37 @@ public class HeroPalacePart extends PlayerPart {
       if (orders.length < 1) {
          logger.info("GM命令参数错误，oder={}", orderStr);
       } else {
-         switch (cmd.toLowerCase()) {
-            case "clear":
-               this.gmClearData();
-               break;
-            case "main":
-               this.sendHeroPalaceData();
-               break;
-            case "comtask":
-               this.completeAllTask();
-               break;
-            case "share":
-               int code = Integer.parseInt(orders[1]);
-               this.shareHero(code);
-               break;
-            case "kingskill":
-               int open = Integer.parseInt(orders[1]);
-               this.gmSetKingSkill(open);
-               break;
-            case "destinyskill":
-               int lv = Integer.parseInt(orders[1]);
-               this.gmSetDestinySkill(lv);
-               break;
-            case "heroskill":
-               int heroSkillLv = Integer.parseInt(orders[1]);
-               this.gmSetHeroSkill(heroSkillLv);
-               break;
-            case "allskill":
-               this.gmSetAllSkill();
+         for (String cmd : orders){
+            switch (cmd.toLowerCase()) {
+               case "clear":
+                  this.gmClearData();
+                  break;
+               case "main":
+                  this.sendHeroPalaceData();
+                  break;
+               case "comtask":
+                  this.completeAllTask();
+                  break;
+               case "share":
+                  int code = Integer.parseInt(orders[1]);
+                  this.shareHero(code);
+                  break;
+               case "kingskill":
+                  int open = Integer.parseInt(orders[1]);
+                  this.gmSetKingSkill(open);
+                  break;
+               case "destinyskill":
+                  int lv = Integer.parseInt(orders[1]);
+                  this.gmSetDestinySkill(lv);
+                  break;
+               case "heroskill":
+                  int heroSkillLv = Integer.parseInt(orders[1]);
+                  this.gmSetHeroSkill(heroSkillLv);
+                  break;
+               case "allskill":
+                  this.gmSetAllSkill();
+            }
          }
-
       }
    }
 

@@ -329,7 +329,7 @@ public class FaQiuPart extends AbstractActivityPart {
             break;
          case "clear":
             faQiuDao.clear();
-            FaQiuTaskPart faQiuTaskPart = (FaQiuTaskPart)this.player.getMgrPart(FaQiuTaskPart.class);
+             faQiuTaskPart = (FaQiuTaskPart)this.player.getMgrPart(FaQiuTaskPart.class);
             faQiuTaskPart.getTasksMap().values().forEach(TaskData::delete);
             faQiuTaskPart.trigger();
       }

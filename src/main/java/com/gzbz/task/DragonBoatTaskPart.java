@@ -102,7 +102,7 @@ public class DragonBoatTaskPart extends AbstractActivityTaskPart {
                int groupId = (Integer)enableGroupIdList.get(0);
                playerActivityDao.dragonBoatData.taskGroup.add(groupId);
 
-               for(DragonBoatTaskGroupModel task : (List)map.get(groupId)) {
+               for(DragonBoatTaskGroupModel task : map.get(groupId)) {
                   super.createTask(task.getIncludeTaskId());
                }
 

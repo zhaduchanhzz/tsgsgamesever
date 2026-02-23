@@ -101,7 +101,7 @@ public class ShiyiActivityPart extends AbstractActivityPart {
       Map<Integer, ShiyiRewardGroupModel> shiyiRewardGroupModelMap = this.player.getGameModelPool().getMap("shiyiRewardGroup");
       Collection<ShiyiRewardGroupModel> values = shiyiRewardGroupModelMap.values();
 
-      for(ShiyiRewardGroupModel shiyiRewardGroupModel : (List)values.stream().sorted((o1, o2) -> o1.getId() - o2.getId()).collect(Collectors.toList())) {
+      for(ShiyiRewardGroupModel shiyiRewardGroupModel : values.stream().sorted((o1, o2) -> o1.getId() - o2.getId()).collect(Collectors.toList())) {
          int earlyTime = shiyiRewardGroupModel.getEarlyTime();
          int laterTime = shiyiRewardGroupModel.getLaterTime();
          if (laterTime != -1) {

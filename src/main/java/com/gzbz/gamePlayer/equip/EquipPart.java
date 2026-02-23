@@ -209,7 +209,7 @@ public class EquipPart extends PlayerPart {
    public void msgGetCompoundLog(EquipMsg.C2S_GetCompoundLog_7105 msg, String channelId) {
       EquipMsg.S2C_GetCompoundLog_7106.Builder builder = EquipMsg.S2C_GetCompoundLog_7106.newBuilder();
 
-      for(EquipCompoundLogDao logDao : this.player.getList("tb_equip_compound_log", this.player.getPlayerId())) {
+      for(EquipCompoundLogDao logDao : new ArrayList<EquipCompoundLogDao>(this.player.getList("tb_equip_compound_log", this.player.getPlayerId()))) {
          EquipMsg.LogInfo.Builder logInfo = EquipMsg.LogInfo.newBuilder();
 
          for(ResourceModel resourceModel : logDao.obtain) {

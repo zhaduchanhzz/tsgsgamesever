@@ -55,7 +55,7 @@ public class GlobalTaskPart extends PlayerPart {
       label56:
       for(AbstractTaskPart taskPart : this.player.getMgrParts(AbstractTaskPart.class)) {
          TaskDefine.TaskModule module = taskPart.getModule();
-         Map<Integer, Set<Integer>> moduleTaskTypeMap = (Map)MapUtil.getOrDefault((Map)MapUtil.getOrDefault(TRIGGERS, module.moduleId, ConcurrentHashMap.class), type, ConcurrentHashMap.class);
+         Map<Integer, Set<Integer>> moduleTaskTypeMap = (Map)MapUtil.getOrDefault(MapUtil.getOrDefault(TRIGGERS, module.moduleId, ConcurrentHashMap.class), type, ConcurrentHashMap.class);
          Iterator var11 = moduleTaskTypeMap.entrySet().iterator();
 
          while(true) {
@@ -85,7 +85,7 @@ public class GlobalTaskPart extends PlayerPart {
                break;
             }
 
-            for(Integer taskId : (Set)moduleTaskTypeEntry.getValue()) {
+            for(Integer taskId : moduleTaskTypeEntry.getValue()) {
                TaskData taskData = taskPart.getTask(taskId);
                if (taskData != null && taskData.state == CommonMsg.TaskState.STATE_DOING.getNumber() && this.handleTaskProcess(taskPart, taskData, op, opValue)) {
                   notifyModuleTasks.add(taskData);
@@ -187,7 +187,7 @@ public class GlobalTaskPart extends PlayerPart {
          int module = (Short)entry_1.getKey();
          if (taskPartMap.containsKey(module)) {
             AbstractTaskPart abstractTaskPart = (AbstractTaskPart)taskPartMap.get(module);
-            Map<Integer, Set<Integer>> targetTaskMap = (Map)MapUtil.getOrDefault((Map)entry_1.getValue(), 619, ConcurrentHashMap.class);
+            Map<Integer, Set<Integer>> targetTaskMap = (Map)MapUtil.getOrDefault(entry_1.getValue(), 619, ConcurrentHashMap.class);
             if (!targetTaskMap.isEmpty()) {
                List<TaskData> notifyTasks = new ArrayList();
 

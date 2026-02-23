@@ -328,7 +328,7 @@ public class ShopPart extends PlayerPart {
       ShopMsg.ShopRecordInfos.Builder recordInfos = ShopMsg.ShopRecordInfos.newBuilder();
       recordInfos.setShopId(msg.getShopId());
 
-      for(ShopBuyRecordData recordData : (List)MapUtil.getOrDefault(recordDao.recordDataMap, msg.getShopId(), ArrayList.class)) {
+      for(ShopBuyRecordData recordData : MapUtil.getOrDefault(recordDao.recordDataMap, msg.getShopId(), ArrayList.class)) {
          ShopMsg.RecordInfo.Builder info = ShopBuyRecordData.builderRecord(recordData);
          recordInfos.addRecordInfo(info);
       }

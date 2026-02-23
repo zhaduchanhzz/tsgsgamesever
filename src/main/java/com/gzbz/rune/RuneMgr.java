@@ -81,7 +81,7 @@ public class RuneMgr extends GameMgr {
       Map<Integer, RuneLotteryRecordDao> recordMap = this.getRecordMap();
       int count = 0;
       if (type == 1) {
-         for(Integer id : (Set)this.playerRecords.getOrDefault(playerId, new TreeSet())) {
+         for(Integer id : (Set<Integer>)this.playerRecords.getOrDefault(playerId, new TreeSet())) {
             RuneLotteryRecordDao runeLotteryRecordDao = (RuneLotteryRecordDao)recordMap.get(id);
             if (runeLotteryRecordDao != null) {
                ++count;

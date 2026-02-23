@@ -796,10 +796,12 @@ public class YuanXiao2022ActivityPart extends AbstractActivityPart {
       if (orders.length < 1) {
          this.logger.info("GM命令参数错误，oder={}", orderStr);
       } else {
-         switch (cmd.toLowerCase()) {
-            case "clearegg":
-               this.resetEggs();
-            default:
+         for (String cmd : orders){
+            switch (cmd.toLowerCase()) {
+               case "clearegg":
+                  this.resetEggs();
+               default:
+            }
          }
       }
    }
@@ -973,7 +975,7 @@ public class YuanXiao2022ActivityPart extends AbstractActivityPart {
                   String infoStr = "{0}~{1}次抽中目标奖励，{2}次，占比{3}%";
 
                   for(Map.Entry<Integer, DrawViewLogInfo> entry : drawViewLogInfoMap.entrySet()) {
-                     DrawViewLogInfo logInfo = (DrawViewLogInfo)entry.getValue();
+                      logInfo = (DrawViewLogInfo)entry.getValue();
                      double proportion = (double)logInfo.getGetFancyNum() / (double)round * (double)100.0F;
                      String format = MessageFormat.format(infoStr, logInfo.getStartNum(), logInfo.getEndNum(), logInfo.getGetFancyNum(), proportion);
                      this.logger.info(format);

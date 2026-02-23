@@ -331,7 +331,7 @@ public class HuaJiaActPart extends AbstractActivityPart {
          Map<Integer, GiftDao> giftDaoMap = giftPart.getBuyGifts(24);
          Map<Integer, List<ShopLimitModel>> allShopLimitMap = ApplicationContextProvider.<Integer, List<ShopLimitModel>>getModelPoolMap("customActivityShopLimit");
 
-         for(ShopLimitModel shopLimitModel : (List)MapUtil.getOrDefault(allShopLimitMap, activityInfo.id, ArrayList.class)) {
+         for(ShopLimitModel shopLimitModel : MapUtil.getOrDefault(allShopLimitMap, activityInfo.id, ArrayList.class)) {
             HuaJiaActMsg.GiftData.Builder giftData = HuaJiaActMsg.GiftData.newBuilder();
             giftData.setId(shopLimitModel.getId());
             ItemModel itemModel = (ItemModel)ApplicationContextProvider.getModelPoolEntity("item", shopLimitModel.getItemId());

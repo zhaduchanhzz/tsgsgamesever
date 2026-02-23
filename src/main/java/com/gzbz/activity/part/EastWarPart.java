@@ -511,7 +511,7 @@ public class EastWarPart extends AbstractActivityPart {
       if (eastWarAwardModelMap != null) {
          List<ResourceModel> addList = new ArrayList();
 
-         for(EastWarAwardModel awardModel : (List)eastWarAwardModelMap.get(EastWarAwardModel.TYPE_1)) {
+         for(EastWarAwardModel awardModel : eastWarAwardModelMap.get(EastWarAwardModel.TYPE_1)) {
             if (!playerActivityDao.eastWarData.secretKey.contains(awardModel.getId())) {
                for(ResourceModel reward : awardModel.getRewards()) {
                   ResourceModel.addResourceToList(addList, reward);
@@ -571,7 +571,7 @@ public class EastWarPart extends AbstractActivityPart {
       if (!playerActivityDao.eastWarData.isTakeEastWar) {
          Map<Integer, List<EastWarAwardModel>> modelMap = (Map)ApplicationContextProvider.getModelPoolEntity("customEastWarAward", this.getPlayerActivityId());
 
-         for(EastWarAwardModel awardModel : (List)modelMap.get(EastWarAwardModel.TYPE_3)) {
+         for(EastWarAwardModel awardModel : modelMap.get(EastWarAwardModel.TYPE_3)) {
             for(ResourceModel reward : awardModel.getRewards()) {
                ResourceModel.addResourceToList(rewardList, reward);
             }

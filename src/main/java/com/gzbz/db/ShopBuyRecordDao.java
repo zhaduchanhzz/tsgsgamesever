@@ -49,7 +49,7 @@ public class ShopBuyRecordDao extends DBDao {
       StringBuilder stringBuilder = new StringBuilder();
 
       for(Map.Entry<Integer, List<ShopBuyRecordData>> entry : this.recordDataMap.entrySet()) {
-         for(ShopBuyRecordData recordData : (List)entry.getValue()) {
+         for(ShopBuyRecordData recordData : entry.getValue()) {
             stringBuilder.append(recordData.toString()).append(",");
          }
       }

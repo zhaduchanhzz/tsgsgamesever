@@ -71,7 +71,7 @@ public class WarNorthMgr extends GameMgr {
       Map<Integer, SacrificeRecordDao> sacrificeRecordDaoMap = this.getRecordMap();
       int count = 0;
       if (type == 1) {
-         for(Integer id : (Set)this.playerRecords.getOrDefault(playerId, new TreeSet())) {
+         for(Integer id : (Set<Integer>)this.playerRecords.getOrDefault(playerId, new TreeSet())) {
             SacrificeRecordDao sacrificeRecordDao = (SacrificeRecordDao)sacrificeRecordDaoMap.get(id);
             if (sacrificeRecordDao != null) {
                ++count;

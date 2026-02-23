@@ -511,7 +511,7 @@ public class TongQueParkPart extends AbstractActivityPart {
          Map<Integer, GiftDao> giftDaoMap = giftPart.getBuyGifts(16);
          Map<Integer, List<ShopLimitModel>> allShopLimitMap = ApplicationContextProvider.<Integer, List<ShopLimitModel>>getModelPoolMap("customActivityShopLimit");
 
-         for(ShopLimitModel shopLimitModel : (List)MapUtil.getOrDefault(allShopLimitMap, activityInfo.id, ArrayList.class)) {
+         for(ShopLimitModel shopLimitModel : MapUtil.getOrDefault(allShopLimitMap, activityInfo.id, ArrayList.class)) {
             TongQueParkMsg.GiftData.Builder giftData = TongQueParkMsg.GiftData.newBuilder();
             giftData.setId(shopLimitModel.getId());
             ItemModel itemModel = (ItemModel)ApplicationContextProvider.getModelPoolEntity("item", shopLimitModel.getItemId());
