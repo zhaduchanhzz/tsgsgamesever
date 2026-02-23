@@ -87,7 +87,7 @@ public class HeroRankMgr extends GameMgr {
          int heroId = (Integer)entry.getKey();
          boolean isHavePlayerHeroId = false;
 
-         for(Map.Entry<Integer, HeroPowerData> subEntry : ((Map)entry.getValue()).entrySet()) {
+         for(Map.Entry<Integer, HeroPowerData> subEntry : (entry.getValue()).entrySet()) {
             if (((HeroPowerData)subEntry.getValue()).playerId == playerId) {
                isHavePlayerHeroId = true;
                if (heroPowerDataMap.containsKey(heroId)) {
@@ -145,7 +145,7 @@ public class HeroRankMgr extends GameMgr {
                      } else {
                         List<HeroPowerData> rankList = new ArrayList();
 
-                        for(HeroPowerData data : ((Map)((HeroRankData)worldDao.jsonData).rankMap.get(heroId)).values()) {
+                        for(HeroPowerData data : (((HeroRankData)worldDao.jsonData).rankMap.get(heroId)).values()) {
                            rankList.add(data);
                         }
 
@@ -274,7 +274,7 @@ public class HeroRankMgr extends GameMgr {
             info.setHeroId((Integer)entry.getKey());
             List<Integer> delList = new ArrayList();
 
-            for(Map.Entry<Integer, HeroPowerData> subEntry : ((Map)entry.getValue()).entrySet()) {
+            for(Map.Entry<Integer, HeroPowerData> subEntry : (entry.getValue()).entrySet()) {
                GamePlayer gamePlayer = this.worldMgr.getPlayerById((Integer)subEntry.getKey());
                if (gamePlayer != null && ((HeroPowerData)subEntry.getValue()).power != 0L) {
                   CommonMsg.MapDataIL.Builder power = CommonMsg.MapDataIL.newBuilder();
@@ -403,7 +403,7 @@ public class HeroRankMgr extends GameMgr {
          boolean isHavePlayerHero = false;
          List<HeroPowerData> list = new ArrayList();
 
-         for(Map.Entry<Integer, HeroPowerData> entry : ((Map)((HeroRankData)worldDao.jsonData).rankMap.get(heroId)).entrySet()) {
+         for(Map.Entry<Integer, HeroPowerData> entry : (((HeroRankData)worldDao.jsonData).rankMap.get(heroId)).entrySet()) {
             if ((Integer)entry.getKey() == playerId) {
                isHavePlayerHero = true;
             }
