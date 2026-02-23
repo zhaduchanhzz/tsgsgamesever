@@ -202,7 +202,7 @@ public class StarMapDefine {
 
    public static List<Integer> getStarSelectGroupList(int type) {
       List<Integer> allGroupList = new ArrayList();
-      Set<Integer> groups = (Set)ApplicationContextProvider.getModelPoolEntity("customStarSelectSkill", type);
+      Set<Integer> groups = ApplicationContextProvider.getModelPoolEntity("customStarSelectSkill", type);
       if (null == groups) {
          logger.error("StarSelectSkill 配置有误 typeLimit缺少:{}", type);
          return allGroupList;

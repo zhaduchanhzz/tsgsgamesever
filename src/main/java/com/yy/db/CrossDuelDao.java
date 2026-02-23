@@ -73,7 +73,7 @@ public class CrossDuelDao extends DBDao {
    public Map<Integer, Integer> topWorshipLike = new HashMap();
 
    public void loadPointGuess(String data) {
-      this.pointGuessList = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.pointGuessList = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePointGuess() {
@@ -81,7 +81,7 @@ public class CrossDuelDao extends DBDao {
    }
 
    public void loadPointRound(String data) {
-      this.pointRoundList = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.pointRoundList = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePointRound() {
@@ -89,7 +89,7 @@ public class CrossDuelDao extends DBDao {
    }
 
    public void loadPassGuess(String data) {
-      this.passGuessList = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.passGuessList = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePassGuess() {

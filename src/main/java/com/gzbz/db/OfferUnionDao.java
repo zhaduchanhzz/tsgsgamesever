@@ -54,7 +54,7 @@ public class OfferUnionDao extends DBDao {
    public String offerRecord;
 
    public void loadMembers(String str) {
-      this.members = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.members = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveMembers() {

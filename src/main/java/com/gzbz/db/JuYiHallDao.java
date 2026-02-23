@@ -75,7 +75,7 @@ public class JuYiHallDao extends DBDao {
    public Timestamp unlockTime = new Timestamp(System.currentTimeMillis());
 
    public void loadHeroTeam(String data) {
-      this.heroTeam = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.heroTeam = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveHeroTeam() {

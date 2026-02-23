@@ -77,7 +77,7 @@ public class FriendDao extends DBDao {
    public int updateTime;
 
    public void loadFriends(String str) {
-      this.friends = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.friends = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveFriends() {
@@ -85,7 +85,7 @@ public class FriendDao extends DBDao {
    }
 
    public void loadBlacks(String str) {
-      this.blacks = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.blacks = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveBlacks() {
@@ -93,7 +93,7 @@ public class FriendDao extends DBDao {
    }
 
    public void loadBeInvites(String str) {
-      this.beInvites = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.beInvites = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveBeInvites() {
@@ -101,7 +101,7 @@ public class FriendDao extends DBDao {
    }
 
    public void loadChats(String str) {
-      this.chats = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.chats = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveChats() {

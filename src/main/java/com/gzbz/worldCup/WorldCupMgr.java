@@ -178,7 +178,7 @@ public class WorldCupMgr extends GameMgr {
    }
 
    private void switchGuessData(WorldCupData worldCupData, int oriTeam, int newTeam) {
-      Set<Integer> oriTotalSet = (Set)worldCupData.totalMap.getOrDefault(oriTeam, new HashSet());
+      Set<Integer> oriTotalSet = worldCupData.totalMap.getOrDefault(oriTeam, new HashSet());
       worldCupData.totalMap.put(newTeam, oriTotalSet);
       worldCupData.totalMap.remove(oriTeam);
       long oriTotalCoin = (Long)worldCupData.totalCoinMap.getOrDefault(oriTeam, 0L);
@@ -273,7 +273,7 @@ public class WorldCupMgr extends GameMgr {
                      guessData.winId = winId;
                      guessData.wagerNum = guessInfoMsg.getWager();
                      worldCupDao.worldCupData.guessDataMap.put(gamePlayer.getPlayerId(), guessData);
-                     ((Set)worldCupDao.worldCupData.totalMap.computeIfAbsent(winId, (v) -> new HashSet())).add(gamePlayer.getPlayerId());
+                     (worldCupDao.worldCupData.totalMap.computeIfAbsent(winId, (v) -> new HashSet())).add(gamePlayer.getPlayerId());
                      long coins = (Long)worldCupDao.worldCupData.totalCoinMap.getOrDefault(winId, 0L);
                      worldCupDao.worldCupData.totalCoinMap.put(winId, coins + (long)guessInfoMsg.getWager());
                      worldCupDao.updateOp();
@@ -394,7 +394,7 @@ public class WorldCupMgr extends GameMgr {
          if (worldCupData.state == 2) {
             worldCupData.state = 3;
             worldCupDao.updateOp();
-            Set<Integer> playerSet = (Set)worldCupData.totalMap.get(worldCupData.win);
+            Set<Integer> playerSet = worldCupData.totalMap.get(worldCupData.win);
             if (playerSet != null && playerSet.size() != 0) {
                WorldCupMainModel worldCupMainModel = (WorldCupMainModel)ApplicationContextProvider.getModelPoolEntity("WorldCupMain", worldCupDao.id);
                if (worldCupMainModel != null) {
@@ -436,7 +436,7 @@ public class WorldCupMgr extends GameMgr {
    private void checkGuessTask(int id) {
       WorldCupDao worldCupDao = this.getWorldCupDao(id);
       if (worldCupDao != null && worldCupDao.worldCupData != null) {
-         Set<Integer> playerSet = (Set)worldCupDao.worldCupData.totalMap.get(worldCupDao.worldCupData.win);
+         Set<Integer> playerSet = worldCupDao.worldCupData.totalMap.get(worldCupDao.worldCupData.win);
          if (playerSet != null && playerSet.size() != 0) {
             for(int playerId : playerSet) {
                GamePlayer gamePlayer = this.worldMgr.getPlayerById(playerId);

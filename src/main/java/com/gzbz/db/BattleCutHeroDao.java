@@ -139,7 +139,7 @@ public class BattleCutHeroDao extends DBDao {
    }
 
    public void loadSupports(String data) {
-      this.supports = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.supports = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveSupports() {

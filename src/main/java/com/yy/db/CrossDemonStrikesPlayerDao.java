@@ -68,7 +68,7 @@ public class CrossDemonStrikesPlayerDao extends DBDao {
    public Map<Integer, Integer> randomReward = new HashMap();
 
    public void loadOccupyCities(String data) {
-      this.occupyCities = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.occupyCities = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveOccupyCities() {

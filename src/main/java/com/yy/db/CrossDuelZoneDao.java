@@ -138,7 +138,7 @@ public class CrossDuelZoneDao extends CrossZoneDao {
    }
 
    public void loadUploadGodHeroServers(String data) {
-      this.uploadGodHeroServers = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.uploadGodHeroServers = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveUploadGodHeroServers() {
@@ -146,7 +146,7 @@ public class CrossDuelZoneDao extends CrossZoneDao {
    }
 
    public void loadUploadBossServers(String data) {
-      this.uploadBossServers = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.uploadBossServers = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveUploadBossServers() {
@@ -170,7 +170,7 @@ public class CrossDuelZoneDao extends CrossZoneDao {
    }
 
    public void loadSubGroups(String data) {
-      this.subGroups = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.subGroups = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveSubGroups() {
@@ -178,7 +178,7 @@ public class CrossDuelZoneDao extends CrossZoneDao {
    }
 
    public void loadPointGuess(String data) {
-      this.pointGuessList = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.pointGuessList = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePointGuess() {
@@ -186,7 +186,7 @@ public class CrossDuelZoneDao extends CrossZoneDao {
    }
 
    public void loadPointRound(String data) {
-      this.pointRoundList = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.pointRoundList = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePointRound() {
@@ -194,7 +194,7 @@ public class CrossDuelZoneDao extends CrossZoneDao {
    }
 
    public void loadPassGuess(String data) {
-      this.passGuessList = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.passGuessList = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePassGuess() {

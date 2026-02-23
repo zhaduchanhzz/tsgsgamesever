@@ -49,7 +49,7 @@ public class CrossSupremePvpZoneDao extends CrossPvpZoneBaseDao {
          StringBuilder stringBuilder = new StringBuilder();
 
          for(Map.Entry<Integer, Set<Integer>> entry : this.teamMap.entrySet()) {
-            Set<Integer> playerIds = (Set)entry.getValue();
+            Set<Integer> playerIds = entry.getValue();
             if (!playerIds.isEmpty()) {
                stringBuilder.append(entry.getKey()).append(":");
 

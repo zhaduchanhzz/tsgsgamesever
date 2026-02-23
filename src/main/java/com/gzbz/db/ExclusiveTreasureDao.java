@@ -37,7 +37,7 @@ public class ExclusiveTreasureDao extends DBDao {
    public Map<Integer, ExclusiveResetData> resetData = new HashMap();
 
    public void loadRise(String data) {
-      this.heroIds = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.heroIds = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveRise() {

@@ -211,7 +211,7 @@ public class HeroUpgradePart extends PlayerPart {
                Map.Entry<Integer, LinkedList<HashSet<Integer>>> partEntry = (Map.Entry)sortArry.getFirst();
                Integer heroId = (Integer)partEntry.getKey();
                LinkedList<HashSet<Integer>> hightMaterialHeroList = (LinkedList)partEntry.getValue();
-               Set<Integer> partSetLast = (Set)hightMaterialHeroList.getLast();
+               Set<Integer> partSetLast = hightMaterialHeroList.getLast();
                logger.info("从 [{}] 拆到四星狗粮组：", heroId);
 
                for(Integer code : partSetLast) {
@@ -262,7 +262,7 @@ public class HeroUpgradePart extends PlayerPart {
 
                   LinkedList<HashSet<Integer>> originHeroList = (LinkedList)originEntry.getValue();
                   if (!originHeroList.isEmpty()) {
-                     Set<Integer> originSetFirst = (Set)originHeroList.getFirst();
+                     Set<Integer> originSetFirst = originHeroList.getFirst();
                      List<Integer> hightCodesLit = new ArrayList();
 
                      for(Integer code : hightMaterialSet) {

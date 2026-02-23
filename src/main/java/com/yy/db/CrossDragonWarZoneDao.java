@@ -22,7 +22,7 @@ public class CrossDragonWarZoneDao extends CrossZoneDao {
    public Set<Integer> subGroups = new HashSet();
 
    public void loadSubGroups(String data) {
-      this.subGroups = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.subGroups = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveSubGroups() {

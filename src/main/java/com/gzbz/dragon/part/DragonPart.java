@@ -67,7 +67,7 @@ public class DragonPart extends PlayerPart {
       if (!this.checkCrossDragonOpen(msg)) {
          DragonDiscipleMsg.S2C_TeamInviteList_13404.Builder resp = DragonDiscipleMsg.S2C_TeamInviteList_13404.newBuilder();
          if (this.dragonMgr.playerInviteTeamMap.containsKey(this.player.getPlayerId())) {
-            for(Integer teamId : (Set)this.dragonMgr.playerInviteTeamMap.get(this.player.getPlayerId())) {
+            for(Integer teamId : this.dragonMgr.playerInviteTeamMap.get(this.player.getPlayerId())) {
                DragonDiscipleMsg.TeamInfo teamBuilder = this.dragonMgr.buildTeamMsg(teamId);
                if (teamBuilder != null) {
                   resp.addInviteTeamList(teamBuilder);

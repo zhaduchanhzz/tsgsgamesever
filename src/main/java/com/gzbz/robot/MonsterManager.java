@@ -286,7 +286,7 @@ public class MonsterManager {
          }
       }
 
-      return (Set)resultModelList.stream().map((modelx) -> modelx.getId()).collect(Collectors.toSet());
+      return resultModelList.stream().map((modelx) -> modelx.getId()).collect(Collectors.toSet());
    }
 
    public boolean isSameBaseSkill(int sourceSkill, int targetSkill) {

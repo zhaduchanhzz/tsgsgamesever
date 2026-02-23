@@ -47,7 +47,7 @@ public class ReportDao extends DBDao {
    public Set<Integer> reportIdSet = new HashSet();
 
    public void loadReports(String str) {
-      this.reportIdSet = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.reportIdSet = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveReports() {

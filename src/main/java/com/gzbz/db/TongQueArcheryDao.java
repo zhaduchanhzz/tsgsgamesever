@@ -38,7 +38,7 @@ public class TongQueArcheryDao extends DBDao {
    public boolean isGotExArrow;
 
    public void loadPrays(String data) {
-      this.prays = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.prays = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePrays() {

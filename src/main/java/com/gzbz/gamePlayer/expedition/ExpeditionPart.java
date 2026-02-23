@@ -317,7 +317,7 @@ public class ExpeditionPart extends PlayerPart {
                   expeditionDao.gridBuffs.put(grid, buffs);
                   expeditionDao.updateOp();
                } else {
-                  buffs = (Set)expeditionDao.gridBuffs.get(grid);
+                  buffs = expeditionDao.gridBuffs.get(grid);
                }
 
                ExpeditionMsg.S2C_BuffList_10316.Builder builder = ExpeditionMsg.S2C_BuffList_10316.newBuilder();

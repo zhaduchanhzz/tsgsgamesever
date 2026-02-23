@@ -659,7 +659,7 @@ public class ActivityMgr extends GameMgr {
                while(iterator.hasNext()) {
                   int playerId = (Integer)iterator.next();
                   if (this.worldMgr.getPlayerMap().containsKey(playerId) && !this.worldMgr.getOnlinePlayerMap().containsKey(playerId)) {
-                     ((Set)MapUtil.computeIfAbsent(this.offLinePlayerActivityMap, playerId, HashSet.class)).add(activityId);
+                     (MapUtil.computeIfAbsent(this.offLinePlayerActivityMap, playerId, HashSet.class)).add(activityId);
                   } else {
                      iterator.remove();
                      activityJoinDao.updateOp();
@@ -695,7 +695,7 @@ public class ActivityMgr extends GameMgr {
       if (!this.offLinePlayerActivityMap.isEmpty() && WorldMgr.serverState.get() == 1) {
          Map<Integer, ActivityJoinDao> activityJoinDaoMap = this.getActivityJoinMap();
          int playerId = (Integer)this.offLinePlayerActivityMap.lastKey();
-         Set<Integer> activities = (Set)this.offLinePlayerActivityMap.remove(playerId);
+         Set<Integer> activities = this.offLinePlayerActivityMap.remove(playerId);
          Iterator<Integer> iterator = activities.iterator();
 
          while(iterator.hasNext()) {

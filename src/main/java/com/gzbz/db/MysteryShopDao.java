@@ -62,7 +62,7 @@ public class MysteryShopDao extends DBDao {
    }
 
    public void loadFastIds(String string) {
-      this.fastIds = (Set)JsonUtil.jsonToBean(string, HashSet.class);
+      this.fastIds = JsonUtil.jsonToBean(string, HashSet.class);
    }
 
    public String saveFastIds() {

@@ -73,7 +73,7 @@ public class StoneCircleDao extends DBDao {
    public Map<Integer, EmployHeroData> arraying = new HashMap();
 
    public void loadSupport(String data) {
-      this.supportHero = (Set)JsonUtil.jsonToBean(data, Set.class);
+      this.supportHero = JsonUtil.jsonToBean(data, Set.class);
    }
 
    public String saveSupport() {

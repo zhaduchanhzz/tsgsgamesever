@@ -43,7 +43,7 @@ public class TongQueParkTaskPart extends AbstractActivityTaskPart {
             PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
             Map<Integer, TongQueActivityTaskModel> tongQueActivityTaskModelMap = ApplicationContextProvider.<Integer, TongQueActivityTaskModel>getModelPoolMap("TongQueActivityTask");
             if (tongQueActivityTaskModelMap != null && !tongQueActivityTaskModelMap.isEmpty()) {
-               for(Integer taskId : (Set)MapUtil.getOrDefault(groupTasksModelMap, playerActivityDao.activityTongQueParkData.taskGroup, HashSet.class)) {
+               for(Integer taskId : MapUtil.getOrDefault(groupTasksModelMap, playerActivityDao.activityTongQueParkData.taskGroup, HashSet.class)) {
                   TongQueActivityTaskModel taskModel = (TongQueActivityTaskModel)tongQueActivityTaskModelMap.get(taskId);
                   if (taskModel != null) {
                      super.createTask(taskId);

@@ -35,7 +35,7 @@ public class CrossDragonTeamServerDao extends DBDao {
    public Set<Integer> openServers = new HashSet();
 
    public void loadInfo(String data) {
-      this.openServers = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.openServers = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveInfo() {

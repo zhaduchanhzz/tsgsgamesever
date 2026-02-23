@@ -114,7 +114,7 @@ public class CrossCommentDao extends DBDao {
 
    public void loadReportPlayerListJson(String itemStr) {
       if (!StringUtils.isEmpty(itemStr)) {
-         this.reportPlayerList = (Set)JsonUtil.jsonToBean(itemStr, HashSet.class);
+         this.reportPlayerList = JsonUtil.jsonToBean(itemStr, HashSet.class);
       }
    }
 

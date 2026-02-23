@@ -35,7 +35,7 @@ public class PlayerReportDao extends DBDao {
    public void loadReportInfo(String str) {
       Map<Integer, String> map = JsonUtil.jsonToMap(str, Integer.class, String.class);
       map.entrySet().forEach((entry) -> {
-         Set<Integer> v = (Set)JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
+         Set<Integer> v = JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
          this.reportInfo.put(entry.getKey(), v);
       });
    }

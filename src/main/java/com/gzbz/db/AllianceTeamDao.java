@@ -110,7 +110,7 @@ public class AllianceTeamDao extends DBDao {
    }
 
    public void loadInvitePlayers(String str) {
-      this.invitePlayers = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.invitePlayers = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveInvitePlayers() {
@@ -118,7 +118,7 @@ public class AllianceTeamDao extends DBDao {
    }
 
    public void loadApplyPlayers(String str) {
-      this.applyPlayers = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.applyPlayers = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveApplyPlayers() {

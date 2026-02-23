@@ -160,7 +160,7 @@ public class UnionMemberDao extends DBDao {
    }
 
    public void loadWorships(String data) {
-      this.worships = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.worships = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveWorships() {
@@ -176,7 +176,7 @@ public class UnionMemberDao extends DBDao {
    }
 
    public void loadRedPacketGot(String data) {
-      this.redPacketGot = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.redPacketGot = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveRedPacketGot() {

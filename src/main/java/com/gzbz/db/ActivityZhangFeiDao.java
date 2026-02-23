@@ -74,7 +74,7 @@ public class ActivityZhangFeiDao extends DBDao {
    public int enjoyId = 0;
 
    public void loadFightReward(String str) {
-      this.fightReward = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.fightReward = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveFightReward() {
@@ -82,7 +82,7 @@ public class ActivityZhangFeiDao extends DBDao {
    }
 
    public void loadPointReward(String str) {
-      this.pointReward = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.pointReward = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String savePointReward() {

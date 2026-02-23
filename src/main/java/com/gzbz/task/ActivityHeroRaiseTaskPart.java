@@ -60,7 +60,7 @@ public class ActivityHeroRaiseTaskPart extends AbstractActivityTaskPart {
          taskGroupBuilder.setEndTime(((TaskGroupData)entry.getValue()).end);
          TreeMap<Integer, Set<Integer>> taskGroupMap = (TreeMap)allTaskGroup.get(entry.getKey());
          if (taskGroupMap != null && taskGroupMap.containsKey(((TaskGroupData)entry.getValue()).group)) {
-            Set<Integer> tasks = (Set)MapUtil.getOrDefault(taskGroupMap, ((TaskGroupData)entry.getValue()).group, HashSet.class);
+            Set<Integer> tasks = MapUtil.getOrDefault(taskGroupMap, ((TaskGroupData)entry.getValue()).group, HashSet.class);
 
             for(TaskData taskData : taskDataMap.values()) {
                if (tasks.contains(taskData.id)) {
@@ -171,7 +171,7 @@ public class ActivityHeroRaiseTaskPart extends AbstractActivityTaskPart {
 
                taskGroup.end = endTime;
 
-               for(int taskId : (Set)MapUtil.getOrDefault(taskGroupMap, taskGroup.group, HashSet.class)) {
+               for(int taskId : MapUtil.getOrDefault(taskGroupMap, taskGroup.group, HashSet.class)) {
                   super.createTask(taskId);
                }
 

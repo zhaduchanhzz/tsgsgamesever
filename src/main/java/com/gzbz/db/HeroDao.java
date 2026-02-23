@@ -4281,7 +4281,7 @@ public class HeroDao extends DBDao {
             RuneItem runeItem = (RuneItem)runeItemEntry.getValue();
             RuneMainModel runeMainModel = this.getRuneMainModel(runeItem.id);
             if (null != runeMainModel) {
-               ((Set)suitId_runeIdSetMap.computeIfAbsent(runeMainModel.getSuitId(), (k) -> new HashSet())).add(runeMainModel.getId());
+               (suitId_runeIdSetMap.computeIfAbsent(runeMainModel.getSuitId(), (k) -> new HashSet())).add(runeMainModel.getId());
                ((List)suitId_runeQualityListMap.computeIfAbsent(runeMainModel.getSuitId(), (k) -> new ArrayList())).add(runeMainModel.getQuality());
                Integer minRuneQuality = (Integer)suitId_minRuneQuality.get(runeMainModel.getSuitId());
                if (null == minRuneQuality) {
@@ -4296,7 +4296,7 @@ public class HeroDao extends DBDao {
 
          for(Map.Entry<Integer, Set<Integer>> suitId_runeIds : suitId_runeIdSetMap.entrySet()) {
             Integer suitId = (Integer)suitId_runeIds.getKey();
-            Set<Integer> runeIds = (Set)suitId_runeIds.getValue();
+            Set<Integer> runeIds = suitId_runeIds.getValue();
             if (runeIds.size() >= 2) {
                int suitSkill2RuneQuality = 0;
                if (runeIds.size() == 2) {

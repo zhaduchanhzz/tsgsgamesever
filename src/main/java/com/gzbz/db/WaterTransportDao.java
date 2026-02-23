@@ -171,7 +171,7 @@ public class WaterTransportDao extends DBDao {
    }
 
    public void loadApplySupports(String data) {
-      this.applySupports = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.applySupports = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveApplySupports() {
@@ -203,7 +203,7 @@ public class WaterTransportDao extends DBDao {
    }
 
    public void loadSupports(String data) {
-      this.supports = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.supports = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveSupports() {

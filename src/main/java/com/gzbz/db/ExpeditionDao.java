@@ -189,7 +189,7 @@ public class ExpeditionDao extends DBDao {
    public void loadGridBuffs(String str) {
       Map<Integer, String> map = JsonUtil.jsonToMap(str, Integer.class, String.class);
       map.entrySet().forEach((entry) -> {
-         Set<Integer> v = (Set)JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
+         Set<Integer> v = JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
          this.gridBuffs.put(entry.getKey(), v);
       });
    }
@@ -293,7 +293,7 @@ public class ExpeditionDao extends DBDao {
    }
 
    public void loadChooseFriend(String str) {
-      this.chooseFriend = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.chooseFriend = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveChooseFriend() {

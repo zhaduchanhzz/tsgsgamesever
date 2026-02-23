@@ -329,7 +329,7 @@ public class PlayerActivityDao extends DBDao {
    }
 
    public void loadDailyRechargeReward(String str) {
-      this.dailyRechargeReward = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.dailyRechargeReward = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveDailyRechargeReward() {
@@ -337,7 +337,7 @@ public class PlayerActivityDao extends DBDao {
    }
 
    public void loadRechargeTotalDayReward(String str) {
-      this.rechargeTotalDayReward = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.rechargeTotalDayReward = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveRechargeTotalDayReward() {
@@ -345,7 +345,7 @@ public class PlayerActivityDao extends DBDao {
    }
 
    public void loadBoxReward(String boxStr) {
-      this.boxReward = (Set)JsonUtil.jsonToBean(boxStr, HashSet.class);
+      this.boxReward = JsonUtil.jsonToBean(boxStr, HashSet.class);
    }
 
    public String saveBoxReward() {

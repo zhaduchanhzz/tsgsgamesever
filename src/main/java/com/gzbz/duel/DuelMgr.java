@@ -86,7 +86,7 @@ public class DuelMgr extends GameMgr {
 
    public void initData() {
       for(DuelBossRecordDao duelBossRecordDao : this.getBossRecords().values()) {
-         ((Set)MapUtil.computeIfAbsent(this.playerBossRecords, duelBossRecordDao.playerId, HashSet.class)).add(duelBossRecordDao.id);
+         (MapUtil.computeIfAbsent(this.playerBossRecords, duelBossRecordDao.playerId, HashSet.class)).add(duelBossRecordDao.id);
       }
 
    }
@@ -243,7 +243,7 @@ public class DuelMgr extends GameMgr {
       duelBossRecordDao.totalDamage = totalDamage;
       duelBossRecordDao.challengeTime = System.currentTimeMillis();
       this.gameCachePool.insertDao(duelBossRecordDao, true);
-      ((Set)MapUtil.computeIfAbsent(this.playerBossRecords, playerId, HashSet.class)).add(duelBossRecordDao.id);
+      (MapUtil.computeIfAbsent(this.playerBossRecords, playerId, HashSet.class)).add(duelBossRecordDao.id);
       DuelBattleMsg.S2C_DuelBossRecord_4526.Builder msg = DuelBattleMsg.S2C_DuelBossRecord_4526.newBuilder();
       msg.setRecord(duelBossRecordDao.buildMsg());
       this.onLineMgr.pushTaskEx("onlineBroadcast", new Object[]{msg.build()});
@@ -256,7 +256,7 @@ public class DuelMgr extends GameMgr {
          for(long recordId : recordIds.subList(maxRecord, recordIds.size())) {
             DuelBossRecordDao delRecordDao = (DuelBossRecordDao)duelBossRecordDaoMap.get(recordId);
             if (delRecordDao != null) {
-               ((Set)this.playerBossRecords.get(delRecordDao.playerId)).remove(recordId);
+               (this.playerBossRecords.get(delRecordDao.playerId)).remove(recordId);
                this.gameCachePool.deleteDao(delRecordDao, true);
             }
          }
@@ -273,7 +273,7 @@ public class DuelMgr extends GameMgr {
       List<DuelBattleMsg.BattleBossRecord> duelBossRecordDaoList = new ArrayList();
       Set<Long> recordIds;
       if (playerId > 0) {
-         recordIds = (Set)this.playerBossRecords.get(playerId);
+         recordIds = this.playerBossRecords.get(playerId);
       } else {
          recordIds = duelBossRecordDaoMap.keySet();
       }

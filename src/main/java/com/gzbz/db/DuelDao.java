@@ -136,7 +136,7 @@ public class DuelDao extends DBDao {
    }
 
    public void loadTaskBoxReward(String data) {
-      this.taskBoxReward = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.taskBoxReward = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveTaskBoxReward() {
@@ -152,7 +152,7 @@ public class DuelDao extends DBDao {
    }
 
    public void loadTodayHistoryLike(String data) {
-      this.todayHistoryLike = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.todayHistoryLike = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveTodayHistoryLike() {
@@ -160,7 +160,7 @@ public class DuelDao extends DBDao {
    }
 
    public void loadTodayWorshipLike(String data) {
-      this.todayWorshipLike = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.todayWorshipLike = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveTodayWorshipLike() {
@@ -168,7 +168,7 @@ public class DuelDao extends DBDao {
    }
 
    public void loadShowRankStage(String data) {
-      this.showRankStage = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.showRankStage = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveShowRankStage() {

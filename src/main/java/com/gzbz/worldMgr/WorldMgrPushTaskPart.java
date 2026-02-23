@@ -244,7 +244,7 @@ public class WorldMgrPushTaskPart extends PartParent {
          HeroSupportDao heroSupportDao = (HeroSupportDao)entry.getValue();
          if (!heroSupportDao.isAuto) {
             String[] keyArr = ((String)entry.getKey()).split("-");
-            ((Set)MapUtil.computeIfAbsent(tempMap, Integer.parseInt(keyArr[0]), HashSet.class)).add(entry.getKey());
+            (MapUtil.computeIfAbsent(tempMap, Integer.parseInt(keyArr[0]), HashSet.class)).add(entry.getKey());
          }
       }
 
@@ -258,7 +258,7 @@ public class WorldMgrPushTaskPart extends PartParent {
             try {
                this.worldMgr.getGameDBPool().query("DELETE FROM tb_hero_support WHERE moduleId=? AND isAuto=0", new Object[]{supportModule.module});
 
-               for(String supportKey : (Set)MapUtil.getOrDefault(tempMap, supportModule.module, HashSet.class)) {
+               for(String supportKey : MapUtil.getOrDefault(tempMap, supportModule.module, HashSet.class)) {
                   heroSupportDaoMap.remove(supportKey);
                }
             } catch (Throwable throwable) {

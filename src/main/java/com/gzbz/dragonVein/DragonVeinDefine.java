@@ -357,7 +357,7 @@ public class DragonVeinDefine {
                      List<KeyValFun> keyValFunList = new ArrayList();
 
                      for(DragonVeinAttriGroupAModel groupAModel : attrGroupAList) {
-                        Set<Integer> ways = (Set)type_ways.getOrDefault(groupAModel.getAddProsType(), new HashSet());
+                        Set<Integer> ways = type_ways.getOrDefault(groupAModel.getAddProsType(), new HashSet());
                         if (!ways.contains(groupAModel.getAddProsWay())) {
                            keyValFunList.add(new KeyValFun(groupAModel.getId(), groupAModel.getWeight()));
                         }
@@ -369,7 +369,7 @@ public class DragonVeinDefine {
                      int addAttrVal = (attrGroupAModel.getAddProsNum() + attrGroupAModel.getAddProsFactor() * soulLv) * waveNum / 10000;
                      HeroTypeAttrData heroTypeAttrData = new HeroTypeAttrData(attrGroupAModel.getAddProsHeroType(), attrGroupAModel.getAddProsType(), attrGroupAModel.getAddProsWay(), addAttrVal);
                      attrList.add(heroTypeAttrData);
-                     ((Set)type_ways.computeIfAbsent(attrGroupAModel.getAddProsType(), (v) -> new HashSet())).add(attrGroupAModel.getAddProsWay());
+                     (type_ways.computeIfAbsent(attrGroupAModel.getAddProsType(), (v) -> new HashSet())).add(attrGroupAModel.getAddProsWay());
                   }
                } else if (groupAOrB == 2) {
                   List<DragonVeinAttriGroupBModel> attrGroupBList = getAttrGroupBList(hasAttrGroup, soulQuality);
@@ -377,7 +377,7 @@ public class DragonVeinDefine {
                      List<KeyValFun> keyValFunList = new ArrayList();
 
                      for(DragonVeinAttriGroupBModel groupBModel : attrGroupBList) {
-                        Set<Integer> ways = (Set)type_ways.getOrDefault(groupBModel.getAddProsType(), new HashSet());
+                        Set<Integer> ways = type_ways.getOrDefault(groupBModel.getAddProsType(), new HashSet());
                         if (!ways.contains(groupBModel.getAddProsWay())) {
                            keyValFunList.add(new KeyValFun(groupBModel.getId(), groupBModel.getWeight()));
                         }
@@ -389,7 +389,7 @@ public class DragonVeinDefine {
                      int addAttrVal = attrGroupBModel.getAddProsNum() * waveNum / 10000;
                      HeroTypeAttrData heroTypeAttrData = new HeroTypeAttrData(attrGroupBModel.getAddProsHeroType(), attrGroupBModel.getAddProsType(), attrGroupBModel.getAddProsWay(), addAttrVal);
                      attrList.add(heroTypeAttrData);
-                     ((Set)type_ways.computeIfAbsent(attrGroupBModel.getAddProsType(), (v) -> new HashSet())).add(attrGroupBModel.getAddProsWay());
+                     (type_ways.computeIfAbsent(attrGroupBModel.getAddProsType(), (v) -> new HashSet())).add(attrGroupBModel.getAddProsWay());
                   }
                }
             }

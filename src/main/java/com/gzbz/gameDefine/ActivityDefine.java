@@ -232,7 +232,7 @@ public class ActivityDefine {
       for(Map.Entry<Integer, Set<RankDefine.RankModule>> entry : CROSS_ACTIVITY.entrySet()) {
          Integer actType = (Integer)entry.getKey();
 
-         for(RankDefine.RankModule rankModule : (Set)entry.getValue()) {
+         for(RankDefine.RankModule rankModule : entry.getValue()) {
             if (rankModule.id == rankType) {
                return actType;
             }
@@ -247,20 +247,20 @@ public class ActivityDefine {
    }
 
    static {
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(57, (v) -> new HashSet())).add(RankDefine.RankModule.SPLENDID_CITY);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(56, (v) -> new HashSet())).add(RankDefine.RankModule.FLOWER_FIRE_BATTLE);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(75, (v) -> new HashSet())).add(RankDefine.RankModule.LABOR_DAY_ARCHERY);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(79, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_ZONG_QING_PICK);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(34, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_GUO_QING);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(84, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_DECISIVE_BATTLE);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(91, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_FIRST_YEAR);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(94, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_CHINESE_NEW_YEAR);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(101, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_GOLD_WEEK);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(105, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_SEND_FLOWER);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(105, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_GET_FLOWER);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(107, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_CHILD_PICK);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(108, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_BROOD_RANK);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(113, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_SUMMER_FESTIVAL_FISHING);
-      ((Set)CROSS_ACTIVITY.computeIfAbsent(115, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_WINTER_ACT_FISHING);
+      (CROSS_ACTIVITY.computeIfAbsent(57, (v) -> new HashSet())).add(RankDefine.RankModule.SPLENDID_CITY);
+      (CROSS_ACTIVITY.computeIfAbsent(56, (v) -> new HashSet())).add(RankDefine.RankModule.FLOWER_FIRE_BATTLE);
+      (CROSS_ACTIVITY.computeIfAbsent(75, (v) -> new HashSet())).add(RankDefine.RankModule.LABOR_DAY_ARCHERY);
+      (CROSS_ACTIVITY.computeIfAbsent(79, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_ZONG_QING_PICK);
+      (CROSS_ACTIVITY.computeIfAbsent(34, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_GUO_QING);
+      (CROSS_ACTIVITY.computeIfAbsent(84, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_DECISIVE_BATTLE);
+      (CROSS_ACTIVITY.computeIfAbsent(91, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_FIRST_YEAR);
+      (CROSS_ACTIVITY.computeIfAbsent(94, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_CHINESE_NEW_YEAR);
+      (CROSS_ACTIVITY.computeIfAbsent(101, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_GOLD_WEEK);
+      (CROSS_ACTIVITY.computeIfAbsent(105, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_SEND_FLOWER);
+      (CROSS_ACTIVITY.computeIfAbsent(105, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_GET_FLOWER);
+      (CROSS_ACTIVITY.computeIfAbsent(107, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_CHILD_PICK);
+      (CROSS_ACTIVITY.computeIfAbsent(108, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_BROOD_RANK);
+      (CROSS_ACTIVITY.computeIfAbsent(113, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_SUMMER_FESTIVAL_FISHING);
+      (CROSS_ACTIVITY.computeIfAbsent(115, (v) -> new HashSet())).add(RankDefine.RankModule.ACTIVITY_WINTER_ACT_FISHING);
    }
 }

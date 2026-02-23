@@ -55,7 +55,7 @@ public class ActivityThanksgivingDao extends DBDao {
    }
 
    public void loadPointReward(String data) {
-      this.pointReward = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.pointReward = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String savePointReward() {

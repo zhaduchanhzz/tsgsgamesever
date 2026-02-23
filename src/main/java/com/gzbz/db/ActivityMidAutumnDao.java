@@ -139,7 +139,7 @@ public class ActivityMidAutumnDao extends AddUpAndConBaseDao {
    public List<Integer> hadRewards = new ArrayList();
 
    public void loadGotSite(String data) {
-      this.gotSite = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.gotSite = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveGotSite() {
@@ -147,7 +147,7 @@ public class ActivityMidAutumnDao extends AddUpAndConBaseDao {
    }
 
    public void loadFinishShow(String data) {
-      this.finishShow = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.finishShow = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveFinishShow() {
@@ -155,7 +155,7 @@ public class ActivityMidAutumnDao extends AddUpAndConBaseDao {
    }
 
    public void loadRewardIds(String data) {
-      this.rewardIds = (Set)JsonUtil.jsonToBean(data, HashSet.class);
+      this.rewardIds = JsonUtil.jsonToBean(data, HashSet.class);
    }
 
    public String saveRewardIds() {

@@ -120,7 +120,7 @@ public class ShopWarcraft extends AbstractShop {
 
    public void autoBuyItems() {
       ShopDao shopDao = (ShopDao)this.player.getData("tb_shop", this.player.getPlayerId());
-      Set<Integer> autoIdSet = (Set)shopDao.autoMap.get(this.getShopId());
+      Set<Integer> autoIdSet = shopDao.autoMap.get(this.getShopId());
       Set<Integer> actualBuy = new HashSet();
       if (!CollectionUtils.isEmpty(autoIdSet)) {
          for(ShopItemData shopItemData : this.getShopList()) {

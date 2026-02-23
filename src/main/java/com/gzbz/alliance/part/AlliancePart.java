@@ -78,7 +78,7 @@ public class AlliancePart extends PlayerPart {
       if (this.player.isSystemOpen(2030)) {
          AllianceMsg.S2C_TeamInviteList_11606.Builder resp = AllianceMsg.S2C_TeamInviteList_11606.newBuilder();
 
-         for(int teamId : (Set)MapUtil.getOrDefault(this.allianceMgr.playerInviteTeamMap, this.player.getPlayerId(), ConcurrentHashSet.class)) {
+         for(int teamId : MapUtil.getOrDefault(this.allianceMgr.playerInviteTeamMap, this.player.getPlayerId(), ConcurrentHashSet.class)) {
             AllianceMsg.TeamInfo teamBuilder = this.allianceMgr.buildTeamMsg(teamId);
             if (teamBuilder != null) {
                resp.addInviteTeamList(teamBuilder);

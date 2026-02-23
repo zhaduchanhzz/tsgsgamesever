@@ -94,11 +94,11 @@ public class AllianceMgr extends GameMgr {
          }
 
          for(int playerId : allianceTeamDao.invitePlayers) {
-            ((Set)MapUtil.computeIfAbsent(this.playerInviteTeamMap, playerId, ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
+            (MapUtil.computeIfAbsent(this.playerInviteTeamMap, playerId, ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
          }
 
          for(int playerId : allianceTeamDao.applyPlayers) {
-            ((Set)MapUtil.computeIfAbsent(this.playerApplyTeamMap, playerId, ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
+            (MapUtil.computeIfAbsent(this.playerApplyTeamMap, playerId, ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
          }
       }
 
@@ -373,7 +373,7 @@ public class AllianceMgr extends GameMgr {
          }
       } else {
          allianceTeamDao.applyPlayers.add(applyPlayer.getPlayerId());
-         ((Set)MapUtil.computeIfAbsent(this.playerApplyTeamMap, applyPlayer.getPlayerId(), ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
+         (MapUtil.computeIfAbsent(this.playerApplyTeamMap, applyPlayer.getPlayerId(), ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
          GamePlayer captainPlayer = this.worldMgr.getOnlinePlayer(allianceTeamDao.captain);
          if (captainPlayer != null) {
             AllianceMsg.S2C_TeamApplyNotify_11652.Builder notifyMsg = AllianceMsg.S2C_TeamApplyNotify_11652.newBuilder();
@@ -395,7 +395,7 @@ public class AllianceMgr extends GameMgr {
       } else {
          allianceTeamDao.applyPlayers.remove(applyPlayer.getPlayerId());
          allianceTeamDao.invitePlayers.remove(applyPlayer.getPlayerId());
-         ((Set)MapUtil.getOrDefault(this.playerApplyTeamMap, applyPlayer.getPlayerId(), ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
+         (MapUtil.getOrDefault(this.playerApplyTeamMap, applyPlayer.getPlayerId(), ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
          allianceTeamDao.updateOp();
       }
 
@@ -417,7 +417,7 @@ public class AllianceMgr extends GameMgr {
          allianceTeamDao.players.put(joinPlayer.getPlayerId(), false);
          if (allianceTeamDao.players.size() >= 3) {
             for(int playerId : allianceTeamDao.invitePlayers) {
-               ((Set)MapUtil.getOrDefault(this.playerInviteTeamMap, playerId, ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
+               (MapUtil.getOrDefault(this.playerInviteTeamMap, playerId, ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
             }
 
             allianceTeamDao.invitePlayers.clear();
@@ -471,8 +471,8 @@ public class AllianceMgr extends GameMgr {
 
                while(iterator.hasNext()) {
                   Map.Entry<Integer, Set<Integer>> entry = (Map.Entry)iterator.next();
-                  ((Set)entry.getValue()).remove(allianceTeamDao.teamId);
-                  if (((Set)entry.getValue()).isEmpty()) {
+                  (entry.getValue()).remove(allianceTeamDao.teamId);
+                  if ((entry.getValue()).isEmpty()) {
                      iterator.remove();
                   }
                }
@@ -513,7 +513,7 @@ public class AllianceMgr extends GameMgr {
    @TaskMethod
    public void invite(GamePlayer invitePlayer, AllianceTeamDao allianceTeamDao) {
       if (allianceTeamDao.players.size() < 3) {
-         ((Set)MapUtil.computeIfAbsent(this.playerInviteTeamMap, invitePlayer.getPlayerId(), ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
+         (MapUtil.computeIfAbsent(this.playerInviteTeamMap, invitePlayer.getPlayerId(), ConcurrentHashSet.class)).add(allianceTeamDao.teamId);
          allianceTeamDao.invitePlayers.add(invitePlayer.getPlayerId());
          allianceTeamDao.updateOp();
          if (invitePlayer.isLogin()) {
@@ -609,7 +609,7 @@ public class AllianceMgr extends GameMgr {
                }
 
                for(int playerId : allianceTeamDao.invitePlayers) {
-                  ((Set)MapUtil.getOrDefault(this.playerInviteTeamMap, playerId, ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
+                  (MapUtil.getOrDefault(this.playerInviteTeamMap, playerId, ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
                }
 
                allianceTeamDao.invitePlayers.clear();
@@ -1327,8 +1327,8 @@ public class AllianceMgr extends GameMgr {
          if (!isAgree) {
             allianceTeamDao.applyPlayers.remove(player.getPlayerId());
             allianceTeamDao.invitePlayers.remove(player.getPlayerId());
-            ((Set)MapUtil.getOrDefault(this.playerInviteTeamMap, player.getPlayerId(), ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
-            ((Set)MapUtil.getOrDefault(this.playerApplyTeamMap, player.getPlayerId(), ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
+            (MapUtil.getOrDefault(this.playerInviteTeamMap, player.getPlayerId(), ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
+            (MapUtil.getOrDefault(this.playerApplyTeamMap, player.getPlayerId(), ConcurrentHashSet.class)).remove(allianceTeamDao.teamId);
             allianceTeamDao.updateOp();
          } else {
             int result = this.joinTeam(player, allianceTeamDao);

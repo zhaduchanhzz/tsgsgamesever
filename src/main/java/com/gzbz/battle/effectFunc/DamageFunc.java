@@ -27,7 +27,7 @@ public abstract class DamageFunc extends EffectFunc {
    public static void recordDamageEntity(Action action, Entity source, Entity target) {
       Entity attacker = (Entity)action.getBlackboard().getSkillParam(1);
       if (attacker == source) {
-         Set<Entity> set = (Set)action.getBlackboard().getSkillParam(23);
+         Set<Entity> set = action.getBlackboard().getSkillParam(23);
          if (set == null) {
             set = new HashSet();
             action.getBlackboard().addSkillParam(23, set);

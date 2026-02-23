@@ -41,7 +41,7 @@ public class StarSelectSkillModel extends BaseModel {
          List<Integer> typeLimitList = value.getTypeLimit();
          if (typeLimitList != null && !typeLimitList.isEmpty()) {
             for(Integer typeLimit : typeLimitList) {
-               ((Set)typeLimit_starSkills.computeIfAbsent(typeLimit, (k) -> new HashSet())).add(value.getGroup());
+               (typeLimit_starSkills.computeIfAbsent(typeLimit, (k) -> new HashSet())).add(value.getGroup());
             }
          }
       }

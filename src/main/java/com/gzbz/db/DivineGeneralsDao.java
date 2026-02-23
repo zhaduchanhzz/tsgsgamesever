@@ -50,7 +50,7 @@ public class DivineGeneralsDao extends DBDao {
    }
 
    public void loadUseNewIds(String str) {
-      this.useNewIds = (Set)JsonUtil.jsonToBean(str, HashSet.class);
+      this.useNewIds = JsonUtil.jsonToBean(str, HashSet.class);
    }
 
    public String saveUseNewIds() {

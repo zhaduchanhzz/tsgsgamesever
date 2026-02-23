@@ -80,7 +80,7 @@ public class ShopDao extends DBDao {
       StringBuilder stringBuilder = new StringBuilder();
 
       for(Map.Entry<Integer, Set<Integer>> entry : this.autoMap.entrySet()) {
-         Set<Integer> autoIdSet = (Set)entry.getValue();
+         Set<Integer> autoIdSet = entry.getValue();
          if (!CollectionUtils.isEmpty(autoIdSet)) {
             stringBuilder.append(entry.getKey()).append(":");
 

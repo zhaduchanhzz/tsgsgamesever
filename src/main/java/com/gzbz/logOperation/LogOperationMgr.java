@@ -652,7 +652,7 @@ public class LogOperationMgr extends GameMgr {
                if (deviceData != null && deviceData.agentId != null && !deviceData.agentId.equals("")) {
                   String agentName = deviceData.agentId;
                   if (map.containsKey(agentName)) {
-                     ((Set)map.get(agentName)).add(player.getPlayerId());
+                     (map.get(agentName)).add(player.getPlayerId());
                   } else {
                      Set<Integer> tempSet = new HashSet();
                      tempSet.add(player.getPlayerId());
@@ -665,7 +665,7 @@ public class LogOperationMgr extends GameMgr {
 
       for(Map.Entry<String, Set<Integer>> entry : map.entrySet()) {
          LogOldData oldExtraLog = new LogOldData(49);
-         oldExtraLog.playerId = String.valueOf(((Set)entry.getValue()).size());
+         oldExtraLog.playerId = String.valueOf((entry.getValue()).size());
          oldExtraLog.param_n3 = "-";
          oldExtraLog.param_n4 = "-";
          oldExtraLog.platformName = (String)entry.getKey();

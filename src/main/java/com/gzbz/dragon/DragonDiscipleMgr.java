@@ -98,7 +98,7 @@ public class DragonDiscipleMgr extends GameMgr {
 
             for(Integer playerId : dragonTeamDao.invitePlayers) {
                if (this.playerInviteTeamMap.containsKey(playerId)) {
-                  ((Set)this.playerInviteTeamMap.get(playerId)).add(dragonTeamDao.teamId);
+                  (this.playerInviteTeamMap.get(playerId)).add(dragonTeamDao.teamId);
                } else {
                   Set<Integer> set = new ConcurrentHashSet();
                   set.add(dragonTeamDao.teamId);
@@ -108,7 +108,7 @@ public class DragonDiscipleMgr extends GameMgr {
 
             for(Integer playerId : dragonTeamDao.applyPlayers) {
                if (this.playerApplyTeamMap.containsKey(playerId)) {
-                  ((Set)this.playerApplyTeamMap.get(playerId)).add(dragonTeamDao.teamId);
+                  (this.playerApplyTeamMap.get(playerId)).add(dragonTeamDao.teamId);
                } else {
                   Set<Integer> set = new ConcurrentHashSet();
                   set.add(dragonTeamDao.teamId);
@@ -376,8 +376,8 @@ public class DragonDiscipleMgr extends GameMgr {
             dragonTeamDao.invitePlayers.remove(applyPlayer.getPlayerId());
          }
 
-         if (this.playerApplyTeamMap.containsKey(applyPlayer.getPlayerId()) && ((Set)this.playerApplyTeamMap.get(applyPlayer.getPlayerId())).contains(dragonTeamDao.teamId)) {
-            ((Set)this.playerApplyTeamMap.get(applyPlayer.getPlayerId())).remove(dragonTeamDao.teamId);
+         if (this.playerApplyTeamMap.containsKey(applyPlayer.getPlayerId()) && (this.playerApplyTeamMap.get(applyPlayer.getPlayerId())).contains(dragonTeamDao.teamId)) {
+            (this.playerApplyTeamMap.get(applyPlayer.getPlayerId())).remove(dragonTeamDao.teamId);
          }
 
          dragonTeamDao.updateOp();
@@ -388,7 +388,7 @@ public class DragonDiscipleMgr extends GameMgr {
 
    public boolean invite(GamePlayer captainPlayer, GamePlayer invitePlayer, DragonTeamDao dragonTeamDao) {
       if (this.playerInviteTeamMap.containsKey(invitePlayer.getPlayerId())) {
-         ((Set)this.playerInviteTeamMap.get(invitePlayer.getPlayerId())).add(dragonTeamDao.teamId);
+         (this.playerInviteTeamMap.get(invitePlayer.getPlayerId())).add(dragonTeamDao.teamId);
       } else {
          Set<Integer> set = new ConcurrentHashSet();
          set.add(dragonTeamDao.teamId);
@@ -410,7 +410,7 @@ public class DragonDiscipleMgr extends GameMgr {
       if (dragonTeamDao.needVerify && !chatJoin) {
          dragonTeamDao.applyPlayers.add(applyPlayer.getPlayerId());
          if (this.playerApplyTeamMap.containsKey(applyPlayer.getPlayerId())) {
-            ((Set)this.playerApplyTeamMap.get(applyPlayer.getPlayerId())).add(dragonTeamDao.teamId);
+            (this.playerApplyTeamMap.get(applyPlayer.getPlayerId())).add(dragonTeamDao.teamId);
          } else {
             Set<Integer> set = new ConcurrentHashSet();
             set.add(dragonTeamDao.teamId);
@@ -430,83 +430,183 @@ public class DragonDiscipleMgr extends GameMgr {
       dragonTeamDao.updateOp();
       return true;
    }
+//
+//   public boolean exitTeam(GamePlayer exitPlayer, DragonTeamDao dragonTeamDao) {
+//      new LinkedHashMap(dragonTeamDao.players);
+//      this.playerTeamMap.remove(exitPlayer.getPlayerId());
+//      dragonTeamDao.players.remove(exitPlayer.getPlayerId());
+//      Iterator<DragonTeamData> itt = dragonTeamDao.arraying.values().iterator();
+//
+//      while(itt.hasNext()) {
+//         DragonTeamData data = (DragonTeamData)itt.next();
+//         if (data.playerId == exitPlayer.getPlayerId()) {
+//            itt.remove();
+//         }
+//      }
+//
+//      dragonTeamDao.updateOp();
+//      if (exitPlayer.getPlayerId() == dragonTeamDao.captain) {
+//         if (dragonTeamDao.players.isEmpty()) {
+//            Iterator<Map.Entry<Integer, Set<Integer>>> iterator = this.playerInviteTeamMap.entrySet().iterator();
+//
+//            while(iterator.hasNext()) {
+//               Map.Entry<Integer, Set<Integer>> entry = (Map.Entry)iterator.next();
+//               (entry.getValue()).remove(dragonTeamDao.teamId);
+//               if ((entry.getValue()).isEmpty()) {
+//                  iterator.remove();
+//               }
+//            }
+//
+//            this.gameCachePool.deleteDao(dragonTeamDao, true);
+//         } else if (dragonTeamDao.players.size() == 1) {
+//            Iterator<DragonTeamData> it = dragonTeamDao.players.keySet().iterator();
+//            if (it.hasNext()) {
+//               int playerId = (Integer)it.next();
+//               dragonTeamDao.captain = playerId;
+//               ((DragonPlayerData)dragonTeamDao.players.get(dragonTeamDao.captain)).isReady = true;
+//               dragonTeamDao.updateOp();
+//            }
+//
+//            it = dragonTeamDao.arraying.values().iterator();
+//
+//            while(it.hasNext()) {
+//               DragonTeamData data = (DragonTeamData)it.next();
+//               if (data.playerId == exitPlayer.getPlayerId()) {
+//                  it.remove();
+//               }
+//            }
+//
+//            dragonTeamDao.updateOp();
+//         } else {
+//            int playerId = 0;
+//            long tempPower = 0L;
+//
+//            for(DragonPlayerData data : dragonTeamDao.players.values()) {
+//               GamePlayer player = this.worldMgr.getPlayerById(data.playerId);
+//               if (player.getPlayerCombatPower() > tempPower) {
+//                  playerId = player.getPlayerId();
+//                  tempPower = player.getPlayerCombatPower();
+//               }
+//            }
+//
+//            dragonTeamDao.captain = playerId;
+//            ((DragonPlayerData)dragonTeamDao.players.get(dragonTeamDao.captain)).isReady = true;
+//            Iterator<DragonTeamData> it = dragonTeamDao.arraying.values().iterator();
+//
+//            while(it.hasNext()) {
+//               DragonTeamData data = (DragonTeamData)it.next();
+//               if (data.playerId == exitPlayer.getPlayerId()) {
+//                  it.remove();
+//               }
+//            }
+//
+//            dragonTeamDao.updateOp();
+//         }
+//      }
+//
+//      return true;
+//   }
+public boolean exitTeam(GamePlayer exitPlayer, DragonTeamDao dragonTeamDao) {
 
-   public boolean exitTeam(GamePlayer exitPlayer, DragonTeamDao dragonTeamDao) {
-      new LinkedHashMap(dragonTeamDao.players);
-      this.playerTeamMap.remove(exitPlayer.getPlayerId());
-      dragonTeamDao.players.remove(exitPlayer.getPlayerId());
-      Iterator<DragonTeamData> itt = dragonTeamDao.arraying.values().iterator();
+    int exitPlayerId = exitPlayer.getPlayerId();
 
-      while(itt.hasNext()) {
-         DragonTeamData data = (DragonTeamData)itt.next();
-         if (data.playerId == exitPlayer.getPlayerId()) {
-            itt.remove();
-         }
-      }
+    // Remove player from team maps
+    playerTeamMap.remove(exitPlayerId);
+    dragonTeamDao.players.remove(exitPlayerId);
 
-      dragonTeamDao.updateOp();
-      if (exitPlayer.getPlayerId() == dragonTeamDao.captain) {
-         if (dragonTeamDao.players.isEmpty()) {
-            Iterator<Map.Entry<Integer, Set<Integer>>> iterator = this.playerInviteTeamMap.entrySet().iterator();
+    // Remove from arraying
+    Iterator<DragonTeamData> arrayIterator =
+            dragonTeamDao.arraying.values().iterator();
 
-            while(iterator.hasNext()) {
-               Map.Entry<Integer, Set<Integer>> entry = (Map.Entry)iterator.next();
-               ((Set)entry.getValue()).remove(dragonTeamDao.teamId);
-               if (((Set)entry.getValue()).isEmpty()) {
-                  iterator.remove();
-               }
+    while (arrayIterator.hasNext()) {
+        DragonTeamData data = arrayIterator.next();
+        if (data.playerId == exitPlayerId) {
+            arrayIterator.remove();
+        }
+    }
+
+    dragonTeamDao.updateOp();
+
+    // If exiting player is not captain → done
+    if (exitPlayerId != dragonTeamDao.captain) {
+        return true;
+    }
+
+    // Captain is leaving
+
+    // Case 1: No players left → delete team
+    if (dragonTeamDao.players.isEmpty()) {
+
+        Iterator<Map.Entry<Integer, Set<Integer>>> inviteIterator =
+                playerInviteTeamMap.entrySet().iterator();
+
+        while (inviteIterator.hasNext()) {
+            Map.Entry<Integer, Set<Integer>> entry = inviteIterator.next();
+            Set<Integer> teamSet = entry.getValue();
+
+            teamSet.remove(dragonTeamDao.teamId);
+
+            if (teamSet.isEmpty()) {
+                inviteIterator.remove();
             }
+        }
 
-            this.gameCachePool.deleteDao(dragonTeamDao, true);
-         } else if (dragonTeamDao.players.size() == 1) {
-            Iterator<DragonTeamData> it = dragonTeamDao.players.keySet().iterator();
-            if (it.hasNext()) {
-               int playerId = (Integer)it.next();
-               dragonTeamDao.captain = playerId;
-               ((DragonPlayerData)dragonTeamDao.players.get(dragonTeamDao.captain)).isReady = true;
-               dragonTeamDao.updateOp();
-            }
+        gameCachePool.deleteDao(dragonTeamDao, true);
+        return true;
+    }
 
-            it = dragonTeamDao.arraying.values().iterator();
+    // Case 2: Only one player left → auto assign captain
+    if (dragonTeamDao.players.size() == 1) {
 
-            while(it.hasNext()) {
-               DragonTeamData data = (DragonTeamData)it.next();
-               if (data.playerId == exitPlayer.getPlayerId()) {
-                  it.remove();
-               }
-            }
+        Integer newCaptainId =
+                dragonTeamDao.players.keySet().iterator().next();
 
-            dragonTeamDao.updateOp();
-         } else {
-            int playerId = 0;
-            long tempPower = 0L;
+        dragonTeamDao.captain = newCaptainId;
 
-            for(DragonPlayerData data : dragonTeamDao.players.values()) {
-               GamePlayer player = this.worldMgr.getPlayerById(data.playerId);
-               if (player.getPlayerCombatPower() > tempPower) {
-                  playerId = player.getPlayerId();
-                  tempPower = player.getPlayerCombatPower();
-               }
-            }
+        DragonPlayerData captainData =
+                dragonTeamDao.players.get(newCaptainId);
 
-            dragonTeamDao.captain = playerId;
-            ((DragonPlayerData)dragonTeamDao.players.get(dragonTeamDao.captain)).isReady = true;
-            Iterator<DragonTeamData> it = dragonTeamDao.arraying.values().iterator();
+        if (captainData != null) {
+            captainData.isReady = true;
+        }
 
-            while(it.hasNext()) {
-               DragonTeamData data = (DragonTeamData)it.next();
-               if (data.playerId == exitPlayer.getPlayerId()) {
-                  it.remove();
-               }
-            }
+        dragonTeamDao.updateOp();
+        return true;
+    }
 
-            dragonTeamDao.updateOp();
-         }
-      }
+    // Case 3: Multiple players left → assign highest combat power as captain
+    int newCaptainId = 0;
+    long maxPower = 0L;
 
-      return true;
-   }
+    for (DragonPlayerData data : dragonTeamDao.players.values()) {
 
+        GamePlayer player = worldMgr.getPlayerById(data.playerId);
+        if (player == null) {
+            continue;
+        }
+
+        long power = player.getPlayerCombatPower();
+        if (power > maxPower) {
+            maxPower = power;
+            newCaptainId = player.getPlayerId();
+        }
+    }
+
+    if (newCaptainId > 0) {
+        dragonTeamDao.captain = newCaptainId;
+
+        DragonPlayerData captainData =
+                dragonTeamDao.players.get(newCaptainId);
+
+        if (captainData != null) {
+            captainData.isReady = true;
+        }
+    }
+
+    dragonTeamDao.updateOp();
+
+    return true;
+}
    public boolean kickOut(GamePlayer captainPlayer, GamePlayer beKickOutPlayer, DragonTeamDao dragonTeamDao) {
       return this.exitTeam(beKickOutPlayer, dragonTeamDao);
    }
@@ -787,12 +887,12 @@ public class DragonDiscipleMgr extends GameMgr {
          if (!msg.getIsAgree()) {
             dragonTeamDao.applyPlayers.remove(player.getPlayerId());
             dragonTeamDao.invitePlayers.remove(player.getPlayerId());
-            if (this.playerInviteTeamMap.containsKey(player.getPlayerId()) && ((Set)this.playerInviteTeamMap.get(player.getPlayerId())).contains(dragonTeamDao.teamId)) {
-               ((Set)this.playerInviteTeamMap.get(player.getPlayerId())).remove(dragonTeamDao.teamId);
+            if (this.playerInviteTeamMap.containsKey(player.getPlayerId()) && (this.playerInviteTeamMap.get(player.getPlayerId())).contains(dragonTeamDao.teamId)) {
+               (this.playerInviteTeamMap.get(player.getPlayerId())).remove(dragonTeamDao.teamId);
             }
 
-            if (this.playerApplyTeamMap.containsKey(player.getPlayerId()) && ((Set)this.playerApplyTeamMap.get(player.getPlayerId())).contains(dragonTeamDao.teamId)) {
-               ((Set)this.playerApplyTeamMap.get(player.getPlayerId())).remove(dragonTeamDao.teamId);
+            if (this.playerApplyTeamMap.containsKey(player.getPlayerId()) && (this.playerApplyTeamMap.get(player.getPlayerId())).contains(dragonTeamDao.teamId)) {
+               (this.playerApplyTeamMap.get(player.getPlayerId())).remove(dragonTeamDao.teamId);
             }
 
             dragonTeamDao.updateOp();
@@ -1108,7 +1208,7 @@ public class DragonDiscipleMgr extends GameMgr {
    @TaskMethod
    public void C2S_TeamInviteClear_13437(GamePlayer player, DragonDiscipleMsg.C2S_TeamInviteClear_13437 msg) {
       if (this.playerInviteTeamMap.containsKey(player.getPlayerId())) {
-         for(Integer teamId : (Set)this.playerInviteTeamMap.get(player.getPlayerId())) {
+         for(Integer teamId : this.playerInviteTeamMap.get(player.getPlayerId())) {
             DragonTeamDao dragonTeamDao = this.getTeamById(teamId);
             if (dragonTeamDao != null) {
                dragonTeamDao.invitePlayers.remove(player.getPlayerId());
@@ -1586,11 +1686,11 @@ public class DragonDiscipleMgr extends GameMgr {
 
          while(iterator.hasNext()) {
             Map.Entry<Integer, Set<Integer>> entry = (Map.Entry)iterator.next();
-            if (((Set)entry.getValue()).contains(dragonTeamDao.teamId)) {
-               ((Set)entry.getValue()).remove(dragonTeamDao.teamId);
+            if ((entry.getValue()).contains(dragonTeamDao.teamId)) {
+               (entry.getValue()).remove(dragonTeamDao.teamId);
             }
 
-            if (((Set)entry.getValue()).isEmpty()) {
+            if ((entry.getValue()).isEmpty()) {
                iterator.remove();
             }
          }
@@ -1674,11 +1774,11 @@ public class DragonDiscipleMgr extends GameMgr {
 
             while(iterator.hasNext()) {
                Map.Entry<Integer, Set<Integer>> entry = (Map.Entry)iterator.next();
-               if (((Set)entry.getValue()).contains(dragonTeamDao.teamId)) {
-                  ((Set)entry.getValue()).remove(dragonTeamDao.teamId);
+               if ((entry.getValue()).contains(dragonTeamDao.teamId)) {
+                  (entry.getValue()).remove(dragonTeamDao.teamId);
                }
 
-               if (((Set)entry.getValue()).isEmpty()) {
+               if ((entry.getValue()).isEmpty()) {
                   iterator.remove();
                }
             }

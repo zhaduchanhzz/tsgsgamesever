@@ -89,7 +89,7 @@ public class WarNorthDao extends DBDao {
          Map<Integer, Set<Integer>> finalValue = new HashMap();
          Map<Integer, String> v = JsonUtil.jsonToMap((String)entry.getValue(), Integer.class, String.class);
          v.entrySet().forEach((valueEntry) -> {
-            Set<Integer> valueSet = (Set)JsonUtil.jsonToBean((String)valueEntry.getValue(), HashSet.class);
+            Set<Integer> valueSet = JsonUtil.jsonToBean((String)valueEntry.getValue(), HashSet.class);
             finalValue.put(valueEntry.getKey(), valueSet);
          });
          this.copies.put(entry.getKey(), finalValue);
@@ -103,7 +103,7 @@ public class WarNorthDao extends DBDao {
    public void loadSectionTargets(String columnData) {
       Map<Integer, String> map = JsonUtil.jsonToMap(columnData, Integer.class, String.class);
       map.entrySet().forEach((entry) -> {
-         Set<Integer> v = (Set)JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
+         Set<Integer> v = JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
          this.sectionTargets.put(entry.getKey(), v);
       });
    }
@@ -115,7 +115,7 @@ public class WarNorthDao extends DBDao {
    public void loadSectionBoxes(String columnData) {
       Map<Integer, String> map = JsonUtil.jsonToMap(columnData, Integer.class, String.class);
       map.entrySet().forEach((entry) -> {
-         Set<Integer> v = (Set)JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
+         Set<Integer> v = JsonUtil.jsonToBean((String)entry.getValue(), HashSet.class);
          this.sectionBoxes.put(entry.getKey(), v);
       });
    }

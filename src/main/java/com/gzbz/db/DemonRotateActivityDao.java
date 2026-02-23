@@ -261,7 +261,7 @@ public class DemonRotateActivityDao extends DBDao {
    }
 
    public void loadTimeRewards(String str) {
-      this.timeRewards = (Set)JsonUtil.jsonToBean(str, Set.class);
+      this.timeRewards = JsonUtil.jsonToBean(str, Set.class);
    }
 
    public String saveTimeRewards() {
@@ -277,7 +277,7 @@ public class DemonRotateActivityDao extends DBDao {
    }
 
    public void loadDestinyDrawed(String str) {
-      this.destinyDrawed = (Set)JsonUtil.jsonToBean(str, Set.class);
+      this.destinyDrawed = JsonUtil.jsonToBean(str, Set.class);
    }
 
    public String saveDestinyDrawed() {
@@ -285,7 +285,7 @@ public class DemonRotateActivityDao extends DBDao {
    }
 
    public void loadBuffAward(String str) {
-      this.buffAward = (Set)JsonUtil.jsonToBean(str, Set.class);
+      this.buffAward = JsonUtil.jsonToBean(str, Set.class);
    }
 
    public String saveBuffAward() {
