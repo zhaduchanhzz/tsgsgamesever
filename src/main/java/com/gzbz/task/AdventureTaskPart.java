@@ -615,7 +615,7 @@ public class AdventureTaskPart extends PlayerPart {
          List<ChapterAdventureModel> newList = new ArrayList();
          int prob = 0;
 
-         for(ChapterAdventureModel model : (List)entry.getValue()) {
+         for(ChapterAdventureModel model : entry.getValue()) {
             if (playerLv >= model.getOpenLevel()) {
                newList.add(model);
             }
@@ -914,7 +914,7 @@ public class AdventureTaskPart extends PlayerPart {
       int taskNum = 0;
       if (!qualityMap.isEmpty()) {
          for(Map.Entry<Integer, List<AdventureData>> entry : qualityMap.entrySet()) {
-            for(AdventureData data : (List)entry.getValue()) {
+            for(AdventureData data : entry.getValue()) {
                if (taskNum >= num) {
                   break;
                }

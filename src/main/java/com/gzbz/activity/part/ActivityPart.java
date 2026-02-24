@@ -479,7 +479,7 @@ public class ActivityPart extends PlayerPart {
    public void loginHandle() {
       PlayerActivityDao playerActivityDao = (PlayerActivityDao)this.player.getData("tb_player_activity", this.player.getPlayerId());
 
-      for(int activityType : new HashSet(playerActivityDao.activities.keySet())) {
+      for(int activityType : playerActivityDao.activities.keySet()) {
          ActivityInfo activityInfo = (ActivityInfo)playerActivityDao.activities.get(activityType);
          if (activityInfo != null && activityInfo.id == 0) {
             playerActivityDao.activities.remove(activityType);

@@ -542,11 +542,11 @@ public class NeiDanPart extends PlayerPart {
                Map<Integer, Integer> realCostItemMap = new HashMap();
                Map<Integer, Integer> lvUpItemId_exp = NeiDanDefine.getLvUpItemId_exp();
                boolean isMaxLv = false;
-               Iterator realCostNeiDanCodeList = costItemMap.entrySet().iterator();
+               Iterator realCostNeiDanCodeListITE = costItemMap.entrySet().iterator();
 
                while(true) {
-                  if (realCostNeiDanCodeList.hasNext()) {
-                     Map.Entry<Integer, Integer> entry = (Map.Entry)realCostNeiDanCodeList.next();
+                  if (realCostNeiDanCodeListITE.hasNext()) {
+                     Map.Entry<Integer, Integer> entry = (Map.Entry)realCostNeiDanCodeListITE.next();
                      Integer itemId = (Integer)entry.getKey();
                      Integer num = (Integer)entry.getValue();
                      if (num <= 0) {

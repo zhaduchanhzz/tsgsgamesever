@@ -111,7 +111,9 @@ public class UnionTechnologyPart extends UnionPart {
                UnionMsg.S2C_UnionResetTechnology_6944.Builder resp = UnionMsg.S2C_UnionResetTechnology_6944.newBuilder();
                resp.setType(type);
                this.player.sendMsg(resp.build());
-               this.player.getOperationMgr().pushTask(() -> this.player.getOperationMgr().addExtraLog(this.player, 116, super.getUnion().unionName, String.valueOf(type), String.valueOf(returnCopper), String.valueOf(returnContribution), String.valueOf(resourceModel.getValue())));
+                int finalReturnContribution = returnContribution;
+                int finalReturnCopper = returnCopper;
+                this.player.getOperationMgr().pushTask(() -> this.player.getOperationMgr().addExtraLog(this.player, 116, super.getUnion().unionName, String.valueOf(type), String.valueOf(finalReturnCopper), String.valueOf(finalReturnContribution), String.valueOf(resourceModel.getValue())));
             }
          }
       }
@@ -209,7 +211,9 @@ public class UnionTechnologyPart extends UnionPart {
                      resp.setId(id);
                      resp.setType(type);
                      this.player.sendMsg(resp.build());
-                     this.player.getOperationMgr().pushTask(() -> this.player.getOperationMgr().addExtraLog(this.player, 115, super.getUnion().unionName, String.valueOf(type), String.valueOf(currentTecPlaceModel.getTecLevel()), String.valueOf(feeCopper), String.valueOf(feeContribution), String.valueOf(playerDao.union_contribution)));
+                      int finalFeeCopper = feeCopper;
+                      int finalFeeContribution = feeContribution;
+                      this.player.getOperationMgr().pushTask(() -> this.player.getOperationMgr().addExtraLog(this.player, 115, super.getUnion().unionName, String.valueOf(type), String.valueOf(currentTecPlaceModel.getTecLevel()), String.valueOf(finalFeeCopper), String.valueOf(finalFeeContribution), String.valueOf(playerDao.union_contribution)));
                   }
                }
             }
@@ -224,10 +228,10 @@ public class UnionTechnologyPart extends UnionPart {
          int levelMax = Integer.parseInt(levelLimitArr[1]);
          ((UnionTechnologyPlaceData)((Map)technology.get(type)).get(unionTecPlaceModel.getTecPlace())).isLight = true;
          ((UnionTechnologyPlaceData)((Map)technology.get(type)).get(unionTecPlaceModel.getTecPlace())).modelId = unionTecPlaceModel.getId();
-         boolean checkAllLight = ((Map)technology.get(type)).size() > 0 && ((Map)technology.get(type)).values().stream().allMatch((unionTechnologyPlaceData) -> unionTechnologyPlaceData.isLight);
+         boolean checkAllLight = (technology.get(type)).size() > 0 && (technology.get(type)).values().stream().allMatch((unionTechnologyPlaceData) -> unionTechnologyPlaceData.isLight);
          if (checkAllLight && unionTecPlaceModel.getTecLevel() < levelMax) {
             Map<Integer, Map<Integer, UnionTecPlaceModel>> customTecPlaceModelMap = ApplicationContextProvider.<Integer, Map<Integer, UnionTecPlaceModel>>getModelPoolMap("customUnionTecPlace");
-            ((Map)technology.get(type)).forEach((key, value) -> {
+            (technology.get(type)).forEach((key, value) -> {
                UnionTecPlaceModel placeNextLvModel = (UnionTecPlaceModel)((Map)customTecPlaceModelMap.get(key)).get(unionTecPlaceModel.getTecLevel() + 1);
                if (placeNextLvModel != null) {
                   value.modelId = placeNextLvModel.getId();
@@ -258,7 +262,7 @@ public class UnionTechnologyPart extends UnionPart {
       Map<Integer, Map<Integer, UnionTecPlaceModel>> unionTecPlaceModelMap = ApplicationContextProvider.<Integer, Map<Integer, UnionTecPlaceModel>>getModelPoolMap("customUnionTecPlace");
 
       for(Map.Entry<Integer, Map<Integer, UnionTecPlaceModel>> entry : unionTecPlaceModelMap.entrySet()) {
-         for(Map.Entry<Integer, UnionTecPlaceModel> subEntry : ((Map)entry.getValue()).entrySet()) {
+         for(Map.Entry<Integer, UnionTecPlaceModel> subEntry : (entry.getValue()).entrySet()) {
             this.setTechnologyLevel(playerUnionExtend.technology, (Integer)subEntry.getKey(), (UnionTecPlaceModel)((Map)entry.getValue()).get(78));
          }
       }
@@ -279,7 +283,7 @@ public class UnionTechnologyPart extends UnionPart {
       playerUnionExtend.technology.entrySet().forEach((entry) -> {
          UnionMsg.UnionTechnology.Builder technologyBuilder = UnionMsg.UnionTechnology.newBuilder();
          technologyBuilder.setType((Integer)entry.getKey());
-         ((Map)entry.getValue()).values().forEach((unionTechnologyPlaceData) -> {
+         (entry.getValue()).values().forEach((unionTechnologyPlaceData) -> {
             UnionMsg.UnionTechnologyPlace.Builder placeBuilder = UnionMsg.UnionTechnologyPlace.newBuilder();
             placeBuilder.setPlace(unionTechnologyPlaceData.place);
             placeBuilder.setModelId(unionTechnologyPlaceData.modelId);

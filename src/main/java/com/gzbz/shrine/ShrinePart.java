@@ -133,11 +133,11 @@ public class ShrinePart extends PlayerPart {
                            Map<Integer, Integer> exchangeCountMap = this.configManager.getIntMap("shrineExchangeCount");
                            if (exchangeCountMap.containsKey(heroDao.getStar()) && (Integer)exchangeCountMap.get(heroDao.getStar()) == materialCodeList.size()) {
                               int destHeroId = 0;
-                              Iterator destHeroModel = materialCodeList.iterator();
+                              Iterator destHeroModelite = materialCodeList.iterator();
 
                               while(true) {
-                                 if (destHeroModel.hasNext()) {
-                                    int materialCode = (Integer)destHeroModel.next();
+                                 if (destHeroModelite.hasNext()) {
+                                    int materialCode = (Integer)destHeroModelite.next();
                                     HeroDao tempHeroDao = heroBagPart.getHeroByCode(materialCode);
                                     if (tempHeroDao == null) {
                                        this.logger.error("武将置换，不存在该武将,code:{}", materialCode);

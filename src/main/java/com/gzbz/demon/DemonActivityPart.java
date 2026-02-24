@@ -1748,7 +1748,7 @@ public class DemonActivityPart extends AbstractActivityPart {
                               demonActivityDao.records.add(record);
                            }
 
-                           for(FengMoTianBoxModel tianBoxModel : (List)ApplicationContextProvider.getModelPoolEntity("customFengmoTianBox", this.getPlayerActivityId())) {
+                           for(FengMoTianBoxModel tianBoxModel : (List<FengMoTianBoxModel>)ApplicationContextProvider.getModelPoolEntity("customFengmoTianBox", this.getPlayerActivityId())) {
                               int drawTIme = tianBoxModel.getDrawTime();
                               if (recordTimes < drawTIme && demonActivityDao.totalDrawTimes >= drawTIme) {
                                  ++demonActivityDao.tianBoxCount;

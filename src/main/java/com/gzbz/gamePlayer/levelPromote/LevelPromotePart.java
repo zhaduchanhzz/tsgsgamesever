@@ -54,11 +54,11 @@ public class LevelPromotePart extends PlayerPart {
       builder.setPromoteId(playerExtend.levelPromoteId);
       WorldDao<HashMap<Integer, ArrayList<String>>> worldDao = this.worldMgr.<HashMap<Integer, ArrayList<String>>>getWorldDao(GameDefine.WorldModule.WORLD_DAO_LEVEL_PROMOTE_RECORD);
 
-      for(Map.Entry<Integer, ArrayList<String>> entry : ((HashMap)worldDao.jsonData).entrySet()) {
+      for(Map.Entry<Integer, ArrayList<String>> entry : (worldDao.jsonData).entrySet()) {
          LevelPromoteMsg.RankInfo.Builder rankInfo = LevelPromoteMsg.RankInfo.newBuilder();
          rankInfo.setModelId((Integer)entry.getKey());
 
-         for(String info : (ArrayList)entry.getValue()) {
+         for(String info : entry.getValue()) {
             String[] arr = info.split("\\|");
             GamePlayer othwerPlayer = this.worldMgr.getPlayerById(Integer.parseInt(arr[0]));
             if (othwerPlayer != null) {

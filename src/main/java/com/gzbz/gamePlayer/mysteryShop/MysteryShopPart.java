@@ -182,7 +182,7 @@ public class MysteryShopPart extends PlayerPart {
    public void C2S_Record_7309(MysteryShopMsg.C2S_Record_7309 msg, String source) {
       MysteryShopMsg.S2C_Record_7310.Builder builder = MysteryShopMsg.S2C_Record_7310.newBuilder();
 
-      for(MysteryShopRecordDao recordDao : this.player.getList("tb_mystery_shop_record", this.player.getPlayerId())) {
+      for(MysteryShopRecordDao recordDao : new ArrayList<MysteryShopRecordDao>(this.player.getList("tb_mystery_shop_record", this.player.getPlayerId()))) {
          MysteryShopMsg.RecordInfo.Builder recordInfo = MysteryShopMsg.RecordInfo.newBuilder();
          recordInfo.setItemType(recordDao.itemType);
          recordInfo.setItemId(recordDao.itemId);
@@ -301,7 +301,7 @@ public class MysteryShopPart extends PlayerPart {
    public int randomShopItem(int group) {
       List<KeyValFun> keyValFunList = new ArrayList();
 
-      for(MysteryShopModel shopModel : (List)ApplicationContextProvider.getModelPoolEntity("customMysteryShop", group)) {
+      for(MysteryShopModel shopModel : (List<MysteryShopModel>)ApplicationContextProvider.getModelPoolEntity("customMysteryShop", group)) {
          keyValFunList.add(new KeyValFun(shopModel.getId(), shopModel.getWeight()));
       }
 

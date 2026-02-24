@@ -1741,7 +1741,7 @@ public class DecisiveBattlePart extends AbstractActivityPart {
 
       for(Map.Entry<Integer, List<DecisiveBattleRecord>> entry : decisiveDao.record.entrySet()) {
          if ((Integer)entry.getKey() == msg.getType()) {
-            for(DecisiveBattleRecord record : (List)entry.getValue()) {
+            for(DecisiveBattleRecord record : entry.getValue()) {
                builder.addRecordList(this.buildBattleRecordInfo(record));
             }
          }

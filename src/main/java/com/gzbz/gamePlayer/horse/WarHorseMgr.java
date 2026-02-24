@@ -91,7 +91,7 @@ public class WarHorseMgr extends GameMgr {
       Map<Integer, WarHorseRecordDao> warHorseRecordMap = this.getWarHorseRecordMap();
       int count = 0;
       if (type == 1) {
-         for(Integer id : (Set)this.playerRecords.getOrDefault(playerId, new TreeSet())) {
+         for(Integer id : (Set<Integer>)this.playerRecords.getOrDefault(playerId, new TreeSet())) {
             WarHorseRecordDao warHorseRecordDao = (WarHorseRecordDao)warHorseRecordMap.get(id);
             if (warHorseRecordDao != null) {
                ++count;

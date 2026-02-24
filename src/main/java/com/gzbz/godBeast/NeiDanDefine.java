@@ -398,7 +398,7 @@ public class NeiDanDefine {
             }
          }
 
-         for(Integer itemExp : (List)exp_itemId.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
+         for(Integer itemExp : exp_itemId.keySet().stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList())) {
             int num = exp / itemExp;
             if (num > 0) {
                Integer itemId = (Integer)exp_itemId.get(itemExp);

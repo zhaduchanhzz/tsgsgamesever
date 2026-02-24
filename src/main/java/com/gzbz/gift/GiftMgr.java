@@ -46,7 +46,7 @@ public class GiftMgr extends GameMgr {
          WorldDao<GeneralWelfareData> worldDao = this.worldMgr.<GeneralWelfareData>getWorldDao(GameDefine.WorldModule.WORLD_DAO_GENERAL_WELFARE);
 
          for(Map.Entry<Integer, TreeMap<Integer, GeneralWelfareModel>> entry : allModelMap.entrySet()) {
-            Optional<GeneralWelfareModel> result = ((TreeMap)entry.getValue()).values().stream().filter((modelx) -> modelx.getTime() < minutes).max(Comparator.comparingInt(GeneralWelfareModel::getTime));
+            Optional<GeneralWelfareModel> result = (entry.getValue()).values().stream().filter((modelx) -> modelx.getTime() < minutes).max(Comparator.comparingInt(GeneralWelfareModel::getTime));
             if (result.isPresent()) {
                GeneralWelfareModel model = (GeneralWelfareModel)result.get();
                if (!((GeneralWelfareData)worldDao.jsonData).random.containsKey(model.getId()) || (Integer)((GeneralWelfareData)worldDao.jsonData).random.get(model.getId()) < model.getMin() || (Integer)((GeneralWelfareData)worldDao.jsonData).random.get(model.getId()) > model.getMax()) {

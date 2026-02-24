@@ -70,7 +70,7 @@ public class UnionTecTestPart extends PlayerPart {
       Map<Integer, Map<Integer, UnionTecPlaceModel>> customTecPlaceModelMap = ApplicationContextProvider.<Integer, Map<Integer, UnionTecPlaceModel>>getModelPoolMap("customUnionTecPlace");
       ((Map)unionTecModeMap.get(type)).keySet().forEach((pos) -> {
          List<ResourceModel> posResourceList = new ArrayList();
-         ((Map)customTecPlaceModelMap.get(pos)).values().forEach((unionTecPlaceModel) -> {
+         (customTecPlaceModelMap.get(pos)).values().forEach((unionTecPlaceModel) -> {
             unionTecPlaceModel.getConsumes().forEach((resourceModel) -> resourceModel.clone().addResourceToList(posResourceList));
             ((Map)technology.computeIfAbsent(type, (v) -> new ConcurrentHashMap())).put(pos, new UnionTechnologyPlaceData(unionTecPlaceModel.getTecPlace(), unionTecPlaceModel.getId(), true));
          });

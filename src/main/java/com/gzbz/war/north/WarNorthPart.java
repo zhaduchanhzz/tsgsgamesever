@@ -351,7 +351,7 @@ public class WarNorthPart extends PlayerPart {
             int totalStar = 0;
 
             for(Map.Entry<Integer, Map<Integer, Set<Integer>>> entry : warNorthDao.copies.entrySet()) {
-               totalStar += ((Map)entry.getValue()).values().stream().mapToInt(Set::size).sum();
+               totalStar += (entry.getValue()).values().stream().mapToInt(Set::size).sum();
             }
 
             RankPart rankPart = (RankPart)this.player.getMgrPart(RankPart.class);
@@ -421,7 +421,7 @@ public class WarNorthPart extends PlayerPart {
       for(Map.Entry<Integer, Map<Integer, Set<Integer>>> entry : warNorthDao.copies.entrySet()) {
          WarNorthMsg.SectionData.Builder sectionBuilder = WarNorthMsg.SectionData.newBuilder();
          sectionBuilder.setId((Integer)entry.getKey());
-         int totalStar = ((Map)entry.getValue()).values().stream().mapToInt(Set::size).sum();
+         int totalStar = (entry.getValue()).values().stream().mapToInt(Set::size).sum();
          sectionBuilder.setStar(totalStar);
          sectionBuilder.addAllGotRewardIds((Iterable)warNorthDao.sectionTargets.getOrDefault(entry.getKey(), new HashSet()));
          resp.addSectionList(sectionBuilder);
@@ -560,7 +560,7 @@ public class WarNorthPart extends PlayerPart {
       int totalStar = 0;
 
       for(Map.Entry<Integer, Map<Integer, Set<Integer>>> entry : warNorthDao.copies.entrySet()) {
-         totalStar += ((Map)entry.getValue()).values().stream().mapToInt(Set::size).sum();
+         totalStar += (entry.getValue()).values().stream().mapToInt(Set::size).sum();
       }
 
       return totalStar;

@@ -154,7 +154,7 @@ public class QrywActivityPart extends AbstractActivityPart {
                Map<Integer, Map<Integer, ActivityPointRewardModel>> rewardMap = ApplicationContextProvider.<Integer, Map<Integer, ActivityPointRewardModel>>getModelPoolMap("customActivityPointReward");
                HashSet boxReward = (HashSet)activityRotateSignDao.boxReward.get(this.getActivityType());
                if (rewardMap.containsKey(this.getPlayerActivityId())) {
-                  for(ActivityPointRewardModel activityPointRewardModel : ((Map)rewardMap.get(this.getPlayerActivityId())).values()) {
+                  for(ActivityPointRewardModel activityPointRewardModel : (rewardMap.get(this.getPlayerActivityId())).values()) {
                      if ((boxReward == null || !boxReward.contains(activityPointRewardModel.getId())) && point >= activityPointRewardModel.getPointNum()) {
                         if (boxReward == null) {
                            boxReward = new HashSet();
