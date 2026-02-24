@@ -336,7 +336,7 @@ public class PrayPart extends PlayerPart {
       for(PrayGridModel gridModel : gridModelMap.values()) {
          List<KeyValFun> rateList = new ArrayList();
          if (gridModel.getPrayId() == prayId) {
-            for(PrayRewardLibModel libModel : (List)ApplicationContextProvider.getModelPoolEntity("curtomPrayRewardLib", gridModel.getGroupId())) {
+            for(PrayRewardLibModel libModel : (List<PrayRewardLibModel>)ApplicationContextProvider.getModelPoolEntity("curtomPrayRewardLib", gridModel.getGroupId())) {
                if (bCalcCount && libModel.getLimitNum() > 0) {
                   int count = (Integer)MapUtil.computeIfAbsent(playerPrayDao.refreshLimit, libModel.getId(), 0);
                   if (count >= libModel.getLimitNum() - 1) {

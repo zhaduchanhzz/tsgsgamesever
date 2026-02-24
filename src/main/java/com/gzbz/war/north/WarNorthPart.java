@@ -448,10 +448,10 @@ public class WarNorthPart extends PlayerPart {
       WarNorthDao warNorthDao = (WarNorthDao)this.player.getData("tb_war_north", this.player.getPlayerId());
       ((Map)warNorthDao.copies.getOrDefault(section, new HashMap())).forEach((key, value) -> {
          WarNorthMsg.CopyData.Builder copyBuilder = WarNorthMsg.CopyData.newBuilder();
-         copyBuilder.setCopyId(key);
-         copyBuilder.addAllSatisfiedConditions(value);
+         copyBuilder.setCopyId((Integer) key);
+         copyBuilder.addAllSatisfiedConditions((Iterable<? extends Integer>) value);
          long power = 0L;
-         NorthCopyModel northCopyModel = (NorthCopyModel)ApplicationContextProvider.getModelPoolEntity("northCopy", key);
+         NorthCopyModel northCopyModel = (NorthCopyModel)ApplicationContextProvider.getModelPoolEntity("northCopy", (Integer) key);
          if (northCopyModel != null) {
             for(Integer battleId : northCopyModel.getBattles()) {
                power += this.monsterManager.getTotalPowerByBattleId(battleId);

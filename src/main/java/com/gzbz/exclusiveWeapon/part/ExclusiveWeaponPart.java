@@ -455,11 +455,11 @@ public class ExclusiveWeaponPart extends PlayerPart {
             List<ExclusiveWeaponItem> allStarResetReward = new ArrayList();
             StringBuilder decItemIdStr = new StringBuilder();
             decItemIdStr.append("分解的幻武道具id:");
-            Iterator itemBagPart = itemCodeList.iterator();
+            Iterator itemBagPartITE = itemCodeList.iterator();
 
             while(true) {
-               if (itemBagPart.hasNext()) {
-                  Integer itemCode = (Integer)itemBagPart.next();
+               if (itemBagPartITE.hasNext()) {
+                  Integer itemCode = (Integer)itemBagPartITE.next();
                   ExclusiveWeaponItem weaponItemFromBag = this.getWeaponItemFromBag(itemCode);
                   if (null == weaponItemFromBag) {
                      return this.player.failure(76235);

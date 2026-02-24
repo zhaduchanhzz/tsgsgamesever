@@ -1676,7 +1676,7 @@ public class BattlePart extends PlayerPart {
                            }
                            break;
                         case 8:
-                           int nationCount = 0;
+                           int nationCount1 = 0;
 
                            for(Entity entity : entityList) {
                               HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", entity.getId());
@@ -1689,18 +1689,18 @@ public class BattlePart extends PlayerPart {
                               }
 
                               if (heroModel != null && realNation == battleCondition.getExtra()) {
-                                 ++nationCount;
+                                 ++nationCount1;
                               }
                            }
 
                            if (friendEntity != null) {
                               HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", friendEntity.getId());
                               if (heroModel != null && heroModel.getNation() == battleCondition.getExtra()) {
-                                 ++nationCount;
+                                 ++nationCount1;
                               }
                            }
 
-                           if (nationCount <= battleCondition.getValue()) {
+                           if (nationCount1 <= battleCondition.getValue()) {
                               list.add(condition);
                            }
                            break;
@@ -1726,23 +1726,23 @@ public class BattlePart extends PlayerPart {
                            }
                            break;
                         case 10:
-                           int typeCount = 0;
+                           int typeCount2 = 0;
 
                            for(Entity entity : entityList) {
                               HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", entity.getId());
                               if (heroModel != null && heroModel.getType() == battleCondition.getExtra()) {
-                                 ++typeCount;
+                                 ++typeCount2;
                               }
                            }
 
                            if (friendEntity != null) {
                               HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", friendEntity.getId());
                               if (heroModel != null && heroModel.getType() == battleCondition.getExtra()) {
-                                 ++typeCount;
+                                 ++typeCount2;
                               }
                            }
 
-                           if (typeCount <= battleCondition.getValue()) {
+                           if (typeCount2 <= battleCondition.getValue()) {
                               list.add(condition);
                            }
                      }
@@ -1883,7 +1883,7 @@ public class BattlePart extends PlayerPart {
                }
                break;
             case 8:
-               int nationCount = 0;
+               int nationCount3 = 0;
 
                for(Entity entity : leftEntityList) {
                   HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", entity.getId());
@@ -1896,7 +1896,7 @@ public class BattlePart extends PlayerPart {
                   }
 
                   if (heroModel != null && realNation == battleCondition.getExtra()) {
-                     ++nationCount;
+                     ++nationCount3;
                   }
                }
 
@@ -1904,12 +1904,12 @@ public class BattlePart extends PlayerPart {
                   if (friendEntity != null) {
                      HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", friendEntity.getId());
                      if (heroModel != null && heroModel.getNation() == battleCondition.getExtra()) {
-                        ++nationCount;
+                        ++nationCount3;
                      }
                   }
                }
 
-               if (nationCount <= battleCondition.getValue()) {
+               if (nationCount3 <= battleCondition.getValue()) {
                   list.add(condition);
                }
                break;
@@ -1937,12 +1937,12 @@ public class BattlePart extends PlayerPart {
                }
                break;
             case 10:
-               int typeCount = 0;
+               int typeCountz = 0;
 
                for(Entity entity : leftEntityList) {
                   HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", entity.getId());
                   if (heroModel != null && heroModel.getType() == battleCondition.getExtra()) {
-                     ++typeCount;
+                     ++typeCountz;
                   }
                }
 
@@ -1950,12 +1950,12 @@ public class BattlePart extends PlayerPart {
                   if (friendEntity != null) {
                      HeroModel heroModel = (HeroModel)ApplicationContextProvider.getModelPoolEntity("hero", friendEntity.getId());
                      if (heroModel != null && heroModel.getType() == battleCondition.getExtra()) {
-                        ++typeCount;
+                        ++typeCountz;
                      }
                   }
                }
 
-               if (typeCount <= battleCondition.getValue()) {
+               if (typeCountz <= battleCondition.getValue()) {
                   list.add(condition);
                }
          }

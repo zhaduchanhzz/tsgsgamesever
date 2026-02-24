@@ -55,7 +55,7 @@ public class NewYear2022TaskPart extends AbstractActivityTaskPart {
             long updateTime = this.player.getPlayerDao().updateTime;
             PlayerRechargeDao playerRechargeDao = (PlayerRechargeDao)this.player.getData("tb_player_recharge", this.player.getPlayerId());
 
-            for(NewYear2022TaskModel taskModel : ((Map)modelMap.get(this.getServerActivityInfo().id)).values()) {
+            for(NewYear2022TaskModel taskModel : (modelMap.get(this.getServerActivityInfo().id)).values()) {
                if (taskModel.getTime() == 1 && taskModel.getDays() != activityDay) {
                   TaskData taskData = this.getTask(taskModel.getId());
                   if (taskData != null) {

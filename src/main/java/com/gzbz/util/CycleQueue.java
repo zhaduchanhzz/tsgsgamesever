@@ -56,7 +56,7 @@ public class CycleQueue<E> implements Collection<E>, Serializable {
          Node<E> pred = next == null ? null : next.prev;
 
          for(Object o : array) {
-            Node<E> newNode = new Node<E>(pred, o, (Node)null);
+            Node<E> newNode = new Node<E>(pred, (E) o, (Node)null);
             if (pred == null) {
                this.first = newNode;
             } else {

@@ -438,7 +438,7 @@ public class HeroSkinActivityPart extends AbstractActivityPart {
             SkinActivityMsg.CardInfo.Builder infoBuilder = SkinActivityMsg.CardInfo.newBuilder();
             infoBuilder.setIndex((Integer)entry.getKey());
 
-            for(ResourceModel resourceModel : (List)entry.getValue()) {
+            for(ResourceModel resourceModel : entry.getValue()) {
                infoBuilder.addItems(resourceModel.builder());
             }
 
