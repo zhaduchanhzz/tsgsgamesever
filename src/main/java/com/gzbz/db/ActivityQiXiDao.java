@@ -202,10 +202,13 @@ public class ActivityQiXiDao extends AddUpAndConBaseDao {
       }
 
       public ActivityQiXiMsg.MusicData buildMsg() {
-         ActivityQiXiMsg.Builder msg = ActivityQiXiMsg.MusicData.newBuilder();
+         ActivityQiXiMsg.MusicData.Builder msg =
+                 ActivityQiXiMsg.MusicData.newBuilder();
+
          msg.setTopScore(this.topScore);
          msg.setMusicId(this.musicId);
          msg.addAllGotId(this.gotScore);
+
          return msg.build();
       }
    }

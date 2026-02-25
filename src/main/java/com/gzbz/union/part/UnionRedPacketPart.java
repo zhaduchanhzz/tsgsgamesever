@@ -70,7 +70,8 @@ public class UnionRedPacketPart extends UnionPart {
                      unionRedPacketGiveDao.redPacketItemNum -= redPacketItemNum;
                      --unionRedPacketGiveDao.redPacketNum;
                      unionRedPacketGiveDao.updateOp();
-                     this.player.pushTask(() -> this.player.addResource(unionRedPacketModel.getRedPacketItemType(), unionRedPacketModel.getRedPacketItemId(), redPacketItemNum, PlayerMsg.ShowType.SHOW_TYPE_COMMON, 9, 924, 0, 0, ""));
+                     int finalRedPacketItemNum = redPacketItemNum;
+                     this.player.pushTask(() -> this.player.addResource(unionRedPacketModel.getRedPacketItemType(), unionRedPacketModel.getRedPacketItemId(), finalRedPacketItemNum, PlayerMsg.ShowType.SHOW_TYPE_COMMON, 9, 924, 0, 0, ""));
                      unionMgr.recordGotRedPacket(id, redPacketItemNum, this.player.getPlayerId());
                      if (unionRedPacketGiveDao.redPacketNum <= 0) {
                         Map<Integer, UnionRedPacketGetDao> redPacketGetDaoMap = unionMgr.getGotRedPacketRecord(unionRedPacketGiveDao.id);

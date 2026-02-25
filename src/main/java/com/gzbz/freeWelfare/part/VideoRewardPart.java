@@ -107,13 +107,15 @@ public class VideoRewardPart extends PlayerPart {
    public void C2S_VideoTimeReward_28405(VideoMsg.C2S_VideoTimeReward_28405 msg, String source) {
       if (!this.functionLimit()) {
          VideoRewardDao dao = this.getDao();
-         int lastGetTimes = 0;
+         int lastGetTimes;
          VideoTimeRewardModel videoTimeRewardModel = (VideoTimeRewardModel)ApplicationContextProvider.getModelPoolEntity("videoTimeReward", dao.maxRoundRewardId);
          if (videoTimeRewardModel != null) {
             lastGetTimes = videoTimeRewardModel.getTime();
+         } else {
+             lastGetTimes = 0;
          }
 
-         Map<Integer, VideoTimeRewardModel> videoTimeRewardModelMap = ApplicationContextProvider.<Integer, VideoTimeRewardModel>getModelPoolMap("videoTimeReward");
+          Map<Integer, VideoTimeRewardModel> videoTimeRewardModelMap = ApplicationContextProvider.<Integer, VideoTimeRewardModel>getModelPoolMap("videoTimeReward");
          VideoTimeRewardModel nextVideoTimeRewardModel = (VideoTimeRewardModel)videoTimeRewardModelMap.values().stream().filter((checkModel) -> checkModel.getTime() > lastGetTimes).min(Comparator.comparingInt(VideoTimeRewardModel::getTime)).orElse(null);
          if (nextVideoTimeRewardModel == null) {
             this.player.failure(24);

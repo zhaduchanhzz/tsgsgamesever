@@ -22,7 +22,7 @@ public class PlayerItemResetCustomCache extends CustomCacheData<PlayerItemResetD
    private Map<Integer, PlayerResetData> weekData;
    private Map<Integer, PlayerResetData> monthData;
    private Map<Integer, PlayerResetData> foreverData;
-   public static HashMap<Class<?>, BiFunction> sumFunc = new HashMap();
+   public static final Map<Class<?>, BiFunction<?, ?, ?>> sumFunc = new HashMap<>();
 
    public <T> PlayerResetData<T> getDaily(int uqId) {
       return (PlayerResetData)this.dailyData.get(uqId);
@@ -225,14 +225,18 @@ public class PlayerItemResetCustomCache extends CustomCacheData<PlayerItemResetD
       return stringBuilder.toString();
    }
 
+
    static {
-      sumFunc.put(Integer.class, Integer::sum);
-      sumFunc.put(Integer.TYPE, Integer::sum);
-      sumFunc.put(Byte.class, (BiFunction)(a, b) -> (byte)(a + b));
-      sumFunc.put(Byte.TYPE, (BiFunction)(a, b) -> (byte)(a + b));
-      sumFunc.put(Short.class, (BiFunction)(a, b) -> (short)(a + b));
-      sumFunc.put(Short.TYPE, (BiFunction)(a, b) -> (short)(a + b));
-      sumFunc.put(Long.class, (BiFunction)(a, b) -> a + b);
-      sumFunc.put(Long.TYPE, (BiFunction)(a, b) -> a + b);
+      sumFunc.put(Integer.class, (BiFunction<Integer, Integer, Integer>) Integer::sum);
+      sumFunc.put(int.class, (BiFunction<Integer, Integer, Integer>) Integer::sum);
+
+      sumFunc.put(Byte.class, (BiFunction<Byte, Byte, Byte>) (a, b) -> (byte)(a + b));
+      sumFunc.put(byte.class, (BiFunction<Byte, Byte, Byte>) (a, b) -> (byte)(a + b));
+
+      sumFunc.put(Short.class, (BiFunction<Short, Short, Short>) (a, b) -> (short)(a + b));
+      sumFunc.put(short.class, (BiFunction<Short, Short, Short>) (a, b) -> (short)(a + b));
+
+      sumFunc.put(Long.class, (BiFunction<Long, Long, Long>) Long::sum);
+      sumFunc.put(long.class, (BiFunction<Long, Long, Long>) Long::sum);
    }
 }

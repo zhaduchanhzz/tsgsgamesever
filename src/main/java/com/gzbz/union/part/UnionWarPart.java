@@ -355,12 +355,14 @@ public class UnionWarPart extends UnionPart {
 
                                  } else {
                                     this.logger.info("战斗-->{}进入【军团争霸】战斗,挑战据点【{}】-【{}星】", new Object[]{this.player.getPlayerId(), warStrongholdData.getName(), star > 0 ? star : "废墟"});
-                                    UnionWarBuffModel unionWarBuffModel = null;
+                                    UnionWarBuffModel unionWarBuffModel;
                                     if (unionDao.warBuffLv > 0) {
                                        unionWarBuffModel = (UnionWarBuffModel)ApplicationContextProvider.getModelPoolEntity("unionWarBuff", unionDao.warBuffLv + 1);
+                                    } else {
+                                        unionWarBuffModel = null;
                                     }
 
-                                    unionMgr.warStrongholdFight(position, this.player.getPlayerId());
+                                     unionMgr.warStrongholdFight(position, this.player.getPlayerId());
                                     ++unionMemberDao.warChallengeCount;
                                     unionMemberDao.updateOp();
                                     unionMgr.sendMember(this.player);
@@ -442,7 +444,8 @@ public class UnionWarPart extends UnionPart {
          battleDao.updateOp();
          this.player.addResource(resourceModels, PlayerMsg.ShowType.SHOW_TYPE_NOT_SHOW, 9, 932, position, star, "");
          BattleScene battleScene = battleDao.scene;
-         this.unionMgrParent.pushTask(() -> unionMgr.warFightSettle(position, star, enemyData, record, this.player.getPlayerArraying(CommonMsg.HeroState.HERO_STATE_UNION_WAR), battleScene, this.player.getServerId()));
+         int finalRecord = record;
+         this.unionMgrParent.pushTask(() -> unionMgr.warFightSettle(position, star, enemyData, finalRecord, this.player.getPlayerArraying(CommonMsg.HeroState.HERO_STATE_UNION_WAR), battleScene, this.player.getServerId()));
       }
 
    }

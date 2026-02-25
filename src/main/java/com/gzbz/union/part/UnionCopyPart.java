@@ -159,12 +159,14 @@ public class UnionCopyPart extends UnionPart {
                      battlePart.pushTaskEx("sendBattleResult", new Object[]{battleDao.type, true, 9011});
                   } else {
                      UnionCopyModel challengeCopyModel = (UnionCopyModel)ApplicationContextProvider.getModelPoolEntity("unionCopy", battleDao.modelId);
-                     UnionBuffModel buffModel = null;
+                     UnionBuffModel buffModel;
                      if (unionDao.copyBuffTime > System.currentTimeMillis()) {
                         buffModel = (UnionBuffModel)ApplicationContextProvider.getModelPoolEntity("unionBuff", unionDao.copyBuffLv);
+                     } else {
+                         buffModel = null;
                      }
 
-                     if (buffModel != null) {
+                      if (buffModel != null) {
                         battleDao.scene.getPKTeam((byte)0).getEntityMap().values().forEach((entityx) -> entityx.modifyBaseProperty(buffModel.getProperties()));
                      }
 
@@ -599,7 +601,7 @@ public class UnionCopyPart extends UnionPart {
                               unionDao.updateOp();
                               unionMgr.addLog(playerDao.unionId, 6, playerDao.playerName, challengeCopyModel.getSectionId(), unionDao.copyChallenge.getOrDefault(this.player.getPlayerId(), 0), copyDamageText);
                               boolean isPass = false;
-                              boolean isKill = false;
+                              boolean isKill;
                               if (unionDao.copyId == challengeCopyModel.getId()) {
                                  unionDao.masterHp = Math.max(0L, unionDao.masterHp - unionMemberDao.copyLastAttackHp);
                                  unionDao.updateOp();
@@ -617,9 +619,11 @@ public class UnionCopyPart extends UnionPart {
                                  }
 
                                  unionMgr.sendUnionCopyInfo();
+                              } else {
+                                  isKill = false;
                               }
 
-                              long finalLastDamage = unionMemberDao.copyLastDamage;
+                               long finalLastDamage = unionMemberDao.copyLastDamage;
                               this.sendChallengeResult(1, challengeCopyModel.getId(), unionDao.masterHp < 0L ? 0L : unionDao.masterHp, isPass, (String)null);
                               this.player.pushTask(() -> {
                                  this.player.triggerTask(107, 0, 1L, 1);
@@ -710,13 +714,15 @@ public class UnionCopyPart extends UnionPart {
                ++realUp;
             }
 
+            int finalFeeGold = feeGold;
+            int finalRealUp = realUp;
             this.player.pushTask(() -> {
-               if (realUp <= 0) {
+               if (finalRealUp <= 0) {
                   guanJiaPart.checkState(systemId, (List)null);
-               } else if ((long)feeGold > playerDao.gold) {
+               } else if ((long) finalFeeGold > playerDao.gold) {
                   guanJiaPart.checkState(systemId, (List)null);
                } else {
-                  this.player.delResource(1, PlayerDefine.PLAYER_GOLD, (long)feeGold, 9, 916, 0, 0, "guanJia");
+                  this.player.delResource(1, PlayerDefine.PLAYER_GOLD, (long) finalFeeGold, 9, 916, 0, 0, "guanJia");
                   String rewardStr = ApplicationContextProvider.getConfigString("unionBuffReward", "1|17|100");
                   List<ResourceModel> rewards = ResourceModel.buildResources(rewardStr);
                   this.player.addResource(rewards, PlayerMsg.ShowType.SHOW_TYPE_NOT_SHOW, 9, 916, 0, 0, "guanJia");
@@ -729,7 +735,7 @@ public class UnionCopyPart extends UnionPart {
                         copyBuffTime = currentTime;
                      }
 
-                     for(int i = 1; i <= realUp; ++i) {
+                     for(int i = 1; i <= finalRealUp; ++i) {
                         UnionBuffModel nextLevelModel = (UnionBuffModel)ApplicationContextProvider.getModelPoolEntity("unionBuff", finalCopyBuffLv + 1);
                         if (nextLevelModel == null) {
                            break;

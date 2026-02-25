@@ -86,10 +86,11 @@ public class RechargeController {
                return this.rechargeFail(rechargeNotifyData, RechargeReasonEnum.NOTIFY_SERVER, finalPlayerDao, rechargeModel);
             }
 
-            int reason = 1706;
+            int reason;
             int status = 1;
             if (isIosSh) {
-               if (rechargeNotifyData.getMoney() == null || rechargeNotifyData.getMoney() <= 0) {
+                reason = 1706;
+                if (rechargeNotifyData.getMoney() == null || rechargeNotifyData.getMoney() <= 0) {
                   return this.rechargeFail(rechargeNotifyData, RechargeReasonEnum.NOTIFY_ILLEGAL, finalPlayerDao, rechargeModel);
                }
 
@@ -98,7 +99,8 @@ public class RechargeController {
                rechargeModel.setIngots(rechargeNotifyData.getMoney() * 10);
                rechargeModel.setMoney(rechargeNotifyData.getMoney());
             } else if (rechargeType == 90) {
-               rechargeModel = new RechargeModel();
+                reason = 1706;
+                rechargeModel = new RechargeModel();
                if (rechargeNotifyData.getMoney() == null || rechargeNotifyData.getMoney() <= 0) {
                   return this.rechargeFail(rechargeNotifyData, RechargeReasonEnum.NOTIFY_ILLEGAL, finalPlayerDao, rechargeModel);
                }
@@ -136,6 +138,8 @@ public class RechargeController {
                   rechargeModel = (RechargeModel)ApplicationContextProvider.getModelPoolEntity("custom_recharge", platform + "-" + rechargeType + "-" + rechargeNotifyData.getMoney());
                   if (rechargeType == 89) {
                      reason = 1709;
+                  } else {
+                      reason = 1706;
                   }
                }
 

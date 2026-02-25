@@ -224,7 +224,8 @@ public class WarOrderPart extends PlayerPart {
          PlayerGiftExtend playerGiftExtend = (PlayerGiftExtend)this.player.getPlayerExtend(22);
          if (!playerGiftExtend.welfareC.containsKey(rewardModel.getType()) || !((Set)playerGiftExtend.welfareC.get(rewardModel.getType())).contains(rewardId) || isBuy && (!playerGiftExtend.welfareS.containsKey(rewardModel.getType()) || !((Set)playerGiftExtend.welfareS.get(rewardModel.getType())).contains(rewardId))) {
             GiftMgr giftMgr = (GiftMgr)ApplicationContextProvider.getContext().getBean(GiftMgr.class);
-            giftMgr.pushTask(() -> giftMgr.generalWelfareReward(this.player, rewardModel, isBuy));
+            boolean finalIsBuy = isBuy;
+            giftMgr.pushTask(() -> giftMgr.generalWelfareReward(this.player, rewardModel, finalIsBuy));
          } else {
             this.player.failure(24);
          }
