@@ -209,6 +209,12 @@ public class GmController {
       gameModelPool.compareXlsCsv();
    }
 
+   @GetMapping({"/loadCSVtoFiletxt"})
+   public void compareXlsCsvWrite() {
+      GameModelPool gameModelPool = (GameModelPool)ApplicationContextProvider.getContext().getBean(GameModelPool.class);
+      gameModelPool.loadCsvAndExportJson();
+   }
+
    @GetMapping({"/printMem"})
    public void printMem() {
       DirMemTool.printJavaMemory();

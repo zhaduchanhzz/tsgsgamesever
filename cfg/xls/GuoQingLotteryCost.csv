@@ -1,4 +1,4 @@
 extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
-1,2,1172,1,s==8|消耗1个龙运勾玉,1,,
-2,2,1172,10,s==9|消耗10个龙运勾玉,10,,
-3,2,1172,45,s==9|消耗45个龙运勾玉,50,9,
+1,2,1172,1,s==33|Tiêu hao 1 viên Long Vận Câu Ngọc,1,,
+2,2,1172,10,s==34|Tiêu hao 10 viên Long Vận Câu Ngọc,10,,
+3,2,1172,45,s==34|Tiêu hao 45 viên Long Vận Câu Ngọc,50,9,

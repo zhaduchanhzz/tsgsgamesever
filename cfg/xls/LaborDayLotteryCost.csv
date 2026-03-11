@@ -1,4 +1,4 @@
 extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
-1,2,1255,1,s==8|消耗1个煅兵宝锤,1,,
-2,2,1255,10,s==9|消耗10个煅兵宝锤,10,,
-3,2,1255,45,s==9|消耗45个煅兵宝锤,50,9,
+1,2,1255,1,s==35|Tiêu hao 1 chiếc Đoạn Binh Bảo Chuỳ,1,,
+2,2,1255,10,s==36|Tiêu hao 10 chiếc Đoạn Binh Bảo Chuỳ,10,,
+3,2,1255,45,s==36|Tiêu hao 45 chiếc Đoạn Binh Bảo Chuỳ,50,9,

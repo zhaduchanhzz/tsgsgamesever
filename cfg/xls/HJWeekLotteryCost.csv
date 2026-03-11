@@ -1,4 +1,4 @@
 extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
-1,2,7033,1,s==8|消耗1个黄金勾玉,1,,
-2,2,7033,10,s==9|消耗10个黄金勾玉,10,,
-3,2,7033,45,s==9|消耗45个黄金勾玉,50,9,
+1,2,7033,1,s==31|Tiêu hao 1 Huyền Ngọc Hoàng Kim,1,,
+2,2,7033,10,s==32|Tiêu hao 10 Huyền Ngọc Hoàng Kim,10,,
+3,2,7033,45,s==32|Tiêu hao 45 Huyền Ngọc Hoàng Kim,50,9,

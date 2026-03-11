@@ -1,4 +1,4 @@
 extractType,consumeItems-type-1,consumeItems-id-1,consumeItems-value-1,desc,extractNum,discountNum,
-1,2,1171,1,s==8|消耗1个祈福燃灯,1,,
-2,2,1171,10,s==9|消耗10个祈福燃灯,10,,
-3,2,1171,45,s==9|消耗45个祈福燃灯,50,9,
+1,2,1171,1,s==33|Tiêu hao 1 cái Kỳ Phúc Nhiên Đăng,1,,
+2,2,1171,10,s==34|Tiêu hao 10 cái Kỳ Phúc Nhiên Đăng,10,,
+3,2,1171,45,s==34|Tiêu hao 45 cái Kỳ Phúc Nhiên Đăng,50,9,

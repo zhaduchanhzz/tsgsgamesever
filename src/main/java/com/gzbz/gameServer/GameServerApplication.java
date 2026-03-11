@@ -33,9 +33,9 @@ public class GameServerApplication {
 
       try {
          if (!Debug.isDebug) {
-            long delayTime = (long)(Math.random() * (double)30000.0F);
-            logger.info("延迟启动时间:{}毫秒", delayTime);
-            Debug.sleep(delayTime);
+//            long delayTime = (long)(Math.random() * (double)30000.0F);
+//            logger.info("delay: {} ms\n", delayTime);
+//            Debug.sleep(delayTime);
          }
 
          ApplicationRunnerImpl.mgrName = "worldMgr";

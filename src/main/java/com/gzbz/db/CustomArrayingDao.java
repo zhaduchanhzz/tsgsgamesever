@@ -52,10 +52,10 @@ public class CustomArrayingDao extends DBDao {
       saveFun = "saveBeautyMap"
    )
    public List<Integer> beautyList = new ArrayList();
-   public List<PropertyModel> property_artifact_refine = new ArrayList();
-   public List<PropertyModel> property_artifact_refine_add = new ArrayList();
-   public List<PropertyModel> property_artifact_strong = new ArrayList();
-   public Map<CommonMsg.HeroState, Map<Integer, Map<Integer, List<PropertyModel>>>> friendProperty = new HashMap();
+   public List<PropertyModel> property_artifact_refine = new ArrayList<>();
+   public List<PropertyModel> property_artifact_refine_add = new ArrayList<>();
+   public List<PropertyModel> property_artifact_strong = new ArrayList<>();
+   public Map<CommonMsg.HeroState, Map<Integer, Map<Integer, List<PropertyModel>>>> friendProperty = new HashMap<>();
 
    public void loadArraying(String data) {
       this.arrayingMap = JsonUtil.jsonToMap(data, CommonMsg.HeroState.class, ArrayingInfo.class);
